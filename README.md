@@ -1,5 +1,5 @@
 # Project1
-Lorem Ipsum short desc. Lorem Ipsum.
+Lorem Ipsum short desc. Lorem Ipsum
 
 ## Purpose:
 Lorem Ipsum
