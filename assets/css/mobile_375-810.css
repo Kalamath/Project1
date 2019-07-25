@@ -3,7 +3,7 @@
 /* Portrait and Landscape */
 @media only screen 
   and (min-width: 375px) 
-  and (max-width: 810) { 
+  and (max-width: 810px) { 
 
 
 /* Header Font:  
@@ -17,21 +17,51 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 /*=================================   HEADER  =================================*/
 
+.header {
+    background: #3F4444;
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
 .navMenu {
-    margin: 5px;
-    padding: 4px 1px;
+    display: inline-block;
+    color: white;
+    width: 49%;
+    text-align: center;
+    margin: 5px auto;
+    padding: 5px 0px;
 }
 
 .menu {
-    font-size: 12px;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
-/*=================================   HOME PAGE  =================================*/
+.navMenu:hover {
+  color: rgb(234, 172, 0);
+}
 
+#Favelogo {
+    color: white;
+    display:block; 
+    margin: 5px auto;
+}
+
+
+
+/*=================================   HOME PAGE  =================================*/
+#bWokeNav {
+    padding: 5px 10px;
+    margin: 5px auto;
+    font-size: 15px;
+}
 
 
 /*=================================   ABOUT PAGE  =================================*/
-
+.headerBlocked {
+    height: 120px;
+}
 
 
 /*=================================   FAVORITES  =================================*/
@@ -40,12 +70,20 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 .favoriteTitle {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     color: #3F4444;
-    padding: 20px 20px;
+    padding: 80px 20px;
     margin: 0px 20px;
 }
+
+#Favelogo {
+    color: white;
+    display:block; 
+    margin: 5px auto;
+}
+
+/*=================================   MUSIC BAR (FIXED ON HOME AND FAVORITES)  =================================*/
 
 
 /*=================================   FOOTER  =================================*/

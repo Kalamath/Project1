@@ -28,16 +28,16 @@ a {
     font-family: 'Teko', sans-serif;
     font-weight: 600;
     color: white;
+    position: fixed;
 }
 
 .navMenu {
     display: inline-block;
-    margin: 10px auto;
     color: white;
-    width: 40%;
+    width: 49%;
     text-align: center;
-    margin: 5px;
-    padding: 5px 5px;
+    margin: 10px auto;
+    padding: 10px 5px;
 }
 
 .menu {
@@ -47,6 +47,13 @@ a {
 
 .navMenu:hover {
   color: rgb(234, 172, 0);
+}
+
+/* Home and About Page */
+#bWokeNav {
+    padding: 5px 20px;
+    margin: 5px auto;
+    font-size: 25px;
 }
 
 /*=================================   FOOTER  =================================*/
@@ -75,6 +82,6 @@ footer {
     position: fixed;
     bottom: 0;
 
-    height: 50px;
+    height: 100px;
     background: rgba(234, 172, 0, 0.459);
 }

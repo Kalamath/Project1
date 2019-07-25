@@ -2,7 +2,7 @@
 /* Portrait and Landscape */
 @media only screen 
   and (min-width: 1224px) 
-  and (max-width: 1700px) {
+  and (max-width: 1400px) {
 
 
 /* Header Font:  
@@ -31,15 +31,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 
 /*=================================   FAVORITES  =================================*/
-.favorites {
-  height: 600px;
-}
 
-.favoriteTitle {
-  font-size: 40px;
-  font-weight: 500;
-  color: #3F4444;
-}
 
 
 /*=================================   FOOTER  =================================*/
