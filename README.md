@@ -1,6 +1,6 @@
 # Project1
 
-Martell Harding
-Ashton Roth
-Ari Virgil-Paige
+Martell Harding,
+Ashton Roth,
+Ari Virgil-Paige,
 Isabel Ngan
