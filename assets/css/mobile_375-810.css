@@ -18,7 +18,6 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 /*=================================   HEADER  =================================*/
 
 .header {
-    background: #3F4444;
     font-family: 'Teko', sans-serif;
     font-weight: 600;
     color: white;

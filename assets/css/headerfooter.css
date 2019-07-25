@@ -24,7 +24,7 @@ a {
 /*=================================   HEADER  =================================*/
 
 .header {
-    background: rgb(45, 49, 49);
+    background: rgba(45, 49, 49, 0.596);
     font-family: 'Teko', sans-serif;
     font-weight: 600;
     color: white;
