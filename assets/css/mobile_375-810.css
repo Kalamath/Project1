@@ -1,0 +1,59 @@
+/* ----------- iPhone 6, 6S, 7, 8, up until 10 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-width: 375px) 
+  and (max-width: 810) { 
+
+
+/* Header Font:  
+font-family: 'Teko', sans-serif;
+ wieght: 400, 500, 600 (semi bold), 700 (bold)
+
+Body font:
+font-family: 'Montserrat', sans-serif;
+wieght: 400, 600 (semi bold), 700 (bold) */
+
+
+/*=================================   HEADER  =================================*/
+
+.navMenu {
+    margin: 5px;
+    padding: 4px 1px;
+}
+
+.menu {
+    font-size: 12px;
+}
+
+/*=================================   HOME PAGE  =================================*/
+
+
+
+/*=================================   ABOUT PAGE  =================================*/
+
+
+
+/*=================================   FAVORITES  =================================*/
+.favorites {
+    height: 400px;
+}
+
+.favoriteTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3F4444;
+    padding: 20px 20px;
+    margin: 0px 20px;
+}
+
+
+/*=================================   FOOTER  =================================*/
+
+
+footer {
+    height: 200px;
+    padding: 50px
+}
+
+}

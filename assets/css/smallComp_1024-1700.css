@@ -1,0 +1,53 @@
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-width: 1224px) 
+  and (max-width: 1700px) {
+
+
+/* Header Font:  
+font-family: 'Teko', sans-serif;
+ wieght: 400, 500, 600 (semi bold), 700 (bold)
+
+Body font:
+font-family: 'Montserrat', sans-serif;
+wieght: 400, 600 (semi bold), 700 (bold) */
+
+
+/*=================================   HEADER  =================================*/
+
+.menu {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+
+/*=================================   HOME PAGE  =================================*/
+
+
+
+/*=================================   ABOUT PAGE  =================================*/
+
+
+
+/*=================================   FAVORITES  =================================*/
+.favorites {
+  height: 600px;
+}
+
+.favoriteTitle {
+  font-size: 40px;
+  font-weight: 500;
+  color: #3F4444;
+}
+
+
+/*=================================   FOOTER  =================================*/
+
+
+footer {
+  height: 300px;
+  padding: 60px
+}
+
+}
