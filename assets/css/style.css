@@ -7,13 +7,220 @@ font-family: 'Montserrat', sans-serif;
 wieght: 400, 600 (semi bold), 700 (bold) */
 
 /*=================================   HOME PAGE  =================================*/
+
+/* FIRST BLOCK: About Us */
 .headerBlocked {
     height: 200px;
 }
+.introduction {
+    /* Positioning for Video */
+    /* position: relative; */
+
+    background: url(https://images.unsplash.com/photo-1547090218-c525e72ceb96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80);
+    background-size: cover;
+
+}
+
+/* To edit video behind but still figuring it out */
+/* #homeVideo {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    left: -100;
+    bottom: 0;
+    z-index: 0;
+  } */
 
 #bWokeLogo {
     display: block;
     margin: 50px auto;
+}
+
+#homeMotto {
+    margin: 50px auto;
+    margin-bottom: 20px;
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;
+    font-size: 200px;
+    text-transform: uppercase;
+}
+
+#homeShortDescription {
+    padding: 50px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    background:rgba(238, 213, 143, 0.5);
+}
+
+.learnMore {
+    display: block;
+    margin: 20px auto;
+    margin-bottom: 50px;
+    width: 30%;
+    background: rgb(234, 172, 0);
+    height: 50px;
+    border:none;
+}
+
+/* SECOND BLOCK: Search */
+.searchArea {
+    background: rgba(49, 53, 53, 0.918);
+    padding: 50px 20px
+}
+
+.searchBar {
+    margin: 0px auto;
+    margin-top: 30px;
+}
+
+.searchBarTitle {
+    margin: 30px auto;
+
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    font-size: 40px;   
+    text-transform: inherit; 
+    color: white;
+}
+
+#searchSubhead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px; 
+    text-transform: initial; 
+}
+
+#search-input {
+    background: rgba(145, 156, 156, 0.253);
+    border: none;
+}
+#search-input:hover {
+    background: rgba(145, 156, 156, 0.411);
+    border: none;
+}
+#search-input:focus {
+    background: rgba(255, 255, 255, 0.842);
+}
+
+#searchBtn {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 20px;
+}
+
+#searchBtn:hover {
+    color: rgba(234, 172, 0, 0.5);;
+}
+
+#searchBtn:active {
+    color: rgba(234, 172, 0, 1);;
+}
+
+.searchBtn {
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 15px 5px 15px;
+    background: white;
+    height: 50px;
+    border:none;
+    border-radius: 3px;
+
+    color: rgb(234, 172, 0);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;  
+    text-transform: initial; 
+   
+}
+
+.searchBtn:hover {
+    color: #3F4444;
+}
+
+
+/* Category Search */
+.suggestionDiv {
+    background: rgba(0, 0, 0, 0.24);
+    width: 70%;
+    margin: 20px auto;
+}
+
+.suggestTitle {
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 20px;
+}
+
+.celebBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 5px 15px 5px 15px;
+    background: rgba(145, 156, 156, 0.411);
+    height: 50px;
+    border:none;
+    border-radius: 3px;
+
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px; 
+    text-transform: initial; 
+}
+
+.celebBtn:hover {
+    color: rgb(234, 172, 0);
+    background: white;
+}
+
+/* Results Div */
+.searchResultsDiv {
+    background: rgba(255, 255, 255, 0.74);
+    width: 90%;
+    height: 300px;
+    margin: 20px auto;
+}
+
+/* Map Title */
+.maps {
+    background: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80);
+    background-size: cover;
+}
+#homeMapTitle {
+    padding: 50px;
+    text-align: center;
+
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    font-size: 50px;   
+    text-transform: uppercase; 
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Map Styling */
+.mapouter {
+    display: block;
+    position: relative;
+    text-align: right;
+    height: 715px;
+    width: 974px;
+
+    padding-bottom: 50px;
+    margin: 0px auto;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none;
+    height: 715px;
+    width: 974px;
 }
 /*=================================   ABOUT PAGE  =================================*/
 
