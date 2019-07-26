@@ -1,5 +1,9 @@
 # Get Woke
+ htmlcssingan
 To allow people to find causes close to them AND to celebrities they like as a way to more easily connect people to social activism
+
+Lorem Ipsum short desc. Lorem Ipsum
+master
 
 ## Purpose:
 To utilize Today’s influencer and celebrity culture to drive and connect charities with the masses.
