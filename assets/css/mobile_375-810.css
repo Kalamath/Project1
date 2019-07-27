@@ -41,12 +41,6 @@ wieght: 400, 600 (semi bold), 700 (bold) */
   color: rgb(234, 172, 0);
 }
 
-#Favelogo {
-    color: white;
-    display:block; 
-    margin: 5px auto;
-}
-
 
 
 /*=================================   HOME PAGE  =================================*/
@@ -140,11 +134,6 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     margin: 0px 20px;
 }
 
-#Favelogo {
-    color: white;
-    display:block; 
-    margin: 5px auto;
-}
 
 /*=================================   MUSIC BAR (FIXED ON HOME AND FAVORITES)  =================================*/
 
