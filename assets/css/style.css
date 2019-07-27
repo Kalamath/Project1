@@ -1,9 +1,9 @@
 /* Header Font:  
-font-family: 'Teko', sans-serif;
+font-family: 'Montserrat', sans-serif;
  wieght: 400, 500, 600 (semi bold), 700 (bold)
 
 Body font:
-font-family: 'Montserrat', sans-serif;
+font-family: 'Work Sans', sans-serif;
 wieght: 400, 600 (semi bold), 700 (bold) */
 
 /*=================================   HOME PAGE  =================================*/
@@ -36,10 +36,24 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     margin: 50px auto;
 }
 
+#aboutMotto {
+    margin: 0px auto;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+#belowAbout {
+    /* margin: 0px auto; */
+    margin-bottom: 60px;
+}
+
 #homeMotto {
     margin: 50px auto;
     margin-bottom: 20px;
-    font-family: 'Teko', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 200px;
     text-transform: uppercase;
@@ -78,7 +92,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 .searchBarTitle {
     margin: 30px auto;
 
-    font-family: 'Teko', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 40px;   
     text-transform: inherit; 
@@ -153,7 +167,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 .suggestTitle {
     text-align: center;
-    font-family: 'Teko', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     color: white;
     margin: 20px;
@@ -197,7 +211,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     padding: 50px;
     text-align: center;
 
-    font-family: 'Teko', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 50px;   
     text-transform: uppercase; 
@@ -234,7 +248,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 .favoriteTitle {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 40px;
     font-weight: 600;
     text-align: center;
