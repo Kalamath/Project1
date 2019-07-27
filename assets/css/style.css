@@ -246,7 +246,17 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 #Favelogo {
-        color: white;
-        display:block; 
-        margin: 10px auto;
+    color: white;
+    display:block; 
+    margin: 0px auto;
+    object-fit: contain;
+    width: 100%;
+}
+
+#logoFooter {
+    color: white;
+    display:block; 
+    margin: 0px auto;
+    object-fit: contain;
+    width: 10%;
 }
