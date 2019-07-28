@@ -4,7 +4,16 @@ font-family: 'Montserrat', sans-serif;
 
 Body font:
 font-family: 'Work Sans', sans-serif;
-wieght: 400, 600 (semi bold), 700 (bold) */
+wieght: 400, 600 (semi bold), 700 (bold) 
+
+Colors:
+color: #fff200; Yellow
+color: #69bd45; Green
+color: #00aeef; Blue
+color: #90181b; Red
+*/
+
+
 
 /*=================================   HOME PAGE  =================================*/
 
@@ -36,20 +45,6 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     margin: 50px auto;
 }
 
-#aboutMotto {
-    margin: 0px auto;
-    margin-bottom: 0px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 80px;
-    text-transform: uppercase;
-}
-
-#belowAbout {
-    /* margin: 0px auto; */
-    margin-bottom: 60px;
-}
-
 #homeMotto {
     margin: 50px auto;
     margin-bottom: 20px;
@@ -64,7 +59,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 #homeShortDescription {
     padding: 50px;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 40px;
     background:rgba(238, 213, 143, 0.5);
@@ -102,7 +97,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 #searchSubhead {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 12px; 
     text-transform: initial; 
@@ -213,7 +208,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     padding: 50px;
     text-align: center;
 
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 50px;   
     text-transform: uppercase; 
@@ -240,7 +235,63 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 /*=================================   ABOUT PAGE  =================================*/
 
+#about {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
 
+#aboutMotto {
+    margin: 0px auto;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+#belowAbout {
+    /* margin: 0px auto; */
+    margin-bottom: 60px;
+}
+
+.aboutUsMain {
+    background: linear-gradient(to Bottom,  rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg); 
+    background-size: cover;
+}
+
+#jumboTeam {
+    
+}
+
+.theTeam {
+    background: linear-gradient(to Bottom,  rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg); 
+    background-size: cover;
+}
+.team-photo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #00aeef;
+    text-shadow: 0 0 3px #000;
+}
+
+.team-photo img {
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.strongTeam {
+    margin: 0px auto;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    text-transform: uppercase;
+}
 
 /*=================================   FAVORITES  =================================*/
 .favorites {
@@ -259,6 +310,12 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
     color: #3F4444;
     padding: 90px;
+}
+
+#myFavorites {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 #Favelogo {

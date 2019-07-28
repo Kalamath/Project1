@@ -20,28 +20,18 @@
 
 
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300,400,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300,400,700&display=swap" rel="stylesheet">
 
     <!-- link to jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <!-- Link to Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>  
-
-    <!-- Link to Javascripts -->
-    <script type="text/javascript" src="assets/javascript/api.js"></script>
-    <script type="text/javascript" src="assets/javascript/main.js"></script>
-    
 </head>
 
 <body>
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
-            <a href="" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img src="assets/images/bWokeLogo.png"
-                    alt="bWOKE" id="Favelogo"></a>
+            <a href="" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img src="assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
             <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
                 <a href="" class="navMenu">
@@ -66,7 +56,7 @@
         </div>
         <div class="row">
             <div class="col-1"></div>
-            <h1 class="col-5" id="homeMotto">We Woke up like this</h1>
+            <h1 class="col-5" id="homeMotto">Woke up like this</h1>
             <div class="col-6"></div>
         </div>
         <div class="row">
@@ -114,22 +104,35 @@
         <div class="row initialSuggestionsDiv">
             <div class="col-1"></div>
             <div class="col-3 suggestionDiv" id="artist">
-                <!-- buttons and header now generated dynamiclaly from JS -ARI- -->
-                </div>
+                <!-- Should we make these top searched? we could generate a database that looks at the most searched! Just an option! -->
+                <h1 class="suggestTitle">Most Popular Artists</h1>
+                <button class="celebBtn">Beyoncè</button>
+                <button class="celebBtn">Usher</button>
+                <button class="celebBtn">Elton John</button>
+                <button class="celebBtn">Queen</button>
+            </div>
 
             <div class="col-3 suggestionDiv" id="actorsActress">
-                     <!-- buttons and header WILL generated dynamiclaly from JS -ARI- -->
+                <h1 class="suggestTitle">Most Popular Actors</h1>
+                <button class="celebBtn">Jennifer Lawrence</button>
+                <button class="celebBtn">Michael B. Jordan</button>
+                <button class="celebBtn">Lili Reinhart</button>
+                <button class="celebBtn">Bradley Cooper</button>
             </div>
 
             <div class="col-3 suggestionDiv" id="athletes">
-                <!-- buttons and header WILL generated dynamiclaly from JS -ARI- -->
+                <h1 class="suggestTitle">Most Popular Athletes</h1>
+                <button class="celebBtn">Serena Williams</button>
+                <button class="celebBtn">David Beckham</button>
+                <button class="celebBtn">Lebron James</button>
+                <button class="celebBtn">Megan Rapinoe</button>
             </div>
             <div class="col-1"></div>
         </div>
 
-        <div id= "results" class="row searchResultsDiv">
-            <div id="celebphoto"></div>
-            <div id="resultsText"></div>
+        <div class="row searchResultsDiv">
+            Results Div (this will be hidden when they are searching, but when searches load, the .initialSuggestionsDiv
+            will hide and this div will show in JS
         </div>
     </section>
 
