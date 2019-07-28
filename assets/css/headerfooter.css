@@ -1,0 +1,88 @@
+/* Header Font:  
+font-family: 'Teko', sans-serif;
+ wieght: 400, 500, 600 (semi bold), 700 (bold)
+
+Body font:
+font-family: 'Montserrat', sans-serif;
+wieght: 400, 600 (semi bold), 700 (bold) */
+
+/* 
+colors:
+gold: #EAAA00;
+Charcoal: #3F4444; */
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=================================   HEADER  =================================*/
+
+.header {
+    background: rgba(45, 49, 49, 0.596);
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    color: white;
+    position: fixed;
+    z-index: 5;
+}
+
+.navMenu {
+    display: inline-block;
+    color: white;
+    width: 49%;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px 5px;
+}
+
+.menu {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.navMenu:hover {
+  color: rgb(234, 172, 0);
+}
+
+/* Home and About Page */
+#bWokeNav {
+    padding: 5px 20px;
+    margin: 5px auto;
+    font-size: 25px;
+}
+
+/*=================================   FOOTER  =================================*/
+footer {
+    height: 300px;
+    background: rgb(221, 162, 0);
+    padding: 100px
+}
+
+#logoFooter {
+    display: block;
+    margin: 10px auto;
+}
+
+#copyright {
+    display: block;
+    margin: 10px auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/*=================================   MUSIC BAR (FIXED ON HOME AND FAVORITES)  =================================*/
+
+.music {
+    display: block;
+    position: fixed;
+    bottom: 0;
+
+    height: 100px;
+    background: rgba(234, 172, 0, 0.459);
+}

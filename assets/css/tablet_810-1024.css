@@ -1,0 +1,131 @@
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-width: 810px) 
+  and (max-width: 1024px) {
+
+
+/* Header Font:  
+font-family: 'Teko', sans-serif;
+ wieght: 400, 500, 600 (semi bold), 700 (bold)
+
+Body font:
+font-family: 'Montserrat', sans-serif;
+wieght: 400, 600 (semi bold), 700 (bold) */
+
+
+/*=================================   HEADER  =================================*/
+
+.menu {
+  font-size: 17px;
+}
+
+/*=================================   HOME PAGE  =================================*/
+
+#bWokeNav {
+  padding: 5px 13px;
+  margin: 10px auto;
+  font-size: 17px;
+}
+
+.headerBlocked {
+  height: 150px;
+}
+
+#homeMotto {
+  font-size: 180px;
+}
+
+#homeShortDescription {
+  font-size: 40px;
+}
+
+.learnMore {
+  display: block;
+  margin: 70px auto;
+  margin-top: 10px;
+  width: 30%;
+  background: rgb(234, 172, 0);
+  height: 50px;
+  border-radius: 5px;
+  
+}
+
+/* Search */
+.searchBarTitle {
+  display: block;
+  font-size: 50px;
+  text-align: center;
+}
+
+#searchSubhead {
+  font-size: 18px; 
+  text-align: center;
+}
+
+.suggestionDiv {
+  width: 75%;
+}
+
+.suggestTitle {
+  font-weight: 600;
+  color: white;
+  margin: 20px;
+}
+
+.searchBtn {
+  font-size: 15px;
+  margin: 5px 5px;
+  padding: 2px 5px 2px 5px;
+}
+
+.celebBtn {
+  font-size: 15px;
+  margin: 10px auto;
+  padding: 2px 10px 2px 10px;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 579px;
+  width: 971px;
+
+  margin: 50px auto;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 579px;
+  width: 971px;
+}
+
+/*=================================   ABOUT PAGE  =================================*/
+
+
+
+/*=================================   FAVORITES  =================================*/
+.favorites {
+  height: 500px;
+}
+
+.favoriteTitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: #3F4444;
+
+  padding: 90px;
+}
+
+
+
+/*=================================   FOOTER  =================================*/
+
+
+footer {
+  height: 300px;
+  padding: 60px
+}
+
+}
