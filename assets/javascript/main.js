@@ -12,13 +12,12 @@ function resultsDiv() {
 //Artists Array
     var artists = [
         {   name: "Usher",
-            
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Boys%20and%20Girls%20Club%20of%20America&searchType=NAME_ONLY&rated=true",
             img: "./assets/images/usher.jpg",
           },
 
-        {   name: "Jennifer Lopez",
-            queryURL: "",
+        {   name: "Imagine Dragons",
+            queryURL: "The Trevor Project", 
         },
 
         {   name: "Beyoncè",
@@ -54,6 +53,46 @@ function resultsDiv() {
     getArtists();
 
 
+// //Actors Array
+
+//     var actors = [
+//         {   name: "Michael B. Jordan",
+//             queryURL: "", Feeding America
+//             img: "",
+//           },
+//         {   name: "Lili Reinhart", 
+//             queryURL: "", https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=6495
+//             img: "",
+//           },
+//         {   name: "Timothée Chalamet",
+//             queryURL: "", https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=9947
+//             img: "",
+//           },
+//         {   name: "Jessie WIlliams ",
+//             queryURL: "",https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=16010
+//             img: "",
+//           },
+//     ]
+
+//     var athletes = [
+//         {   name: "Michael Phelps",
+//             queryURL: "", SPECIAL OLMPYICS
+//             img: "",
+//           },
+//         {   name: "Megan Rapinoe",
+//             queryURL: "",https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=3247
+//             img: "",
+//           },
+//         {   name: "Lebron James",
+//     //         queryURL: "", 
+    //         img: "",
+    //       },
+    //     {   name: "",
+    //         queryURL: "",
+    //         img: "",
+    //       },
+    // ]
+
 
 
 $(".celebBtn").on("click", function(results) {
@@ -62,6 +101,11 @@ $(".celebBtn").on("click", function(results) {
      $(".searchResultsDiv").show();
     
     // Creates Images from Celeb Object and Appends to Search Results Div
+    var faveButton = $("<button>");
+    faveButton.addClass("favebtn");
+    faveButton.text("Add to Favorites");
+    $("#celebphoto").append(faveButton);
+
     var img = $("<img>");
     img.addClass("searchResultPhotos");
     img.attr("src", this, artists.img);
@@ -84,8 +128,9 @@ $(".celebBtn").on("click", function(results) {
         $("#resultsText").append("Charity Name: " + chartName +"<br>"+ "Charity Tagline: " + tagline + 
         "<br>" + "Charity Purpose: " + purpose + "<br>" + "Mission Statement: " + mission + "<br>" + "Get Involved: " + site);
      
-    });
+        });
 
     });
 
 });
+
