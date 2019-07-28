@@ -16,7 +16,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     /* Positioning for Video */
     /* position: relative; */
 
-    background: url(https://images.unsplash.com/photo-1547090218-c525e72ceb96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80);
+    background: linear-gradient(to Bottom,  rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/home1Option2.jpg); 
     background-size: cover;
 
 }
@@ -43,6 +43,8 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     font-weight: 400;
     font-size: 200px;
     text-transform: uppercase;
+
+    color: white;
 }
 
 #homeShortDescription {
@@ -190,7 +192,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 /* Map Title */
 .maps {
-    background: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80);
+    background: linear-gradient(to Bottom,  rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.2)), url(../images/home3.jpg); 
     background-size: cover;
 }
 #homeMapTitle {
@@ -246,7 +248,17 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 #Favelogo {
-        color: white;
-        display:block; 
-        margin: 10px auto;
+    color: white;
+    display:block; 
+    margin: 0px auto;
+    object-fit: contain;
+    width: 100%;
+}
+
+#logoFooter {
+    color: white;
+    display:block; 
+    margin: 0px auto;
+    object-fit: contain;
+    width: 10%;
 }
