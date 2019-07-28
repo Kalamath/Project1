@@ -1,0 +1,182 @@
+
+$(document).ready(function(){
+
+resultsDiv();
+
+function resultsDiv() {
+    $("#results").hide();
+
+}
+
+
+//Artists Array
+    var artists = [
+        {   name: "Usher",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Boys%20and%20Girls%20Club%20of%20America&searchType=NAME_ONLY&rated=true",
+            img: "./assets/images/usher.jpg",
+          },
+
+        {   name: "Imagine Dragons",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&search=The%20Trevor%20Project&searchType=NAME_ONLY&rated=tru", 
+        },
+
+        {   name: "Billie Eilish",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Oxfam%20America&searchType=NAME_ONLY&rated=true",
+        },
+        
+        {   name: "Shawn Mendes",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=American%20Red%20Cross&searchType=NAME_ONLY&rated=true",   
+        },
+
+    ]
+
+    // Function to Generate Artists Buttons
+    function getArtists() {
+
+        $("#artist").empty();
+
+        var newH1 = $("<h1>");
+        newH1.addClass("suggestTitle");
+        newH1.text("Popular Artists");
+        $("#artist").append(newH1);
+     
+              for (var i = 0; i < artists.length; i++) {
+              var newButton = $("<button>");
+              newButton.addClass("celebBtn");
+              newButton.attr("data-name", artists[i].name);
+              newButton.attr("query-link", artists[i].queryURL)
+              newButton.text(artists[i].name);
+              $("#artist").append(newButton);
+        }
+
+    }
+
+    getArtists();
+
+
+//Actors Array
+
+    var actors = [
+        {   name: "Michael B. Jordan",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Feeding%20America&searchType=NAME_ONLY&rated=true", 
+            img: "",
+          },
+        {   name: "Lili Reinhart", 
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=American%20Cancer%20Society&searchType=NAME_ONLY&rated=true", 
+            img: "",
+          },
+        {   name: "Timothée Chalamet",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Rape%2C%20Abuse%20%26%20Incest%20National%20Network&searchType=NAME_ONLY&rated=true", 
+            img: "",
+          },
+        {   name: "Jessie WIlliams ",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Advancement%20Project&searchType=NAME_ONLY&rated=true",
+            img: "",
+          },
+    ]
+
+
+    function getActors() {
+
+        $("#actorsActress").empty();
+
+        var newH1 = $("<h1>");
+        newH1.addClass("suggestTitle");
+        newH1.text("Popular Actors");
+        $("#actorsActress").append(newH1);
+     
+              for (var i = 0; i < actors.length; i++) {
+              var newButton = $("<button>");
+              newButton.addClass("celebBtn");
+              newButton.attr("data-name", actors[i].name);
+              newButton.attr("query-link", actors[i].queryURL)
+              newButton.text(actors[i].name);
+              $("#actorsActress").append(newButton);
+        }
+
+    }
+
+    getActors();
+
+    var athletes = [
+        {   name: "Michael Phelps",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Special%20Olympics&searchType=NAME_ONLY&rated=true",
+            img: "",
+          },
+        {   name: "Megan Rapinoe",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=American%20Civil%20Liberties%20Union%20Foundation&searchType=NAME_ONLY&rated=true",
+            img: "",
+          },
+        {   name: "Lebron James",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=After-School%20All-Stars&searchType=NAME_ONLY&rated=true", 
+            img: "",
+          },
+        {   name: "Serena Williams",
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=UNICEF%20USA&searchType=NAME_ONLY&rated=true",
+            img: "",
+          },
+    ]
+
+    function getAthletes() {
+
+        $("#athletes").empty();
+
+        var newH1 = $("<h1>");
+        newH1.addClass("suggestTitle");
+        newH1.text("Popular Artists");
+        $("#athletes").append(newH1);
+     
+              for (var i = 0; i < athletes.length; i++) {
+              var newButton = $("<button>");
+              newButton.addClass("celebBtn");
+              newButton.attr("data-name", athletes[i].name);
+              newButton.attr("query-link", athletes[i].queryURL)
+              newButton.text(athletes[i].name);
+              $("#athletes").append(newButton);
+        }
+
+    }
+
+    getAthletes();
+
+
+$(".celebBtn").on("click", function(results) {
+      event.preventDefault();
+     $("#resultsText").empty();  
+     $("#celebphoto").empty();  
+     $(".searchResultsDiv").show();
+    
+    // Creates Images from Celeb Object and Appends to Search Results Div
+    var faveButton = $("<button>");
+    faveButton.addClass("favebtn");
+    faveButton.text("Add to Favorites");
+    $("#celebphoto").append(faveButton);
+
+    var img = $("<img>");
+    img.addClass("searchResultPhotos");
+    img.attr("src", this, artists.img);
+    var queryURL= $(this).attr("query-link");
+    $("#celebphoto").append(img)
+    console.log(img, "image")
+
+ //API CALLS FOR CELEBRITY BUTTONS   
+   $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+
+    console.log (response);
+        var chartName = response[0].charityName;
+        var tagline = response[0].tagLine;
+        var purpose = response[0].cause.causeName;
+        var mission= response[0].mission;
+        var site = response[0].websiteURL;
+        $("#resultsText").append("Charity Name: " + chartName +"<br>"+ "Charity Tagline: " + tagline + 
+        "<br>" + "Charity Purpose: " + purpose + "<br>" + "Mission Statement: " + mission + "<br>" + "Get Involved: " + site);
+     
+        });
+
+    });
+
+});
+
