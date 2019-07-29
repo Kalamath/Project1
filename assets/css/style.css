@@ -186,8 +186,29 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 .searchResultsDiv {
     background: rgba(255, 255, 255, 0.74);
     width: 90%;
-    height: 300px;
     margin: 20px auto;
+}
+
+.favebtn {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 20px;
+    background: rgba(145, 156, 156, 0.411);
+    padding: 10px 20px;
+}
+
+#resultsText {
+    padding: 30px 30px;
+}
+
+.searchItemTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 15px; 
 }
 
 /* Map Title */
@@ -224,6 +245,8 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     height: 715px;
     width: 974px;
 }
+
+
 /*=================================   ABOUT PAGE  =================================*/
 
 

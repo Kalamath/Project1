@@ -44,6 +44,7 @@ function resultsDiv() {
               var newButton = $("<button>");
               newButton.addClass("celebBtn");
               newButton.attr("data-name", artists[i].name);
+              newButton.attr("img-src", artists[i].img);
               newButton.attr("query-link", artists[i].queryURL)
               newButton.text(artists[i].name);
               $("#artist").append(newButton);
@@ -89,6 +90,7 @@ function resultsDiv() {
               var newButton = $("<button>");
               newButton.addClass("celebBtn");
               newButton.attr("data-name", actors[i].name);
+              newButton.attr("img-src", actors[i].img);
               newButton.attr("query-link", actors[i].queryURL)
               newButton.text(actors[i].name);
               $("#actorsActress").append(newButton);
@@ -130,6 +132,7 @@ function resultsDiv() {
               var newButton = $("<button>");
               newButton.addClass("celebBtn");
               newButton.attr("data-name", athletes[i].name);
+              newButton.attr("img-src", athletes[i].img);
               newButton.attr("query-link", athletes[i].queryURL)
               newButton.text(athletes[i].name);
               $("#athletes").append(newButton);
@@ -154,10 +157,10 @@ $(".celebBtn").on("click", function(results) {
 
     var img = $("<img>");
     img.addClass("searchResultPhotos");
-    img.attr("src", this, artists.img);
+    imgsrc = $(this).attr("img-src");
+    img.attr("src", imgsrc);
     var queryURL= $(this).attr("query-link");
     $("#celebphoto").append(img)
-    console.log(img, "image")
 
  //API CALLS FOR CELEBRITY BUTTONS   
    $.ajax({
@@ -171,8 +174,8 @@ $(".celebBtn").on("click", function(results) {
         var purpose = response[0].cause.causeName;
         var mission= response[0].mission;
         var site = response[0].websiteURL;
-        $("#resultsText").append("Charity Name: " + chartName +"<br>"+ "Charity Tagline: " + tagline + 
-        "<br>" + "Charity Purpose: " + purpose + "<br>" + "Mission Statement: " + mission + "<br>" + "Get Involved: " + site);
+        $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName +"<br>"+ "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline + 
+        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
      
         });
 
