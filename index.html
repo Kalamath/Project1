@@ -34,6 +34,9 @@
     <!-- Link to Javascripts -->
     <script type="text/javascript" src="assets/javascript/api.js"></script>
     <script type="text/javascript" src="assets/javascript/main.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCfCbQMtphVTJZPsHwJfmHVYIgcWCpITKk&libraries=places"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
+    <script type="text/javascript" src="assets/javascript/google.js"></script>
     
 </head>
 
@@ -70,9 +73,9 @@
         </div>
         <div class="row">
             <div class="col-1"></div>
-            <h1 class="col-10" id="homeShortDescription">To allow people to find causes close to them AND to celebrities
-                they like as a
-                way to more easily connect people to social activism.</h1>
+            <h1 class="col-10" id="homeShortDescription"> Want to give back? Don't know where to start? <br>Start today by connecting with causes close to heart AND home! 
+               <br><br> You can also find charities and causes supported by your favorite celebrtries as inspiration! Don't just sit there and be mad about the state of world, when you could, bWoke!
+            </h1>
             <div class="col-1"></div>
         </div>
         <div class="row">
@@ -83,9 +86,8 @@
     <section class="searchArea container-fluid">
         <div class="row Search">
             <div class="col-1"></div>
-            <div class="searchBarTitle col-sm-12 col-md-12 col-lg-4">Begin your journey to get Woke <br> <span
-                    id="searchSubhead">Click on a
-                    button to view results, or generate your own search term.</span></div>
+            <div class="searchBarTitle col-sm-12 col-md-12 col-lg-4">Time to wake up!<br> <span
+                    id="searchSubhead">Click below to view cause related charities or start your own search!</span></div>
             <div class="col-sm-0 col-md-0 col-lg-2"></div>
             <div class="searchBar col-sm-12 col-md-12 col-lg-4">
                 <form role="form">
@@ -102,10 +104,7 @@
 
         <div class="row searchButtonDiv">
             <div class="col-1"></div>
-            <div class="buttonArea col-10">Initial Array of Buttons go here. use class .searchBtn. Here is an example of
-                how they will look like:
-                <button class="searchBtn">Test Button</button>
-                <button class="searchBtn">Test Button</button>
+            <div id = "causebtns" class="buttonArea col-10">
             </div>
             <div class="col-1"></div>
         </div>
@@ -141,6 +140,7 @@
                     href="https://www.embedgooglemap.org">how to embed a map on a google slide</a>
             </div>
         </div>
+        <div class="mapCharityBtns"></div>
     </section>
 
     <section class="music container-fluid">

@@ -187,6 +187,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     background: rgba(255, 255, 255, 0.74);
     width: 90%;
     margin: 20px auto;
+    position: relative;
 }
 
 .favebtn {
@@ -199,6 +200,9 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     margin: 20px;
     background: rgba(145, 156, 156, 0.411);
     padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 #resultsText {
@@ -209,6 +213,11 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 15px; 
+}
+
+.searchResultPhotos {
+    object-fit: contain;
+    margin: 20px;
 }
 
 /* Map Title */
