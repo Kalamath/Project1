@@ -1,15 +1,18 @@
 /* Header Font:  
-font-family: 'Teko', sans-serif;
- wieght: 400, 500, 600 (semi bold), 700 (bold)
+font-family: 'Montserrat', sans-serif;
+ wieght: 900
 
 Body font:
-font-family: 'Montserrat', sans-serif;
-wieght: 400, 600 (semi bold), 700 (bold) */
+font-family: 'Work Sans', sans-serif;
+wieght: 300, 400, 700
 
-/* 
-colors:
-gold: #EAAA00;
-Charcoal: #3F4444; */
+Colors:
+color: #fff200; Yellow
+color: #69bd45; Green
+color: #00aeef; Blue
+color: #90181b; Red
+*/
+
 
 * {
     margin: 0px;
@@ -25,7 +28,7 @@ a {
 
 .header {
     background: rgba(45, 49, 49, 0.596);
-    font-family: 'Teko', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: white;
     position: fixed;
@@ -39,9 +42,14 @@ a {
     text-align: center;
     margin: 10px auto;
     padding: 10px 5px;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 .menu {
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -72,8 +80,8 @@ footer {
 #copyright {
     display: block;
     margin: 10px auto;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
 }
 
 /*=================================   MUSIC BAR (FIXED ON HOME AND FAVORITES)  =================================*/
