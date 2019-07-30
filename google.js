@@ -162,7 +162,6 @@ $(document).ready(function(){
   //     map.fitBounds(bounds);
   //   });
   // });
-  -------------------------------------------------------------------
 //     function displaySearchButton(){
 //       $("#searchButton").empty(); // erasing anything in this div id so that it doesnt duplicate the results
 //       {
