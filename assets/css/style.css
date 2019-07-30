@@ -264,13 +264,21 @@ color: #90181b; Red
 
 #belowAbout {
     /* margin: 0px auto; */
-    margin-bottom: 60px;
+    margin-bottom: 0px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
 }
 
 .aboutUsMain {
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
     background-size: length;
     margin: 0px auto;
+}
+
+.ourTeam {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
+    background-size: cover;
 }
 
 .teamImg {
