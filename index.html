@@ -28,8 +28,8 @@
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-    <!-- Link to Javascripts -->
-    <script type="text/javascript" src="assets/javascript/api.js"></script>
+    <!-- Link to Javascripts
+    <script type="text/javascript" src="assets/javascript/api.js"></script> -->
     <script type="text/javascript" src="assets/javascript/main.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCfCbQMtphVTJZPsHwJfmHVYIgcWCpITKk&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
@@ -40,14 +40,14 @@
 <body>
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
-            <a href="" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img src="assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
+            <a href="" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
             <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
                 <a href="" class="navMenu">
-                    <div id='myFavorites' class='menu favoritesNav'>My Favorites</div>
+                    <div id='menu' class='menu'>My Favorites</div>
                 </a>
                 <a href="" class="navMenu">
-                    <div id='about' class='menu aboutNav'>About</div>
+                    <div id='menu' class='menu'>About</div>
                 </a>
             </div>
         </div>
@@ -120,6 +120,9 @@
         </div>
 
         <div class="row searchResultsDiv">
+            <div id= "celebphoto"></div>
+            <div id= "resultsText"></div>
+       
         </div>
     </section>
 

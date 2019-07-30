@@ -1,6 +1,6 @@
 /* Header Font:  
 font-family: 'Montserrat', sans-serif;
- wieght: 900
+wieght: 900
 
 Body font:
 font-family: 'Work Sans', sans-serif;
@@ -92,7 +92,8 @@ color: #90181b; Red
 
 .searchBarTitle {
     margin: 30px auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
     font-size: 40px;
     text-transform: uppercase;
     color: white;
@@ -136,6 +137,7 @@ color: #90181b; Red
 
 #searchBtn:active {
     color: rgba(234, 172, 0, 1);
+    ;
 }
 
 .searchBtn {
@@ -232,6 +234,7 @@ color: #90181b; Red
 .searchResultPhotos {
     object-fit: contain;
     margin: 20px;
+    width: 500px;
 }
 
 
@@ -292,8 +295,8 @@ color: #90181b; Red
     background: rgba(255, 255, 255, 0.5)
 }
 
-#about {
-    font-family: 'Work Sans', sans-serif;
+#menu {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
@@ -302,17 +305,16 @@ color: #90181b; Red
     margin: 50px auto;
     margin-bottom: 0px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 80px;
     text-transform: uppercase;
 }
 
 #belowAbout {
     /* margin: 0px auto; */
-    color: white;
     margin-bottom: 60px;
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    
 }
 
 .aboutUsMain {
@@ -321,20 +323,14 @@ color: #90181b; Red
     margin: 0px auto;
 }
 
-.ourTeam {
-    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
-    background-size: cover;
-    color: white;
-}
-
 .teamImg {
     width: 100%;
     height: auto;
 }
 
 .theTeam {
-    color: black;
-    /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg); */
+    color: white;
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg);
     background-size: auto;
     background-repeat: no-repeat;
     margin: 0px auto;
@@ -343,12 +339,19 @@ color: #90181b; Red
 #jumboTeam {
     margin: 0px auto;
 }
+
+.team-photo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #00aeef;
+    text-shadow: 0 0 3px #000;
+    border: 5px solid black;
+}
+
 .team-photo img {
     width: 90%;
     height: auto;
     border-radius: 50%;
-    /* border-color: black; */
-    border: 5px solid black;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;
@@ -360,6 +363,7 @@ color: #90181b; Red
     margin-top: 20px;
     border-radius: 15px;
     font-size: 12px;
+}
   
 .indTeamName {
     font-family: 'Montserrat', sans-serif;
@@ -389,7 +393,7 @@ color: #90181b; Red
 /*=================================   FAVORITES  =================================*/
 
 .favorites {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(../images/favoritesBack.jpg);
     background-size: cover;
     height: 1000px;
 }
@@ -405,17 +409,18 @@ color: #90181b; Red
 }
 
 #myFavorites {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
 
 #Favelogo {
     color: white;
-    display: block;
-    margin: 0px auto;
-    object-fit: contain;
+    /* display: block; */
+    /* margin: 0px auto; */
+    /* object-fit: contain; */
     width: 100%;
+    height: auto;
 }
 
 #logoFooter {
