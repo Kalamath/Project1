@@ -79,11 +79,13 @@ color: #90181b; Red
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     padding: 13px 40px;
+    color: white;
 
 }
 
 .learnMore:hover {
     background: #90181ac0;
+    color: white;
 }
 
 

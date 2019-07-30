@@ -198,7 +198,7 @@ $(document).ready(function () {
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
-            faveButton.attr("id", id)
+            faveButton.attr("id", id);
             // need this push id into array to track what is favorited
             favoriteList.push(id)
         });
@@ -238,14 +238,7 @@ $(document).ready(function () {
 
     // Click to add to favorites
     var favoriteList = [];
-
-    $(".searchArea").on("click", "#viewFaves", function () {
-        $(".searchArea").hide(); $(".favorites").show();
-    });
-
-    $(".favorites").on("click", "#viewSearch", function () {
-        $(".favorites").hide(); $(".searchArea").show();
-    });
+    var favorited = false;
 
     $(".searchResultsDiv").on("click", ".favebtn", function () {
         if (favoriteList.includes($(this).attr("id"))) {
@@ -264,7 +257,6 @@ $(document).ready(function () {
             var myItem = deletingDiv.filter(function (index, item) {
                 return $(item).hasClass("clone")
             })
-
             $(myItem[0]).remove();
 
             var index = $(myItem[0]).attr("data-index");
@@ -292,7 +284,7 @@ $(document).ready(function () {
 
 
 
-    $(".favoriteGallery").on("click", ".favorite", function () {
+    $(".favorites").on("click", ".favebtn", function () {
         var faveDiv = $("div[id=" + ($(this).attr("id")) + "]");
 
         $(this).css("background-color", "");
@@ -309,7 +301,6 @@ $(document).ready(function () {
             // we are filtering our elements that share the same class (BY ID) 
             // within the filter we must return true for our filtering mechanism to work and it returns as an array
             var myItem = deletingDiv.filter(function (index, item) {
-
                 return $(item).hasClass("clone")
             })
 
@@ -321,27 +312,19 @@ $(document).ready(function () {
     });
 
 
-    // Click on favorites
-    $(".searchFave").on("click", "#favoritebtn", function () {
-        $(".results").hide();
-        $("#resultTitle").hide();
-        $(".buttons").hide();
-        $(".favoriteGallery").show()
+    // Click on Button to view Favorites
+
+    $(".favorites").on("click", "#viewSearch", function () {
+        $(".favorites").hide(); 
+        $(".searchArea").show();
     });
 
-    // Click on Search Results
-    $(".searchFave").on("click", "#searchresultsbtn", function () {
-        $(".results").show();
-        $("#resultTitle").show();
-        $(".buttons").show();
-        $(".favoriteGallery").hide()
+    // Click on Back to search to go back to search
+    $(".searchArea").on("click", "#viewFaves", function () {
+        $(".searchArea").hide(); 
+        $(".favorites").show();
     });
 
-    // Removing gif ID from from Array Function
-    function removeFave(index) {
-        console.log('index', index);
-        favoriteList.splice(index, 1)
-    }
 
     // Removing gif ID from from Array Function
     function removeFave(index) {

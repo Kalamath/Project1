@@ -25,8 +25,9 @@ Charcoal: #3F4444; */
     box-sizing: border-box;
 }
 
-a {
+a:hover {
     text-decoration: none;
+    color: none;
 }
 
 
