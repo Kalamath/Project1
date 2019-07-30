@@ -1,15 +1,12 @@
 $(document).ready(function () {
-
-    resultsDiv();
+ 
+  
+    resultsDiv()
 
     function resultsDiv() {
         $("#results").hide();
 
     }
-
-    //Loading image gig for results div
-    var loading = $("<img>")
-    loading.attr("src", "./assets/images/loading.jpg")
 
     //Artists Array
     var artists = [
@@ -164,13 +161,13 @@ $(document).ready(function () {
         $("#resultsText").empty();
         $("#celebphoto").empty();
         $(".searchResultsDiv").show();
-        $("#celebphoto").append(loading)
+        // $("#celebphoto").append(loading)
 
         // Creates Images from Celeb Object and Appends to Search Results Div
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
-
+       
 
         var img = $("<img>");
         img.addClass("searchResultPhotos");
@@ -193,10 +190,12 @@ $(document).ready(function () {
             var purpose = response[0].cause.causeName;
             var mission = response[0].mission;
             var site = response[0].websiteURL;
+            var id = response[0].organization.ein;
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
+            faveButton.attr("id", id)
         });
 
     });
@@ -227,4 +226,37 @@ $(document).ready(function () {
 
 
     getCauses();
+
+    // var userLocation = "" ;//ASHTON PUT THIS HERE :)
+    // var search = "";
+
+    // $(".searchBtn").on("click", function (event){
+    //     event.preventDefault();
+    //     $(".searchResultsDiv").show();
+    //      var  querlyURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true&state=" + userLocation ;
+    //     $.ajax({
+    //         url: queryURL,
+    //         method: "GET"
+    //     }).then(function (response) {
+    //         console.log(response);
+    //         $("#celebphoto").empty();
+    //         var chartName = response[0].charityName;
+    //         var tagline = response[0].tagLine;
+    //         var purpose = response[0].cause.causeName;
+    //         var mission = response[0].mission;
+    //         var site = response[0].websiteURL;
+    //         $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
+    //             "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+    //         $("#celebphoto").append(img);
+    //         $("#celebphoto").append(faveButton);
+    //     });
+
+
+
+    // });
+
+    // FAVORITES
+
+
+    
 });

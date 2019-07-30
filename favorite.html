@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/mobile_375-810.css">
 
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Teko:400,500,600,700&display=swap"
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300,400,700&display=swap"
         rel="stylesheet">
 
     <!-- link to jquery -->
@@ -31,13 +31,14 @@
 <body>
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
-            <a href="" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img src="" alt="bWOKE" id="Favelogo"></a>
+            <a href="./index.html" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img
+                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
             <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
-                <a href="" class="navMenu">
+                <a href="./favorite.html" class="navMenu">
                     <div id='myFavorites' class='menu favoritesNav'>My Favorites</div>
                 </a>
-                <a href="" class="navMenu">
+                <a href="./about.html" class="navMenu">
                     <div id='about' class='menu aboutNav'>About</div>
                 </a>
             </div>
@@ -46,7 +47,23 @@
 
     <section class="favorites container-fluid">
         <h1 class="favoriteTitle">My Favorites</h1>
-        <div class="favoriteCharities"></div>
+        <div class="favoriteCharities">
+            <div class="row">
+                <div class="col-1"></div>
+                <table class="col-10" id="timeTable">
+                    <tr class="tableTitle">
+                        <th class="tableTitle">Charity</th>
+                        <th class="tableTitle ">Charity Tag Line</th>
+                        <th class="tableTitle ">Charity Purpose</th>
+                        <th class="tableTitle ">Mission Statement</th>
+                        <th class="tableTitle ">Site Link</th>
+                    </tr>
+                </table>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+
     </section>
 
     <section class="music container-fluid">
