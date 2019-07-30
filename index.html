@@ -8,8 +8,7 @@
     <title>bWoke</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CSS Links -->
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
@@ -20,16 +19,14 @@
 
 
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Teko:400,500,600,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300,400,700&display=swap" rel="stylesheet">
 
     <!-- link to jquery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!-- Link to Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
     <!-- Link to Javascripts -->
     <script type="text/javascript" src="assets/javascript/api.js"></script>
@@ -37,7 +34,7 @@
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCfCbQMtphVTJZPsHwJfmHVYIgcWCpITKk&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
     <script type="text/javascript" src="assets/javascript/google.js"></script>
-    
+
 </head>
 
 <body>
@@ -68,13 +65,13 @@
         </div>
         <div class="row">
             <div class="col-1"></div>
-            <h1 class="col-5" id="homeMotto">We Woke up like this</h1>
+            <h1 class="col-5" id="homeMotto">Woke up like this</h1>
             <div class="col-6"></div>
         </div>
         <div class="row">
             <div class="col-1"></div>
-            <h1 class="col-10" id="homeShortDescription"> Want to give back? Don't know where to start? <br>Start today by connecting with causes close to heart AND home! 
-               <br><br> You can also find charities and causes supported by your favorite celebrtries as inspiration! Don't just sit there and be mad about the state of world, when you could, bWoke!
+            <h1 class="col-10" id="homeShortDescription"> Want to give back? Don't know where to start? <br>Start today by connecting with causes close to heart AND home!
+                <br><br> You can also find charities and causes supported by your favorite celebrtries as inspiration! Don't just sit there and be mad about the state of world, when you could, bWoke!
             </h1>
             <div class="col-1"></div>
         </div>
@@ -86,8 +83,7 @@
     <section class="searchArea container-fluid">
         <div class="row Search">
             <div class="col-1"></div>
-            <div class="searchBarTitle col-sm-12 col-md-12 col-lg-4">Time to wake up!<br> <span
-                    id="searchSubhead">Click below to view cause related charities or start your own search!</span></div>
+            <div class="searchBarTitle col-sm-12 col-md-12 col-lg-4">Time to wake up!<br> <span id="searchSubhead">Click below to view cause related charities or start your own search!</span></div>
             <div class="col-sm-0 col-md-0 col-lg-2"></div>
             <div class="searchBar col-sm-12 col-md-12 col-lg-4">
                 <form role="form">
@@ -104,7 +100,7 @@
 
         <div class="row searchButtonDiv">
             <div class="col-1"></div>
-            <div id = "causebtns" class="buttonArea col-10">
+            <div id="causebtns" class="buttonArea col-10">
             </div>
             <div class="col-1"></div>
         </div>
@@ -112,32 +108,41 @@
         <div class="row initialSuggestionsDiv">
             <div class="col-1"></div>
             <div class="col-3 suggestionDiv" id="artist">
-                <!-- buttons and header now generated dynamiclaly from JS -ARI- -->
-                </div>
+                <!-- Should we make these top searched? we could generate a database that looks at the most searched! Just an option! -->
+                <h1 class="suggestTitle">Most Popular Artists</h1>
+                <button class="celebBtn">Beyoncè</button>
+                <button class="celebBtn">Usher</button>
+                <button class="celebBtn">Elton John</button>
+                <button class="celebBtn">Queen</button>
+            </div>
 
             <div class="col-3 suggestionDiv" id="actorsActress">
-                     <!-- buttons and header WILL generated dynamiclaly from JS -ARI- -->
+                <h1 class="suggestTitle">Most Popular Actors</h1>
+                <button class="celebBtn">Jennifer Lawrence</button>
+                <button class="celebBtn">Michael B. Jordan</button>
+                <button class="celebBtn">Lili Reinhart</button>
+                <button class="celebBtn">Bradley Cooper</button>
             </div>
 
             <div class="col-3 suggestionDiv" id="athletes">
-                <!-- buttons and header WILL generated dynamiclaly from JS -ARI- -->
+                <h1 class="suggestTitle">Most Popular Athletes</h1>
+                <button class="celebBtn">Serena Williams</button>
+                <button class="celebBtn">David Beckham</button>
+                <button class="celebBtn">Lebron James</button>
+                <button class="celebBtn">Megan Rapinoe</button>
             </div>
             <div class="col-1"></div>
         </div>
 
-        <div id= "results" class="row searchResultsDiv">
-            <div id="celebphoto"></div>
-            <div id="resultsText"></div>
+        <div class="row searchResultsDiv">
+            Results Div (this will be hidden when they are searching, but when searches load, the .initialSuggestionsDiv will hide and this div will show in JS
         </div>
     </section>
 
     <section class="maps container-fluid">
         <h1 id="homeMapTitle">See charities near you</h1>
         <div class="mapouter">
-            <div class="gmap_canvas"><iframe width="974" height="715" id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=UCLA&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                    href="https://www.embedgooglemap.org">how to embed a map on a google slide</a>
+            <div class="gmap_canvas"><iframe width="974" height="715" id="gmap_canvas" src="https://maps.google.com/maps?q=UCLA&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.org">how to embed a map on a google slide</a>
             </div>
         </div>
         <div class="mapCharityBtns"></div>
