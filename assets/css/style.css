@@ -295,8 +295,8 @@ color: #90181b; Red
     background: rgba(255, 255, 255, 0.5)
 }
 
-#about {
-    font-family: 'Work Sans', sans-serif;
+#menu {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
@@ -357,6 +357,21 @@ color: #90181b; Red
     -o-border-radius: 50%;
 }
 
+.teamInfo {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+  
+.indTeamName {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px #00aeef;
+}
+
 .strongTeam {
     margin: 0px auto;
     margin-bottom: 50px;
@@ -394,17 +409,18 @@ color: #90181b; Red
 }
 
 #myFavorites {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
 
 #Favelogo {
     color: white;
-    display: block;
-    margin: 0px auto;
-    object-fit: contain;
+    /* display: block; */
+    /* margin: 0px auto; */
+    /* object-fit: contain; */
     width: 100%;
+    height: auto;
 }
 
 #logoFooter {
