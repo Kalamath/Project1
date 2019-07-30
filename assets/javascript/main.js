@@ -159,7 +159,7 @@ $(document).ready(function () {
     $(".celebBtn").on("click", function (results) {
         event.preventDefault();
         $("#resultsText").empty();
-        $(".searchResultPhotos").empty();
+        $("#celebphoto").empty();
         $(".searchResultsDiv").show();
         // $("#celebphoto").append(loading)
 
@@ -179,6 +179,9 @@ $(document).ready(function () {
         console.log(img, "image")
 
         //API CALLS FOR CELEBRITY BUTTONS   
+
+        // @ARI When you make this generate dyanmically
+        // ---- need id to be a class and "id" attr of the entire div
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -191,17 +194,12 @@ $(document).ready(function () {
             var mission = response[0].mission;
             var site = response[0].websiteURL;
             var id = response[0].organization.ein;
-
-            var resultDiv = $("<div class=searchResultDiv " + id + " id=" + id + ">");
-            resultDiv.append($("<div class='searchResultPhotos'>"));
-            resultDiv.append($("<div class='resultsText'>"));
-            $(".resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
+            $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
-            $(".searchResultPhotos").append(img);
-            $(".searchResultPhotos").append(faveButton);
-            resultDiv.appendTo(".allResultsDiv");
+            $("#celebphoto").append(img);
+            $("#celebphoto").append(faveButton);
             faveButton.attr("id", id)
-            // need this push id into array to track if favorited or not
+            // need this push id into array to track what is favorited
             favoriteList.push(id)
         });
 
@@ -255,6 +253,7 @@ $(document).ready(function () {
               // we are filtering our elements that share the same class (BY ID) 
               // within the filter we must return true for our filtering mechanism to work and it returns as an array
               var myItem = deletingDiv.filter(function (index, item) {
+  
                   return $(item).hasClass("clone")
               })
   
@@ -264,9 +263,10 @@ $(document).ready(function () {
               removeFave(index);
   
           } else {
-              $(this).css("background-color", "hsla(57, 100%, 50%, 0.808);");
-              $(this).css("color", "rgb(94, 94, 94)");
-              $(this).css("border", "2px solid darkgrey");
+              $(this).css("background-color", "#AA1911");
+              $(this).css("color", "white");
+              $(this).css("border", "2px solid #d49f4f");
+              $(this).css("padding", "3px 13px 3px 13px");
              
               favoriteList.push($(this).attr("id"))
               favorited = true;
