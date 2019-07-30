@@ -192,7 +192,6 @@ $(document).ready(function () {
             var site = response[0].websiteURL;
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
-           debugger
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
         });
@@ -246,7 +245,6 @@ $(document).ready(function () {
             var site = response[0].websiteURL;
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
-           debugger
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
         });

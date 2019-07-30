@@ -1,27 +1,39 @@
 /* Header Font:  
-font-family: 'Teko', sans-serif;
- wieght: 400, 500, 600 (semi bold), 700 (bold)
+font-family: 'Montserrat', sans-serif;
+ wieght: 900
 
 Body font:
-font-family: 'Montserrat', sans-serif;
-wieght: 400, 600 (semi bold), 700 (bold) */
+font-family: 'Work Sans', sans-serif;
+wieght: 300, 400, 700
+
+Colors:
+color: #fff200; Yellow
+color: #69bd45; Green
+color: #00aeef; Blue
+color: #90181b; Red
+*/
+
 
 /*=================================   HOME PAGE  =================================*/
 
+
 /* FIRST BLOCK: About Us */
+
 .headerBlocked {
     height: 200px;
 }
+
 .introduction {
     /* Positioning for Video */
     /* position: relative; */
-
-    background: linear-gradient(to Bottom,  rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/home1Option2.jpg); 
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/home1Option2.jpg);
     background-size: cover;
-
 }
 
+
 /* To edit video behind but still figuring it out */
+
+
 /* #homeVideo {
     position: absolute;
     min-width: 100%;
@@ -39,21 +51,20 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 #homeMotto {
     margin: 50px auto;
     margin-bottom: 20px;
-    font-family: 'Teko', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 200px;
     text-transform: uppercase;
-
     color: white;
 }
 
 #homeShortDescription {
     padding: 50px;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 40px;
-    background:rgba(238, 213, 143, 0.5);
+    background: rgba(238, 213, 143, 0.5);
 }
 
 .learnMore {
@@ -63,10 +74,12 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     width: 30%;
     background: rgb(234, 172, 0);
     height: 50px;
-    border:none;
+    border: none;
 }
 
+
 /* SECOND BLOCK: Search */
+
 .searchArea {
     background: rgba(49, 53, 53, 0.918);
     padding: 50px 20px
@@ -79,49 +92,50 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 .searchBarTitle {
     margin: 30px auto;
-
-    font-family: 'Teko', sans-serif;
-    font-weight: 600;
-    font-size: 40px;   
-    text-transform: inherit; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
     color: white;
 }
 
 #searchSubhead {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 12px; 
-    text-transform: initial; 
+    font-size: 15px;
+    text-transform: initial;
 }
 
 #search-input {
     background: rgba(145, 156, 156, 0.253);
     border: none;
 }
+
 #search-input:hover {
     background: rgba(145, 156, 156, 0.411);
     border: none;
 }
+
 #search-input:focus {
     background: rgba(255, 255, 255, 0.842);
 }
 
 #searchBtn {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 15px;  
+    font-size: 15px;
     border: 2px solid white;
     border-radius: 3px;
     margin: 20px;
 }
 
 #searchBtn:hover {
-    color: rgba(234, 172, 0, 0.5);;
+    color: rgba(234, 172, 0, 0.5);
+    ;
 }
 
 #searchBtn:active {
-    color: rgba(234, 172, 0, 1);;
+    color: rgba(234, 172, 0, 1);
 }
 
 .searchBtn {
@@ -130,15 +144,13 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     padding: 5px 15px 5px 15px;
     background: white;
     height: 50px;
-    border:none;
+    border: none;
     border-radius: 3px;
-
     color: rgb(234, 172, 0);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 20px;  
-    text-transform: initial; 
-   
+    font-size: 20px;
+    text-transform: initial;
 }
 
 .searchBtn:hover {
@@ -147,6 +159,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 
 /* Category Search */
+
 .suggestionDiv {
     background: rgba(0, 0, 0, 0.24);
     width: 70%;
@@ -155,7 +168,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 .suggestTitle {
     text-align: center;
-    font-family: 'Teko', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     color: white;
     margin: 20px;
@@ -167,14 +180,13 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     padding: 5px 15px 5px 15px;
     background: rgba(145, 156, 156, 0.411);
     height: 50px;
-    border:none;
+    border: none;
     border-radius: 3px;
-
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 20px; 
-    text-transform: initial; 
+    font-size: 20px;
+    text-transform: initial;
 }
 
 .celebBtn:hover {
@@ -182,38 +194,73 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     background: white;
 }
 
+
 /* Results Div */
+
 .searchResultsDiv {
     background: rgba(255, 255, 255, 0.74);
     width: 90%;
-    height: 300px;
     margin: 20px auto;
+    position: relative;
 }
 
+.favebtn {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 20px;
+    background: rgba(145, 156, 156, 0.411);
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#resultsText {
+    padding: 30px 30px;
+}
+
+.searchItemTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 15px; 
+}
+
+.searchResultPhotos {
+    object-fit: contain;
+    margin: 20px;
+}
+
+
 /* Map Title */
+
 .maps {
-    background: linear-gradient(to Bottom,  rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.2)), url(../images/home3.jpg); 
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.2)), url(../images/home3.jpg);
     background-size: cover;
 }
+
 #homeMapTitle {
     padding: 50px;
     text-align: center;
-
-    font-family: 'Teko', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 50px;   
-    text-transform: uppercase; 
+    font-size: 50px;
+    text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
 }
 
+
 /* Map Styling */
+
 .mapouter {
     display: block;
     position: relative;
     text-align: right;
     height: 715px;
     width: 974px;
-
     padding-bottom: 50px;
     margin: 0px auto;
 }
@@ -224,11 +271,123 @@ wieght: 400, 600 (semi bold), 700 (bold) */
     height: 715px;
     width: 974px;
 }
-/*=================================   ABOUT PAGE  =================================*/
 
+
+/*=================================   ABOUT PAGE  =================================*/
+.aboutUs {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.1)), url(../images/aboutTeam.jpg);
+    background-size: cover;
+}
+.aboutTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+}
+
+.description {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400px;
+    font-size: 25px;
+    margin: 50px 10px;
+    margin-bottom: 100px;
+    background: rgba(255, 255, 255, 0.5)
+}
+
+#about {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#aboutMotto {
+    margin: 50px auto;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+#belowAbout {
+    /* margin: 0px auto; */
+    color: white;
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    
+}
+
+.aboutUsMain {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
+    background-size: cover;
+    margin: 0px auto;
+}
+
+.ourTeam {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.teamImg {
+    width: 100%;
+    height: auto;
+}
+
+.theTeam {
+    color: black;
+    /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg); */
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 0px auto;
+}
+
+#jumboTeam {
+    margin: 0px auto;
+}
+.team-photo img {
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
+    /* border-color: black; */
+    border: 5px solid black;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.teamInfo {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 12px;
+  
+.indTeamName {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px #00aeef;
+}
+
+.strongTeam {
+    margin: 0px auto;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+.wantToGive {
+    font-size: 50px;
+}
+
+.wePride {
+    margin-bottom: 0px;
+}
 
 
 /*=================================   FAVORITES  =================================*/
+
 .favorites {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);
     background-size: cover;
@@ -236,20 +395,24 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 .favoriteTitle {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 40px;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-
-
     color: #3F4444;
     padding: 90px;
 }
 
+#myFavorites {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
 #Favelogo {
     color: white;
-    display:block; 
+    display: block;
     margin: 0px auto;
     object-fit: contain;
     width: 100%;
@@ -257,7 +420,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 
 #logoFooter {
     color: white;
-    display:block; 
+    display: block;
     margin: 0px auto;
     object-fit: contain;
     width: 10%;
