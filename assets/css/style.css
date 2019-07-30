@@ -1,10 +1,10 @@
 /* Header Font:  
 font-family: 'Montserrat', sans-serif;
- wieght: 400, 500, 600 (semi bold), 700 (bold)
+ wieght: 900
 
 Body font:
 font-family: 'Work Sans', sans-serif;
-wieght: 400, 600 (semi bold), 700 (bold) 
+wieght: 300, 400, 700
 
 Colors:
 color: #fff200; Yellow
@@ -102,7 +102,7 @@ color: #90181b; Red
 #searchSubhead {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     text-transform: initial;
 }
 
@@ -122,7 +122,7 @@ color: #90181b; Red
 
 #searchBtn {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 15px;
     border: 2px solid white;
