@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     resultsDiv();
@@ -229,4 +228,3 @@ $(document).ready(function () {
 
     getCauses();
 });
-
