@@ -308,6 +308,7 @@ color: #90181b; Red
 
 #belowAbout {
     /* margin: 0px auto; */
+    color: white;
     margin-bottom: 60px;
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -320,14 +321,20 @@ color: #90181b; Red
     margin: 0px auto;
 }
 
+.ourTeam {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
+    background-size: cover;
+    color: white;
+}
+
 .teamImg {
     width: 100%;
     height: auto;
 }
 
 .theTeam {
-    color: white;
-    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg);
+    color: black;
+    /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg); */
     background-size: auto;
     background-repeat: no-repeat;
     margin: 0px auto;
@@ -340,16 +347,25 @@ color: #90181b; Red
     width: 90%;
     height: auto;
     border-radius: 50%;
+    /* border-color: black; */
+    border: 5px solid black;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;
 }
 
+.teamInfo {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 12px;
+  
 .indTeamName {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: white;
-    text-shadow: 0 0 3px #00aeef
+    text-shadow: 0 0 3px #00aeef;
 }
 
 .strongTeam {
@@ -359,6 +375,14 @@ color: #90181b; Red
     font-weight: 400;
     font-size: 80px;
     text-transform: uppercase;
+}
+
+.wantToGive {
+    font-size: 50px;
+}
+
+.wePride {
+    margin-bottom: 0px;
 }
 
 
