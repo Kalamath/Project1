@@ -6,6 +6,7 @@ Body font:
 font-family: 'Montserrat', sans-serif;
 wieght: 400, 600 (semi bold), 700 (bold) */
 
+
 /* 
 colors:
 gold: #EAAA00;
@@ -21,11 +22,12 @@ a {
     text-decoration: none;
 }
 
+
 /*=================================   HEADER  =================================*/
 
 .header {
     background: rgba(45, 49, 49, 0.596);
-    font-family: 'Teko', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: white;
     position: fixed;
@@ -42,22 +44,27 @@ a {
 }
 
 .menu {
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
     text-transform: uppercase;
 }
 
 .navMenu:hover {
-  color: rgb(234, 172, 0);
+    color: rgb(234, 172, 0);
 }
 
+
 /* Home and About Page */
+
 #bWokeNav {
     padding: 5px 20px;
     margin: 5px auto;
     font-size: 25px;
 }
 
+
 /*=================================   FOOTER  =================================*/
+
 footer {
     height: 300px;
     background: rgb(221, 162, 0);
@@ -76,13 +83,13 @@ footer {
     font-weight: 600;
 }
 
+
 /*=================================   MUSIC BAR (FIXED ON HOME AND FAVORITES)  =================================*/
 
 .music {
     display: block;
     position: fixed;
     bottom: 0;
-
     height: 100px;
     background: rgba(234, 172, 0, 0.459);
 }

@@ -247,8 +247,8 @@ color: #90181b; Red
 
 /*=================================   ABOUT PAGE  =================================*/
 
-#about {
-    font-family: 'Work Sans', sans-serif;
+#menu {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
@@ -359,7 +359,7 @@ color: #90181b; Red
 }
 
 #myFavorites {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
