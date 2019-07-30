@@ -218,6 +218,7 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 .searchResultPhotos {
     object-fit: contain;
     margin: 20px;
+    width: 500px;
 }
 
 /* Map Title */
