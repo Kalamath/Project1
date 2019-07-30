@@ -238,6 +238,7 @@ $(document).ready(function () {
 
       // Click to add to favorites
       var favoriteList = [];
+      localStorage.setItem("favoriteList", favoriteList);
 
       $(".searchResultsDiv").on("click", ".favebtn", function () {
           if (favoriteList.includes($(this).attr("id"))) {
@@ -245,6 +246,7 @@ $(document).ready(function () {
               $(this).css("color", "");
               $(this).css("border", "");
               $(this).css("padding", "");
+              $(this).text("Add to Favorites");
   
               // HOW TO DETACH A DIV FROM ANOTHER AREA?
               var ID = $(this).attr("id");
@@ -253,7 +255,6 @@ $(document).ready(function () {
               // we are filtering our elements that share the same class (BY ID) 
               // within the filter we must return true for our filtering mechanism to work and it returns as an array
               var myItem = deletingDiv.filter(function (index, item) {
-  
                   return $(item).hasClass("clone")
               })
   
@@ -263,10 +264,10 @@ $(document).ready(function () {
               removeFave(index);
   
           } else {
-              $(this).css("background-color", "#AA1911");
-              $(this).css("color", "white");
-              $(this).css("border", "2px solid #d49f4f");
-              $(this).css("padding", "3px 13px 3px 13px");
+              $(this).css("background-color", "#fff200b7");
+              $(this).css("color", "rgb(94, 94, 94)");
+              $(this).css("border", "2px solid rgb(94, 94, 94)");
+              $(this).text("Favorited");
              
               favoriteList.push($(this).attr("id"))
               favorited = true;
@@ -275,7 +276,7 @@ $(document).ready(function () {
   
               // adding giv to favorites (div is being cloned and moved)
               var faveDiv = $("div[id=" + ($(this).attr("id")) + "]").attr("data-index", dataIndex);
-              faveDiv.clone().detach().addClass("clone").appendTo(".favoriteGallery");
+              faveDiv.clone().detach().addClass("clone").appendTo(".favoriteCharities");
   
           }
   
