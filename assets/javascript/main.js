@@ -198,6 +198,8 @@ $(document).ready(function () {
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
+            $(".searchResultsDiv").addClass(id);
+            $(".searchResultsDiv").attr("id", id);
             faveButton.attr("id", id);
             // need this push id into array to track what is favorited
             favoriteList.push(id)
@@ -275,7 +277,7 @@ $(document).ready(function () {
 
             // adding giv to favorites (div is being cloned and moved)
             var faveDiv = $("div[id=" + ($(this).attr("id")) + "]").attr("data-index", dataIndex);
-            faveDiv.clone().detach().addClass("clone").appendTo(".favoriteCharities");
+            faveDiv.clone().detach().addClass("clone").appendTo("#favoriteCharities");
 
         }
 
