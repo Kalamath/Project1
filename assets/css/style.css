@@ -1,10 +1,10 @@
 /* Header Font:  
 font-family: 'Montserrat', sans-serif;
- wieght: 400, 500, 600 (semi bold), 700 (bold)
+ wieght: 900
 
 Body font:
 font-family: 'Work Sans', sans-serif;
-wieght: 400, 600 (semi bold), 700 (bold) 
+wieght: 300, 400, 700
 
 Colors:
 color: #fff200; Yellow
@@ -92,17 +92,16 @@ color: #90181b; Red
 
 .searchBarTitle {
     margin: 30px auto;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    text-transform: inherit;
+    text-transform: uppercase;
     color: white;
 }
 
 #searchSubhead {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     text-transform: initial;
 }
 
@@ -122,7 +121,7 @@ color: #90181b; Red
 
 #searchBtn {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 15px;
     border: 2px solid white;
@@ -137,7 +136,6 @@ color: #90181b; Red
 
 #searchBtn:active {
     color: rgba(234, 172, 0, 1);
-    ;
 }
 
 .searchBtn {
@@ -149,7 +147,7 @@ color: #90181b; Red
     border: none;
     border-radius: 3px;
     color: rgb(234, 172, 0);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     text-transform: initial;
@@ -185,7 +183,7 @@ color: #90181b; Red
     border: none;
     border-radius: 3px;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     text-transform: initial;
@@ -202,8 +200,38 @@ color: #90181b; Red
 .searchResultsDiv {
     background: rgba(255, 255, 255, 0.74);
     width: 90%;
-    height: 300px;
     margin: 20px auto;
+    position: relative;
+}
+
+.favebtn {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 20px;
+    background: rgba(145, 156, 156, 0.411);
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#resultsText {
+    padding: 30px 30px;
+}
+
+.searchItemTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 15px; 
+}
+
+.searchResultPhotos {
+    object-fit: contain;
+    margin: 20px;
 }
 
 
@@ -246,6 +274,23 @@ color: #90181b; Red
 
 
 /*=================================   ABOUT PAGE  =================================*/
+.aboutUs {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.1)), url(../images/aboutTeam.jpg);
+    background-size: cover;
+}
+.aboutTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+}
+
+.description {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400px;
+    font-size: 25px;
+    margin: 50px 10px;
+    margin-bottom: 100px;
+    background: rgba(255, 255, 255, 0.5)
+}
 
 #about {
     font-family: 'Work Sans', sans-serif;
@@ -254,10 +299,9 @@ color: #90181b; Red
 }
 
 #aboutMotto {
-    margin: 0px auto;
+    margin: 50px auto;
     margin-bottom: 0px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
     font-size: 80px;
     text-transform: uppercase;
 }
@@ -265,15 +309,15 @@ color: #90181b; Red
 #belowAbout {
     /* margin: 0px auto; */
     color: white;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    font-size: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    
 }
 
 .aboutUsMain {
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg);
-    background-size: length;
+    background-size: cover;
     margin: 0px auto;
 }
 
@@ -293,16 +337,12 @@ color: #90181b; Red
     /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg); */
     background-size: auto;
     background-repeat: no-repeat;
+    margin: 0px auto;
 }
 
-.team-photo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    color: #00aeef;
-    /* text-shadow: 0 0 3px #000; */
-    margin-bottom: 5px;
+#jumboTeam {
+    margin: 0px auto;
 }
-
 .team-photo img {
     width: 90%;
     height: auto;
@@ -320,6 +360,12 @@ color: #90181b; Red
     margin-top: 20px;
     border-radius: 15px;
     font-size: 12px;
+  
+.indTeamName {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px #00aeef;
 }
 
 .strongTeam {
