@@ -8,6 +8,9 @@ function resultsDiv() {
 
 }
 
+//Loading image gig for results div
+var loading = $("<img>")
+loading.attr("src","./assets/images/loading.jpg" )
 
 //Artists Array
     var artists = [
@@ -17,16 +20,19 @@ function resultsDiv() {
           },
 
         {   name: "Imagine Dragons",
-            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&search=The%20Trevor%20Project&searchType=NAME_ONLY&rated=tru", 
+            queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&search=The%20Trevor%20Project&searchType=NAME_ONLY&rated=true", 
+            img: "./assets/images/imagine.jpg",
         },
 
         {   name: "Billie Eilish",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Oxfam%20America&searchType=NAME_ONLY&rated=true",
+            img: "./assets/images/billie.jpg",
         },
         
         {   name: "Shawn Mendes",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=American%20Red%20Cross&searchType=NAME_ONLY&rated=true",   
-        },
+            img: "./assets/images/shawn.jpg",
+       },
 
     ]
 
@@ -59,19 +65,19 @@ function resultsDiv() {
     var actors = [
         {   name: "Michael B. Jordan",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Feeding%20America&searchType=NAME_ONLY&rated=true", 
-            img: "",
+            img: "./assets/images/michael.jpg",
           },
         {   name: "Lili Reinhart", 
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=American%20Cancer%20Society&searchType=NAME_ONLY&rated=true", 
-            img: "",
+            img: "./assets/images/lili.jpg",
           },
         {   name: "Timothée Chalamet",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Rape%2C%20Abuse%20%26%20Incest%20National%20Network&searchType=NAME_ONLY&rated=true", 
-            img: "",
+            img: "./assets/images/timothee.jpg",
           },
-        {   name: "Jessie WIlliams ",
+        {   name: "Jesse Williams ",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Advancement%20Project&searchType=NAME_ONLY&rated=true",
-            img: "",
+            img: "./assets/images/jesse.jpg",
           },
     ]
 
@@ -101,19 +107,19 @@ function resultsDiv() {
     var athletes = [
         {   name: "Michael Phelps",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Special%20Olympics&searchType=NAME_ONLY&rated=true",
-            img: "",
+            img: "./assets/images/phelps.jpg",
           },
         {   name: "Megan Rapinoe",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=American%20Civil%20Liberties%20Union%20Foundation&searchType=NAME_ONLY&rated=true",
-            img: "",
+            img: "./assets/images/rapinoe.png",
           },
         {   name: "Lebron James",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=After-School%20All-Stars&searchType=NAME_ONLY&rated=true", 
-            img: "",
+            img: "./assets/images/lebron.jpg",
           },
         {   name: "Serena Williams",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=UNICEF%20USA&searchType=NAME_ONLY&rated=true",
-            img: "",
+            img: "./assets/images/serena.jpg",
           },
     ]
 
@@ -139,24 +145,24 @@ function resultsDiv() {
 
     getAthletes();
 
-
 $(".celebBtn").on("click", function(results) {
       event.preventDefault();
      $("#resultsText").empty();  
      $("#celebphoto").empty();  
      $(".searchResultsDiv").show();
-    
+     $("#celebphoto").append(loading)
+
     // Creates Images from Celeb Object and Appends to Search Results Div
     var faveButton = $("<button>");
     faveButton.addClass("favebtn");
     faveButton.text("Add to Favorites");
-    $("#celebphoto").append(faveButton);
+    
 
     var img = $("<img>");
     img.addClass("searchResultPhotos");
     img.attr("src", this, artists.img);
     var queryURL= $(this).attr("query-link");
-    $("#celebphoto").append(img)
+
     console.log(img, "image")
 
  //API CALLS FOR CELEBRITY BUTTONS   
@@ -164,8 +170,8 @@ $(".celebBtn").on("click", function(results) {
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-
-    console.log (response);
+     console.log (response);
+       $("#celebphoto").empty();  
         var chartName = response[0].charityName;
         var tagline = response[0].tagLine;
         var purpose = response[0].cause.causeName;
@@ -173,10 +179,37 @@ $(".celebBtn").on("click", function(results) {
         var site = response[0].websiteURL;
         $("#resultsText").append("Charity Name: " + chartName +"<br>"+ "Charity Tagline: " + tagline + 
         "<br>" + "Charity Purpose: " + purpose + "<br>" + "Mission Statement: " + mission + "<br>" + "Get Involved: " + site);
-     
+        $("#celebphoto").append(img);
+        $("#celebphoto").append(faveButton);
         });
 
     });
 
+
+//Button creation for Causes
+   var causes = ["Immigration", "Women's Rights", "Foster Families", "LGBTQIA", "Civil Rights", "Animals", "Environment", "International", "Community Developement", "Public Policy", "Gun Safety"]
+
+   function getCauses() {
+    $("#causebtns").empty();
+          for (var i = 0; i < causes.length; i++) {
+          var newButton = $("<button>");
+          newButton.addClass("searchBtn");
+          newButton.attr("data-name", causes[i]);
+          // newButton.attr("query-link", causes[i])
+          newButton.text(causes[i]);
+          $("#causebtns").append(newButton);
+        }
+    }
+
+ //Adding Buttons from Search Bar
+    $("#searchBtn").on("click", function(event) {
+      event.preventDefault();
+      var newCause = $("#search-input").val().trim();
+      causes.push(newCause);
+      getCauses();
+    });
+
+
+    getCauses();
 });
 
