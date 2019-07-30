@@ -259,7 +259,7 @@ $(document).ready(function () {
          removeFave(index);
 
      } else {
-         $(this).css("background-color", "#AA1911");
+         $(this).css("background-color", "#darkgrey");
          $(this).css("color", "white");
          $(this).css("border", "2px solid #d49f4f");
          $(this).css("padding", "3px 13px 3px 13px");

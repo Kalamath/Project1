@@ -221,6 +221,12 @@ color: #90181b; Red
     top: 0;
 }
 
+.favebtn:hover {
+    border: 2px solid grey;
+    background: #fff20086;
+    color: rgb(94, 94, 94);
+}
+
 #resultsText {
     padding: 30px 30px;
 }
@@ -236,6 +242,7 @@ color: #90181b; Red
     margin: 20px;
     width: 500px;
 }
+
 
 
 /* Map Title */
