@@ -345,6 +345,7 @@ color: #90181b; Red
     font-size: 15px;
     color: #00aeef;
     text-shadow: 0 0 3px #000;
+    border: 5px solid black;
 }
 
 .team-photo img {
@@ -363,6 +364,14 @@ color: #90181b; Red
     font-weight: 400;
     font-size: 80px;
     text-transform: uppercase;
+}
+
+.wantToGive {
+    font-size: 50px;
+}
+
+.wePride {
+    margin-bottom: 0px;
 }
 
 
