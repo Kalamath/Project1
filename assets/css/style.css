@@ -501,7 +501,7 @@ color: #90181b; Red
     text-align: center;
     text-transform: uppercase;
     color: #3F4444;
-    padding: 150px;
+    padding: 50px;
 }
 
 #myFavorites {
@@ -515,8 +515,10 @@ color: #90181b; Red
     /* display: block; */
     /* margin: 0px auto; */
     /* object-fit: contain; */
-    width: 100%;
+    width: 60%;
     height: auto;
+    margin: 5px auto;
+    
 }
 
 #logoFooter {
