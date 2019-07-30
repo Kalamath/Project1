@@ -75,14 +75,47 @@ color: #90181b; Red
     background: rgb(234, 172, 0);
     height: 50px;
     border: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 13px 40px;
+
+}
+
+.learnMore:hover {
+    background: #90181ac0;
 }
 
 
 /* SECOND BLOCK: Search */
 
+#viewFaves {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 25px 15px;
+    background: rgba(234, 172, 0, 0.616);
+    padding: 5px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#viewFaves:hover {
+    background: rgb(234, 172, 0);
+}
+
 .searchArea {
     background: rgba(49, 53, 53, 0.918);
-    padding: 50px 20px
+    padding: 20px 20px;
+    position: relative;
+}
+
+.Search {
+    padding: 50px;
 }
 
 .searchBar {
@@ -104,6 +137,7 @@ color: #90181b; Red
     font-weight: 400;
     font-size: 15px;
     text-transform: initial;
+    padding: 5px;
 }
 
 #search-input {
@@ -244,6 +278,49 @@ color: #90181b; Red
 }
 
 
+/* Fave Block */
+#viewFaves {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 25px 15px;
+    background: rgba(234, 172, 0, 0.616);
+    padding: 5px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#viewFaves:hover {
+    background: rgb(234, 172, 0);
+}
+
+#viewSearch {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 25px 15px;
+    background: rgba(234, 172, 0, 0.616);
+    padding: 5px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#viewSearch:hover {
+    background: rgb(234, 172, 0);
+}
+
+.favorites {
+    position: relative;
+    display: none;
+}
 
 /* Map Title */
 
