@@ -1,6 +1,6 @@
 $(document).ready(function () {
- 
-  
+
+
     resultsDiv()
 
     function resultsDiv() {
@@ -167,7 +167,7 @@ $(document).ready(function () {
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
-       
+
 
         var img = $("<img>");
         img.addClass("searchResultPhotos");
@@ -179,6 +179,9 @@ $(document).ready(function () {
         console.log(img, "image")
 
         //API CALLS FOR CELEBRITY BUTTONS   
+
+        // @ARI When you make this generate dyanmically
+        // ---- need id to be a class and "id" attr of the entire div
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -195,7 +198,11 @@ $(document).ready(function () {
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
-            faveButton.attr("id", id)
+            $(".searchResultsDiv").addClass(id);
+            $(".searchResultsDiv").attr("id", id);
+            faveButton.attr("id", id);
+            // need this push id into array to track what is favorited
+            favoriteList.push(id)
         });
 
     });
@@ -224,116 +231,111 @@ $(document).ready(function () {
         getCauses();
     });
 
-
     getCauses();
 
-    var userLocation = "" ;//ASHTON PUT THIS HERE :)
+    var userLocation = "";//ASHTON PUT THIS HERE :)
     var search = "";
 
-    // ====================== FAVORTIE BUTTON
+    // ============================================= FAVORITES BUTTON =================================================
 
- // Click to add to favorites
- var favoriteList = [];
+    // Click to add to favorites
+    var favoriteList = [];
+    var favorited = false;
 
- $(".results").on("click", ".favorite", function () {
-     if (favoriteList.includes($(this).attr("id"))) {
-         $(this).css("background-color", "");
-         $(this).css("color", "");
-         $(this).css("border", "");
-         $(this).css("padding", "");
+    $(".searchResultsDiv").on("click", ".favebtn", function () {
+        if (favoriteList.includes($(this).attr("id"))) {
+            $(this).css("background-color", "");
+            $(this).css("color", "");
+            $(this).css("border", "");
+            $(this).css("padding", "");
+            $(this).text("Add to Favorites");
 
-         // HOW TO DETACH A DIV FROM ANOTHER AREA?
-         var ID = $(this).attr("id");
-         var deletingDiv = $("." + ID)
+            // HOW TO DETACH A DIV FROM ANOTHER AREA?
+            var ID = $(this).attr("id");
+            var deletingDiv = $("." + ID)
 
-         // we are filtering our elements that share the same class (BY ID) 
-         // within the filter we must return true for our filtering mechanism to work and it returns as an array
-         var myItem = deletingDiv.filter(function (index, item) {
+            // we are filtering our elements that share the same class (BY ID) 
+            // within the filter we must return true for our filtering mechanism to work and it returns as an array
+            var myItem = deletingDiv.filter(function (index, item) {
+                return $(item).hasClass("clone")
+            })
+            $(myItem[0]).remove();
 
-             return $(item).hasClass("clone")
-         })
+            var index = $(myItem[0]).attr("data-index");
+            removeFave(index);
 
-         $(myItem[0]).remove();
+        } else {
+            $(this).css("background-color", "#fff200b7");
+            $(this).css("color", "rgb(94, 94, 94)");
+            $(this).css("border", "2px solid rgb(94, 94, 94)");
+            $(this).text("Favorited");
 
-         var index = $(myItem[0]).attr("data-index");
-         removeFave(index);
+            favoriteList.push($(this).attr("id"))
+            favorited = true;
 
-     } else {
-         $(this).css("background-color", "#darkgrey");
-         $(this).css("color", "white");
-         $(this).css("border", "2px solid #d49f4f");
-         $(this).css("padding", "3px 13px 3px 13px");
-        
-         favoriteList.push($(this).attr("id"))
-         favorited = true;
-        
-         var dataIndex = favoriteList.length ? favoriteList.length - 1 : 0;
+            var dataIndex = favoriteList.length ? favoriteList.length - 1 : 0;
 
-         // adding giv to favorites (div is being cloned and moved)
-         var faveDiv = $("div[id=" + ($(this).attr("id")) + "]").attr("data-index", dataIndex);
-         faveDiv.clone().detach().addClass("clone").appendTo(".favoriteGallery");
+            // adding giv to favorites (div is being cloned and moved)
+            var faveDiv = $("div[id=" + ($(this).attr("id")) + "]").attr("data-index", dataIndex);
+            faveDiv.clone().detach().addClass("clone").appendTo("#favoriteCharities");
 
-         
+        }
 
-     }
-
-     console.log("from results:" + favoriteList)
- });
+        console.log("from results:" + favoriteList)
+    });
 
 
 
- $(".favoriteGallery").on("click", ".favorite", function () {
-     var faveDiv = $("div[id=" + ($(this).attr("id")) + "]");
+    $(".favorites").on("click", ".favebtn", function () {
+        var faveDiv = $("div[id=" + ($(this).attr("id")) + "]");
 
-     $(this).css("background-color", "");
-     $(this).css("color", "");
-     $(this).css("border", "");
-     $(this).css("padding", "");
-     $(faveDiv).remove()
+        $(this).css("background-color", "");
+        $(this).css("color", "");
+        $(this).css("border", "");
+        $(this).css("padding", "");
+        $(faveDiv).remove()
 
-     if (favoriteList.includes($(this).attr("id"))) {
-         // HOW TO DETACH A DIV FROM ANOTHER AREA?
-         var ID = $(this).attr("id");
-         var deletingDiv = $("." + ID)
+        if (favoriteList.includes($(this).attr("id"))) {
+            // HOW TO DETACH A DIV FROM ANOTHER AREA?
+            var ID = $(this).attr("id");
+            var deletingDiv = $("." + ID)
 
-         // we are filtering our elements that share the same class (BY ID) 
-         // within the filter we must return true for our filtering mechanism to work and it returns as an array
-         var myItem = deletingDiv.filter(function (index, item) {
+            // we are filtering our elements that share the same class (BY ID) 
+            // within the filter we must return true for our filtering mechanism to work and it returns as an array
+            var myItem = deletingDiv.filter(function (index, item) {
+                return $(item).hasClass("clone")
+            })
 
-             return $(item).hasClass("clone")
-         })
+            var index = $(myItem[0]).attr("data-index");
+            removeFave(index);
+        }
 
-         var index = $(myItem[0]).attr("data-index");
-         removeFave(index);
-     }
-
-     console.log("from Fave:" + favoriteList)
- });
+        console.log("from Fave:" + favoriteList)
+    });
 
 
- // Click on favorites
- $(".searchFave").on("click", "#favoritebtn", function () {
-     $(".results").hide();
-     $("#resultTitle").hide();
-     $(".buttons").hide();
-     $(".favoriteGallery").show()
- });
+    // Click on Button to view Favorites
 
- // Click on Search Results
- $(".searchFave").on("click", "#searchresultsbtn", function () {
-     $(".results").show();
-     $("#resultTitle").show();
-     $(".buttons").show();
-     $(".favoriteGallery").hide()
- });
+    $(".favorites").on("click", "#viewSearch", function () {
+        $(".favorites").hide(); 
+        $(".searchArea").show();
+    });
 
- // Removing gif ID from from Array Function
- function removeFave(index) {
-     console.log('index',index);
-     favoriteList.splice(index, 1)
- }
+    // Click on Back to search to go back to search
+    $(".searchArea").on("click", "#viewFaves", function () {
+        $(".searchArea").hide(); 
+        $(".favorites").show();
+    });
 
-    function getCauseResults(response){
+
+    // Removing gif ID from from Array Function
+    function removeFave(index) {
+        console.log('index', index);
+        favoriteList.splice(index, 1)
+    }
+
+    // ====================================END OF FAVE BUTTON CODE =============================
+    function getCauseResults(response) {
         var newDiv = $("<div>")
         newDev.addClass("resultDivs")
         var chartName = response[0].charityName;
@@ -345,27 +347,27 @@ $(document).ready(function () {
         $(".searchResultsDiv").append(newDiv);
     }
 
-    $(".searchBtn").on("click", function (event){
+    $(".searchBtn").on("click", function (event) {
         event.preventDefault();
         $(".searchResultsDiv").show();
-        var userLocation = "" ;//ASHTON PUT THIS HERE :)
-        var search = $(this).attr("data-name");   
-        var  querlyURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true&state=" + userLocation ;
-       
-         $.ajax({
+        var userLocation = "";//ASHTON PUT THIS HERE :)
+        var search = $(this).attr("data-name");
+        var querlyURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true&state=" + userLocation;
+
+        $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
             $("#celebphoto").empty();
             $("#resultsText").empty();
-            
-        for (var i = 0; i < response.length; i++) {
+
+            for (var i = 0; i < response.length; i++) {
                 getCauseResults(response);
             }
-           
+
         });
 
     });
-   
+
 });

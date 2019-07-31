@@ -25,8 +25,9 @@ Charcoal: #3F4444; */
     box-sizing: border-box;
 }
 
-a {
+a:hover {
     text-decoration: none;
+    color: none;
 }
 
 
@@ -45,7 +46,7 @@ a {
     display: inline-block;
     color: white;
     width: 49%;
-    text-align: center;
+    text-align: right;
     margin: 10px auto;
     padding: 10px 5px;
     
