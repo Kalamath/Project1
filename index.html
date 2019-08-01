@@ -48,6 +48,9 @@
                     src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
             <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
+                <a href="./favorites.html" class="navMenu" id='veiwFavesAbout'>
+                    <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
+                </a>
                 <a href="./about.html" class="navMenu">
                     <div id='about' class='menu aboutNav'>About</div>
                 </a>
@@ -84,9 +87,7 @@
     </section>
 
     <section class="searchArea container-fluid">
-        <div class="row">
-            <button id="viewFaves">View Favorites</button>
-        </div>
+
         <div class="row Search">
             <div class="col-1"></div>
             <div class="searchBarTitle col-sm-12 col-md-12 col-lg-5">Time to wake up!<br> <span id="searchSubhead">Click
@@ -132,16 +133,6 @@
         </div>
     </section>
 
-    <section class="favorites container-fluid">
-        <div class="row">
-            <button id="viewSearch">Back to Search Results</button>
-        </div>˝
-        <h1 class="favoriteTitle">My Favorites</h1>
-        <div id="favoriteCharities">
-
-        </div>
-    </section>
-
     <section class="maps container-fluid">
         <h1 id="homeMapTitle">See charities near you</h1>
 
@@ -168,6 +159,9 @@
     </footer>
 
     <script type="text/javascript" src="./assets/javascript/main.js"></script>
+    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
+    <script type="text/javascript" src="./assets/javascript/favoritesStorage.js"></script>
+    <script type="text/javascript" src="./assets/javascript/google.js"></script>
 </body>
 
 </html>
