@@ -17,12 +17,12 @@ $(document).ready(function(){
      locationRequest(data.latitude, data.longitude).then(function(results){
        console.log(results)
 
-      //  var charityLocation = results
-      //  var marker = new google.maps.Marker({
-      //   position: myLatLng,
-      //   map: map,
-      //   title: 'Hello World!'
-      // });
+       var charityLocation = results
+       var marker = new google.maps.Marker({
+        position: {lat: data.latitude, lng: data.longitude},
+        map: map,
+        title: 'Hello World!'
+      });
      });
       // var request = {
       //   query: 'school',
