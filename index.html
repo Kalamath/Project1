@@ -41,6 +41,7 @@
         src="http://maps.google.com/maps/api/js?key=AIzaSyCfCbQMtphVTJZPsHwJfmHVYIgcWCpITKk&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
     <script type="text/javascript" src="assets/javascript/google.js"></script>
+    <script type="text/javascript" src="assets/javascript/spotify.js"></script>
 
 </head>
 
@@ -51,6 +52,9 @@
                     src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
             <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
+                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state" class="navMenu" id='veiwFavesAbout'>
+                    <div id='viewFaves' class='menu favoritesNav'>Login To Spotify</div>
+                </a>
                 <a href="./favorites.html" class="navMenu" id='veiwFavesAbout'>
                     <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
                 </a>
