@@ -91,25 +91,6 @@ color: #90181b; Red
 
 /* SECOND BLOCK: Search */
 
-#viewFaves {
-    color: white;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    border: 2px solid white;
-    border-radius: 3px;
-    margin: 25px 15px;
-    background: rgba(234, 172, 0, 0.616);
-    padding: 5px 15px;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-#viewFaves:hover {
-    background: rgb(234, 172, 0);
-}
-
 .searchArea {
     background: rgba(49, 53, 53, 0.918);
     padding: 20px 20px;
@@ -277,51 +258,6 @@ color: #90181b; Red
     object-fit: contain;
     margin: 20px;
     width: 500px;
-}
-
-
-/* Fave Block */
-#viewFaves {
-    color: white;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    border: 2px solid white;
-    border-radius: 3px;
-    margin: 25px 15px;
-    background: rgba(234, 172, 0, 0.616);
-    padding: 5px 15px;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-#viewFaves:hover {
-    background: rgb(234, 172, 0);
-}
-
-#viewSearch {
-    color: white;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    border: 2px solid white;
-    border-radius: 3px;
-    margin: 25px 15px;
-    background: rgba(234, 172, 0, 0.616);
-    padding: 5px 15px;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-#viewSearch:hover {
-    background: rgb(234, 172, 0);
-}
-
-.favorites {
-    position: relative;
-    display: none;
 }
 
 /* Map Title */
@@ -492,7 +428,15 @@ color: #90181b; Red
 
 .favorites {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(../images/favoritesBack.jpg);
-    background-size: cover;
+    background-size:cover;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 0;
+	
+  /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .favoriteTitle {
@@ -502,7 +446,7 @@ color: #90181b; Red
     text-align: center;
     text-transform: uppercase;
     color: #3F4444;
-    padding: 50px;
+    padding: 100px;
 }
 
 #myFavorites {
@@ -528,4 +472,46 @@ color: #90181b; Red
     margin: 0px auto;
     object-fit: contain;
     width: 10%;
+}
+
+.trainSchedule {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.timeTable {
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 30px auto;
+    padding: 10px 20px;
+    border-collapse: collapse;
+    width: 100%;
+    color: black;
+}
+
+.timeTable td,
+.timeTable th {
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.timeTable tr:nth-child(even) {
+    background-color: rgba(1, 50, 67, .3);
+    color: black;
+}
+
+.timeTable tr:hover {
+    background-color: rgba(1, 50, 67, .5);
+}
+
+.tableTitle {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgba(1, 50, 67, 1);
+    color: white;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
 }

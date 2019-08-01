@@ -127,10 +127,10 @@ wieght: 400, 600 (semi bold), 700 (bold) */
 }
 
 .favoriteTitle {
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
     color: #3F4444;
-    padding: 80px 20px;
+    padding: 180px 20px;
     margin: 0px 20px;
 }
 
