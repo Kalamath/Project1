@@ -442,6 +442,9 @@ body {
 
 
 /*=================================   FAVORITES  =================================*/
+.favoritesBody {
+    position: relative;
+}
 
 .favorites {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(../images/favoritesBack.jpg);
@@ -534,7 +537,7 @@ body {
 }
 
 
-.faveSearch {
+.faveSearch .nofavebtn {
     display: inline-block;
     margin: 10px 10px 10px 10px;
     padding: 5px 15px 5px 15px;
@@ -557,12 +560,12 @@ body {
     width: 90%;
     margin: 20px auto;
     position: relative;
+    margin: 40px auto; 
 }
 
 .FavoritesContent {
     overflow: scroll;
     width: 100%;
-    height: 3000px;
     z-index: 1;
     position: absolute;
 }

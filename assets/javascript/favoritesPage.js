@@ -35,11 +35,14 @@ $(".favortiesPageResults").on("click", ".nofavebtn", function () {
 // TO SHOW RESULTS
 $("#favoriteCharities").on("click", ".faveSearch", function (event) {
     event.preventDefault();
+    $(".favortiesPageResults").empty();
+
     var search = $(this).attr("data-name");
     var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
     newH1.text("Most Popular Charities");
-    newH1.addClass("causeH1")
-    $(".searchResultsDiv").append(newH1)
+    newH1.addClass("causeH1");
+    $(".searchResultsDiv").append(newH1);
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -64,5 +67,6 @@ function FaveResults(response, i) {
     var mission = response[i].mission;
     $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
     "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>"+ mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site + "<br>"+ "<br>" );
+    $(textDiv).css("padding", "30px 30px")
     $(".favortiesPageResults").append(newDiv);
 }
