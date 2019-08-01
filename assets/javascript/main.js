@@ -242,7 +242,6 @@ $(document).ready(function () {
         favoriteList.splice(index, 1)
     }
 
-    // ====================================END OF FAVE BUTTON CODE =============================
     function getCauseResults(response) {
         var newDiv = $("<div>")
         newDev.addClass("resultDivs")

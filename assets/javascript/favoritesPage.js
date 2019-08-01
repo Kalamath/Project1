@@ -1,76 +1,56 @@
-   // ============================================= FAVORITES BUTTON =================================================
+// ============================================= FAVORITES Page Button Generation =================================================
+// getting list items (array from)
+var favoritedSearchTearms = JSON.parse(localStorage.getItem("Favorited"));
 
-    // Click to add to favorites
-    var favoriteList = [];
-    var favorited = false;
+var buttons = function () {
+    $(".buttons").empty();
+    for (var term of favoritedSearchTearms) {
+        var buttonFave = $("<button class='faveSearch'>");
+        buttonFave.text(term);
+        buttonFave.attr("data-search", "term");
+        buttonFave.css("display", "inline-block")
+        $("#favoriteCharities").append(buttonFave);
+    }
+}
+buttons();
 
-    $(".searchResultsDiv").on("click", ".favebtn", function () {
-        if (favoriteList.includes($(this).attr("id"))) {
-            $(this).css("background-color", "");
-            $(this).css("color", "");
-            $(this).css("border", "");
-            $(this).css("padding", "");
-            $(this).text("Add to Favorites");
-
-            // HOW TO DETACH A DIV FROM ANOTHER AREA?
-            var ID = $(this).attr("id");
-            var deletingDiv = $("." + ID)
-
-            // we are filtering our elements that share the same class (BY ID) 
-            // within the filter we must return true for our filtering mechanism to work and it returns as an array
-            var myItem = deletingDiv.filter(function (index, item) {
-                return $(item).hasClass("clone")
-            })
-            $(myItem[0]).remove();
-
-            var index = $(myItem[0]).attr("data-index");
-            removeFave(index);
-
-        } else {
-            $(this).css("background-color", "#fff200b7");
-            $(this).css("color", "rgb(94, 94, 94)");
-            $(this).css("border", "2px solid rgb(94, 94, 94)");
-            $(this).text("Favorited");
-
-            favoriteList.push($(this).attr("id"))
-            favorited = true;
-
-            var dataIndex = favoriteList.length ? favoriteList.length - 1 : 0;
-
-            // adding giv to favorites to local storage
-            var faveDiv = $("div[id=" + ($(this).attr("id")) + "]").attr("data-index", dataIndex);
-            faveDiv.clone().detach().addClass("clone").appendTo("#favoriteCharities");
-
-        }
-
-        console.log("from results:" + favoriteList)
-    });
-
-
-
-    $(".favorites").on("click", ".favebtn", function () {
-        var faveDiv = $("div[id=" + ($(this).attr("id")) + "]");
-
-        $(this).css("background-color", "");
+// ============================================= Favoites Page Button listening =================================================
+// THIS LISTENER HELPS REMOVE FAVORITE BUTTON
+$(".favortiesPageResults").on("click", ".nofavebtn", function () {
+    $(this).css("background-color", "");
         $(this).css("color", "");
         $(this).css("border", "");
         $(this).css("padding", "");
-        $(faveDiv).remove()
+        $(this).text("Add to Favorites");
 
-        if (favoriteList.includes($(this).attr("id"))) {
-            // HOW TO DETACH A DIV FROM ANOTHER AREA?
-            var ID = $(this).attr("id");
-            var deletingDiv = $("." + ID)
+    if (favoriteList.includes($(this).attr("id"))) {
+        var DI = $(this).attr("data-index");
+        removeFave(DI);
+    }
 
-            // we are filtering our elements that share the same class (BY ID) 
-            // within the filter we must return true for our filtering mechanism to work and it returns as an array
-            var myItem = deletingDiv.filter(function (index, item) {
-                return $(item).hasClass("clone")
-            })
+    console.log("from Fave:" + favoriteList)
+});
 
-            var index = $(myItem[0]).attr("data-index");
-            removeFave(index);
-        }
+// TO SHOW RESULTS
+$("#favoriteCharities").on("click", ".faveSearch" ,function (event) {
+        event.preventDefault();
+        $(".searchResultsDiv").show();
+        var userLocation = "";//ASHTON PUT THIS HERE :)
+        var search = $(this).attr("data-name");
+        var querlyURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true&state=" + userLocation;
 
-        console.log("from Fave:" + favoriteList)
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            $("#celebphoto").empty();
+            $("#resultsText").empty();
+
+            for (var i = 0; i < response.length; i++) {
+                getCauseResults(response);
+            }
+
+        });
+
     });
