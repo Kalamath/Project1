@@ -249,6 +249,12 @@ body {
     color: rgb(94, 94, 94);
 }
 
+.causeH1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px; 
+    padding: 30px 30px;
+}
+
 #resultsText {
     padding: 30px 30px;
 }

@@ -1,13 +1,9 @@
 // ============================================= FAVORITES Page Button Generation =================================================
-// getting list items (array from)
-var favoritedSearchTearms = JSON.parse(localStorage.getItem("Favorited"));
-
-
 var buttons = function () {
     $(".buttons").empty();
     let count = 0;
-    console.log(favoritedSearchTerms);
-    for (var term of favoritedSearchTerms) {
+    console.log(favoriteList);
+    for (var term of favoriteList) {
         var buttonFave = $("<button class='faveSearch'>");
         buttonFave.text(term);
         buttonFave.attr("data-search", term ).attr('data-index', count);
@@ -48,10 +44,21 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
     var foundArtist = compareObject(artists, searchTerm);
     var foundActor = compareObject(actors, searchTerm);
     var foundAtheletes = compareObject(athletes, searchTerm);
+    var myObj;
 
+    if (foundArtist !== null) {
+        myObj = foundArtist
+    }
 
+    if (foundActor !== null) {
+        myObj = foundActor
+    }
 
-    if (Object.keys(foundArtist).length || Object.keys(foundActor).length || Object.keys(foundAtheletes).length) {
+    if (foundAtheletes !== null) {
+        myObj = foundAtheletes
+    }
+
+    if (Object.keys(myObj).length) {
         $("#resultsText").empty();
         $("#celebphoto").empty();
         $(".searchResultsDiv").show();
@@ -59,14 +66,14 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
         // Creates Images from Celeb Object and Appends to Search Results Div
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
-        faveButton.text("Add to Favorites");
+        faveButton.text("Favorited");
 
 
         var img = $("<img>");
         img.addClass("searchResultPhotos");
-        imgsrc = $(this).attr("img-src");
+        imgsrc = myObj.img;
         img.attr("src", imgsrc);
-        var queryURL = $(this).attr("query-link");
+        var queryURL = myObj.queryURL;
         $("#celebphoto").append(img)
 
         console.log(img, "image")
@@ -136,8 +143,6 @@ function FaveResults(response, i) {
 
 function compareObject(array, searchTerm) {
     for (var item of array) {
-        console.log(item);
-        console.log(searchTerm)
         if (item.name === searchTerm) {
             return item;
         }
