@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <script>
+
+        var hashPieces = parseHash();
+        var accessToken = hashPieces['access_token'];
+        localStorage.setItem("token", accessToken);
+        window.location.href="/"
+        
+        
+        console.log("THe token", accessToken);
+
+
+        function parseHash() {
+            var hash = window.location.hash.replace(/#/g, '');
+            var hashPieces = hash.split("&");
+            var hashReturn = {};
+            for(var hashPiece of hashPieces) {
+                var pieceBits = hashPiece.split('=');
+                hashReturn[pieceBits[0]] =  pieceBits[1];
+            }
+
+            return hashReturn;
+        }
+        </script>
+</body>
+</html>
