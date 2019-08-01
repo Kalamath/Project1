@@ -3,7 +3,11 @@ var favoriteList = [];
 var favorited = false;
 
 // PUSHING THE ARRAY (IN STRING FORM) TO LOCAL STORAGE
-localStorage.setItem("Favorited", JSON.stringify(favoriteList));
+var lspush = function () {
+    localStorage.clear();
+    localStorage.setItem("Favorited", JSON.stringify(favoriteList));
+}
+
 
 
 // Removing gif ID from from Array Function
