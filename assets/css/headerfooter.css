@@ -46,7 +46,7 @@ a:hover {
     display: inline-block;
     color: white;
     width: 49%;
-    text-align: right;
+    text-align: center;
     margin: 10px auto;
     padding: 10px 5px;
     
@@ -78,9 +78,15 @@ a:hover {
 /*=================================   FOOTER  =================================*/
 
 footer {
-    height: 300px;
+    height: 100px;
     background: rgb(221, 162, 0);
-    padding: 100px
+    padding: 100px;
+}
+
+.aboutFooter {
+    height: 100px;
+    background: white;
+    padding: 100px;
 }
 
 #logoFooter {
