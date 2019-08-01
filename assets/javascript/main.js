@@ -1,3 +1,7 @@
+var actors = [];
+var athletes = [];
+var artists = [];
+
 $(document).ready(function () {
 
 
@@ -9,7 +13,7 @@ $(document).ready(function () {
     }
 
     //Artists Array
-    var artists = [
+     artists = [
         {
             name: "Usher",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Boys%20and%20Girls%20Club%20of%20America&searchType=NAME_ONLY&rated=true",
@@ -63,7 +67,7 @@ $(document).ready(function () {
 
     //Actors Array
 
-    var actors = [
+    actors = [
         {
             name: "Michael B. Jordan",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Feeding%20America&searchType=NAME_ONLY&rated=true",
@@ -110,7 +114,7 @@ $(document).ready(function () {
 
     getActors();
 
-    var athletes = [
+    athletes = [
         {
             name: "Michael Phelps",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Special%20Olympics&searchType=NAME_ONLY&rated=true",
@@ -156,30 +160,30 @@ $(document).ready(function () {
 
     getAthletes();
 
-    $(".celebBtn").on("click", function (results) {
-        event.preventDefault();
-        var btnVal = $(this).attr("data-name");
-        $("#resultsText").empty();
-        $("#celebphoto").empty();
-        $(".searchResultsDiv").show();
-
-        // Creates Images from Celeb Object and Appends to Search Results Div
+    function fave(){
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
+    }
 
-
+    $(".celebBtn").on("click", function (results) {
+        event.preventDefault();
+        var btnVal = $(this).attr("data-name");
+        $("#celeb").show();
+        $("#resultsText").empty();
+        $("#celebphoto").empty();
+        $(".causeResults").remove();
+        var faveButton = $("<button>");
+        faveButton.addClass("favebtn");
+        faveButton.text("Add to Favorites");
+        
+        // Creates Images from Celeb Object and Appends to Search Results Div
         var img = $("<img>");
         img.addClass("searchResultPhotos");
         imgsrc = $(this).attr("img-src");
         img.attr("src", imgsrc);
         var queryURL = $(this).attr("query-link");
-        // $("#celebphoto").append(img)
 
-        //API CALLS FOR CELEBRITY BUTTONS   
-
-        // @ARI When you make this generate dyanmically
-        // ---- need id to be a class and "id" attr of the entire div
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -231,6 +235,7 @@ $(document).ready(function () {
     getCauses();
         function getCauseResults(response, i) {
         var newDiv = $("<div>")
+        newDiv.addClass("causeResults")
         var textDiv = $("<div>")
         $(newDiv).append(textDiv);
         var chartName = response[i].charityName;
@@ -243,18 +248,25 @@ $(document).ready(function () {
         $(".searchResultsDiv").append(newDiv);
     }
 
+  
+
     function handleSearch(event){
         console.log(this, "this is");
         event.preventDefault();
         $("#celebphoto").empty();
         $("#resultsText").empty();
         $(".searchResultsDiv").empty();
-        $(".searchResultsDiv").show();
+        $("#search").show();
         var search = $(this).attr("data-name");
         var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true";        var newH1 = $("<h1>");
         newH1.text("Most Popular Charities");
         newH1.addClass("causeH1")
-        $(".searchResultsDiv").append(newH1)
+
+        var faveBtnResults = $("<button>");
+        faveBtnResults.addClass("favebtn");
+        faveBtnResults.text("Add to Favorites");
+        $("#search").append(newH1).append(faveBtnResults);
+        
 
         $.ajax({
             url: queryURL,
