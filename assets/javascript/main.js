@@ -162,7 +162,6 @@ $(document).ready(function () {
         $("#resultsText").empty();
         $("#celebphoto").empty();
         $(".searchResultsDiv").show();
-        // $("#celebphoto").append(loading)
 
         // Creates Images from Celeb Object and Appends to Search Results Div
         var faveButton = $("<button>");
@@ -175,9 +174,7 @@ $(document).ready(function () {
         imgsrc = $(this).attr("img-src");
         img.attr("src", imgsrc);
         var queryURL = $(this).attr("query-link");
-        $("#celebphoto").append(img)
-
-        console.log(img, "image")
+        // $("#celebphoto").append(img)
 
         //API CALLS FOR CELEBRITY BUTTONS   
 
@@ -188,7 +185,6 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            $("#celebphoto").empty();
             var chartName = response[0].charityName;
             var tagline = response[0].tagLine;
             var purpose = response[0].cause.causeName;
@@ -218,8 +214,8 @@ $(document).ready(function () {
             var newButton = $("<button>");
             newButton.addClass("searchBtn");
             newButton.attr("data-name", causes[i]);
-            // newButton.attr("query-link", causes[i])
             newButton.text(causes[i]);
+            newButton.on("click", handleSearch);
             $("#causebtns").append(newButton);
         }
     }
@@ -228,14 +224,11 @@ $(document).ready(function () {
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
         var newCause = $("#search-input").val().trim();
-        newCause.attr("data-name", newCause);
-        newCause.addClass("searchBtn");
         causes.push(newCause);
         getCauses();
     });
 
     getCauses();
-
         function getCauseResults(response, i) {
         var newDiv = $("<div>")
         var textDiv = $("<div>")
@@ -250,7 +243,8 @@ $(document).ready(function () {
         $(".searchResultsDiv").append(newDiv);
     }
 
-    $(".searchBtn").on("click", function (event) {
+    function handleSearch(event){
+        console.log(this, "this is");
         event.preventDefault();
         $("#celebphoto").empty();
         $("#resultsText").empty();
@@ -272,7 +266,7 @@ $(document).ready(function () {
                     }
 
         });
-
-    });
+    }
+        
 
 });
