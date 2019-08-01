@@ -550,7 +550,7 @@ body {
 }
 
 
-.faveSearch, .nofavebtn {
+.faveSearch {
     display: inline-block;
     margin: 10px 10px 10px 10px;
     padding: 5px 15px 5px 15px;
@@ -565,9 +565,26 @@ body {
     text-transform: initial;
 }
 
-.faveSearch:hover {
+.nofavebtn {
+    color: rgb(94, 94, 94);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid rgb(94, 94, 94);
+    border-radius: 3px;
+    margin: 20px;
+    background: #fff200b7;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faveSearch:hover, .nofavebtn:hover {
     color: #3F4444;
 }
+
+
 .favortiesPageResults {
     background: rgba(255, 255, 255, 0.74);
     width: 90%;
