@@ -168,7 +168,7 @@ $(document).ready(function () {
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
-        
+
     }
 
     $(".celebBtn").on("click", function (results) {
@@ -292,6 +292,17 @@ $(document).ready(function () {
             }
 
         });
+
+        // check to see if it was already favorited
+        if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
+            var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
+            if (favoriteList.includes($(this).attr("data-name"))) {
+                $(faveBtnResults).css("background-color", "#fff200b7");
+                $(faveBtnResults).css("color", "rgb(94, 94, 94)");
+                $(faveBtnResults).css("border", "2px solid rgb(94, 94, 94)");
+                $(faveBtnResults).text("Favorited");
+            }
+        }
     }
 
 

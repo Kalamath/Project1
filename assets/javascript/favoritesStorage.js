@@ -1,28 +1,20 @@
 var favorited = false;
 
-// Removing gif ID from from Array Function
-function removeFave(index) {
-    console.log('index', index);
-    favoriteList = JSON.parse(localStorage.getItem('Favorited'));
-    favoriteList.splice(index, 1);
-    localStorage.setItem('Favorited', JSON.stringify(favoriteList));
-};
-
 // ============================================= HOME Page Button listening =================================================
 
 $(".searchResultsDiv").on("click", ".favebtn", function () {
     // removing from FAVES
     favoriteList = JSON.parse(localStorage.getItem('Favorited'));
     if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
-        if (favoriteList.includes($(this).attr("id"))) {
+        if (favoriteList.includes($(this).attr("search-term"))) {
             $(this).css("background-color", "");
             $(this).css("color", "");
             $(this).css("border", "");
             $(this).css("padding", "");
             $(this).text("Add to Favorites");
 
-            var DI = $(this).attr("data-index");
-            removeFave(DI);
+            var searchedItem = $(this).attr("search-term");
+            removeFave(searchedItem);
             favorited = false;
 
             // this is tracking if the item is IS NOT in the list, ADDING TO FAVE
@@ -53,8 +45,6 @@ $(".searchResultsDiv").on("click", ".favebtn", function () {
         favorited = true;
 
     }
-
-    console.log("from results:" + favoriteList)
 });
 
 
@@ -76,8 +66,21 @@ function SaveDataToLocalStorage(term) {
         // Re-serialize the array back into a string and store it in localStorage
         localStorage.setItem('Favorited', JSON.stringify(favoriteList));
     }
+}
 
-
-
-
+// Removing un-faved item from from Array Function
+function removeFave(searchedItem) {
+    var Array = JSON.parse(localStorage.getItem('Favorited'))
+    var removeTerm = Array.slice(0);
+    removeTerm.forEach(function (element) {
+        if (Array.includes(searchedItem)) {
+            let removeIndex = Array.map(function (item) {
+                return searchedItem;
+            }).indexOf(element);
+            Array.splice(removeIndex, 1);
+            console.log(Array)
+            localStorage.setItem('Favorited', JSON.stringify(Array));
+        }
+    });
+    
 }

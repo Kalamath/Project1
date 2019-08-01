@@ -1,38 +1,36 @@
 // ============================================= FAVORITES Page Button Generation =================================================
 var buttons = function () {
     $(".buttons").empty();
-    let count = 0;
+    var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
     console.log(favoriteList);
     for (var term of favoriteList) {
         var buttonFave = $("<button class='faveSearch'>");
         buttonFave.text(term);
-        buttonFave.attr("data-search", term ).attr('data-index', count);
+        buttonFave.attr("data-search", term).attr('data-index');
         buttonFave.css("display", "inline-block")
         $("#favoriteCharities").append(buttonFave);
-        count++;
     }
 }
 
-setTimeout(function(){
+setTimeout(function () {
     buttons();
-},1000)
+}, 1000)
 
 
 // ============================================= Favoites Page Button listening =================================================
 // THIS LISTENER HELPS REMOVE FAVORITE BUTTON
 $(".favortiesPageResults").on("click", ".nofavebtn", function () {
+    var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
     $(this).css("background-color", "");
     $(this).css("color", "");
     $(this).css("border", "");
     $(this).css("padding", "");
     $(this).text("Add to Favorites");
 
-    if (favoriteList.includes($(this).attr("id"))) {
-        var DI = $(this).attr("data-index");
-        removeFave(DI);
-    }
-
-    console.log("from Fave:" + favoriteList)
+    
+    var searchedItem = $(this).attr("data-search");
+    removeFave(searchedItem);
+    favorited = false;
 });
 
 // TO SHOW RESULTS
@@ -57,7 +55,6 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
     if (foundAtheletes !== null) {
         myObj = foundAtheletes
     }
-
     if (Object.keys(myObj).length) {
         $("#resultsText").empty();
         $("#celebphoto").empty();
@@ -98,11 +95,6 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
-            $(".searchResultsDiv").addClass(id);
-            $(".searchResultsDiv").attr("id", id);
-            faveButton.attr("id", id);
-            // need this push id into array to track what is favorited
-            favoriteList.push(id)
         });
 
     } else {
@@ -123,7 +115,9 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
                 FaveResults(response, i);
             }
         });
+
     }
+
 });
 
 function FaveResults(response, i) {
