@@ -1,3 +1,6 @@
+var artists;
+var athletes;
+var actors;
 $(document).ready(function () {
 
 
@@ -9,7 +12,7 @@ $(document).ready(function () {
     }
 
     //Artists Array
-    var artists = [
+    artists = [
         {
             name: "Usher",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Boys%20and%20Girls%20Club%20of%20America&searchType=NAME_ONLY&rated=true",
@@ -49,7 +52,7 @@ $(document).ready(function () {
         for (var i = 0; i < artists.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", artists[i].name);
+            newButton.attr("data-name", artists[i].name).attr('data-index', i);
             newButton.attr("img-src", artists[i].img);
             newButton.attr("query-link", artists[i].queryURL)
             newButton.text(artists[i].name);
@@ -63,7 +66,7 @@ $(document).ready(function () {
 
     //Actors Array
 
-    var actors = [
+    actors = [
         {
             name: "Michael B. Jordan",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Feeding%20America&searchType=NAME_ONLY&rated=true",
@@ -99,7 +102,7 @@ $(document).ready(function () {
         for (var i = 0; i < actors.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", actors[i].name);
+            newButton.attr("data-name", actors[i].name).attr('data-index', i);
             newButton.attr("img-src", actors[i].img);
             newButton.attr("query-link", actors[i].queryURL)
             newButton.text(actors[i].name);
@@ -110,7 +113,7 @@ $(document).ready(function () {
 
     getActors();
 
-    var athletes = [
+    athletes = [
         {
             name: "Michael Phelps",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Special%20Olympics&searchType=NAME_ONLY&rated=true",
@@ -145,7 +148,7 @@ $(document).ready(function () {
         for (var i = 0; i < athletes.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", athletes[i].name);
+            newButton.attr("data-name", athletes[i].name).attr('data-index', i);
             newButton.attr("img-src", athletes[i].img);
             newButton.attr("query-link", athletes[i].queryURL)
             newButton.text(athletes[i].name);
@@ -235,12 +238,6 @@ $(document).ready(function () {
 
     var userLocation = "";//ASHTON PUT THIS HERE :)
     var search = "";
-
-    // Removing gif ID from from Array Function
-    function removeFave(index) {
-        console.log('index', index);
-        favoriteList.splice(index, 1)
-    }
 
     function getCauseResults(response) {
         var newDiv = $("<div>")
