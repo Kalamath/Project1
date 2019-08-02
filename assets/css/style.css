@@ -517,14 +517,21 @@ video {
 }
 
 .favoriteTitle {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    font-weight: 600;
     text-align: center;
     text-transform: uppercase;
     color: #3F4444;
-    padding: 100px;
-    width: 90%;
+    padding: 100px 0px 0px 0px;
+}
+
+.favoritesSubtitle {
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 0px 0px 100px 0px;
 }
 
 #myFavorites {
@@ -555,48 +562,6 @@ video {
     object-fit: contain;
     width: 10%;
 }
-
-.trainSchedule {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.timeTable {
-    color: white;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    margin: 30px auto;
-    padding: 10px 20px;
-    border-collapse: collapse;
-    width: 100%;
-    color: black;
-}
-
-.timeTable td, .timeTable th {
-    border: 1px solid #ddd;
-    padding: 10px 20px;
-}
-
-.timeTable tr:nth-child(even) {
-    background-color: rgba(1, 50, 67, .3);
-    color: black;
-}
-
-.timeTable tr:hover {
-    background-color: rgba(1, 50, 67, .5);
-}
-
-.tableTitle {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: rgba(1, 50, 67, 1);
-    color: white;
-    border: 1px solid #ddd;
-    padding: 8px 10px;
-}
-
 
 .faveSearch {
     display: inline-block;
