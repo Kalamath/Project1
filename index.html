@@ -172,6 +172,21 @@
     <section class="music container-fluid">
         <div class="player">
             <div class="left"></div>
+            <div id="wrapper">
+                <audio id="demo">
+                    <source src="" type="audio/mp3"/>
+                </audio>
+                <nav>
+                    <div id="defaultBar">
+                        <div id="progressBar"></div>
+                    </div>
+                    <div id="buttons">
+                        <button type="button" id="playButton" onclick="playSong()"></button>
+                        <button type="button" id="muteButton"></button>
+                        <span id="currentTime">0:00</span>/<span id="fullDuration">0:00</span>
+                    </div>
+                </nav>
+            </div>
             <div class="right">
                 <div class="top">
                     <!-- <a class="song"
@@ -183,11 +198,11 @@
                         Kero
                         Bonito</a> -->
                 </div>
-                <div class="bottom">
+                <!-- <div class="bottom">
                     <video controls="" _autoplay="" name="media">
                         <source src="https://i.koya.io/Kero%20Kero%20Bonito%20-%20Let's%20Go%20To%20The%20Forest.mp3"
                             type="audio/mpeg"></video>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
