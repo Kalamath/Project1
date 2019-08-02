@@ -57,7 +57,7 @@ a:hover {
 
 .menu {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -75,20 +75,20 @@ a:hover {
 }
 
 #spotifyNav {
-    /* display: block; */
-    /* margin: 0px auto; */
+    display: inline-block;
+    margin: 0px auto;
     object-fit: contain;
-    width: 50%;
-    margin-left: 100px;
+    width: 20%;
+    
 }
 
 
 /*=================================   FOOTER  =================================*/
 
 footer {
-    height: 100px;
+    height: 180px;
     background: rgb(0, 0, 0);
-    padding: 100px;
+    padding: 50px;
 }
 
 .aboutFooter {
@@ -120,3 +120,4 @@ footer {
     /* background: rgba(234, 172, 0, 0.459); */
     margin-bottom: 10.2px;
 }
+
