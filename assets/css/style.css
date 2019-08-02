@@ -607,7 +607,7 @@ video {
 }
 
 .FavoritesContent {
-    overflow-y: scroll;
+    overflow: scroll;
     width: 100%;
     z-index: 1;
     position: absolute;
