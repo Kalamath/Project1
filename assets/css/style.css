@@ -499,6 +499,9 @@ video {
 /*=================================   FAVORITES  =================================*/
 .favoritesBody {
     position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .favorites {
@@ -521,6 +524,7 @@ video {
     text-transform: uppercase;
     color: #3F4444;
     padding: 100px;
+    width: 90%;
 }
 
 #myFavorites {
@@ -638,8 +642,14 @@ video {
 }
 
 .FavoritesContent {
-    overflow: scroll;
+    overflow-y: scroll;
     width: 100%;
     z-index: 1;
     position: absolute;
+    margin: 0px;
+    padding: 0px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
