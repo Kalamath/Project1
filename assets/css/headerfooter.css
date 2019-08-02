@@ -45,13 +45,13 @@ a:hover {
 .navMenu {
     display: inline-block;
     color: white;
-    width: 49%;
+    width: 30%;
     text-align: center;
     margin: 10px auto;
     padding: 10px 5px;
     
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase;
 }
 
@@ -69,9 +69,17 @@ a:hover {
 /* Home and About Page */
 
 #bWokeNav {
-    padding: 5px 20px;
+    /* padding: 5px 20px;
     margin: 5px auto;
-    font-size: 25px;
+    font-size: 25px; */
+}
+
+#spotifyNav {
+    /* display: block; */
+    /* margin: 0px auto; */
+    object-fit: contain;
+    width: 50%;
+    margin-left: 100px;
 }
 
 
@@ -79,7 +87,7 @@ a:hover {
 
 footer {
     height: 100px;
-    background: rgb(221, 162, 0);
+    background: rgb(0, 0, 0);
     padding: 100px;
 }
 
@@ -107,7 +115,9 @@ footer {
 .music {
     display: block;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     height: 100px;
-    background: rgba(234, 172, 0, 0.459);
+    /* background: rgba(234, 172, 0, 0.459); */
+    margin-bottom: 10.2px;
 }
+

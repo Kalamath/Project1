@@ -13,9 +13,7 @@ color: #00aeef; Blue
 color: #90181b; Red
 */
 
-
 /*=================================   HOME PAGE  =================================*/
-
 
 /* FIRST BLOCK: About Us */
 
@@ -35,9 +33,7 @@ body {
     background-position: center; 
 }
 
-
 /* To edit video behind but still figuring it out */
-
 
 /* #homeVideo {
     position: absolute;
@@ -86,14 +82,12 @@ body {
     text-transform: uppercase;
     padding: 13px 40px;
     color: white;
-
 }
 
 .learnMore:hover {
     background: #90181b;
     color: white;
 }
-
 
 /* SECOND BLOCK: Search */
 
@@ -182,7 +176,6 @@ body {
     color: #3F4444;
 }
 
-
 /* Category Search */
 
 .suggestionDiv {
@@ -219,7 +212,6 @@ body {
     background: white;
 }
 
-
 /* Results Div */
 
 .searchResultsDiv {
@@ -233,7 +225,7 @@ body {
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 15px;  
+    font-size: 15px;
     border: 2px solid white;
     border-radius: 3px;
     margin: 20px;
@@ -263,7 +255,7 @@ body {
 .searchItemTitle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 15px; 
+    font-size: 15px;
 }
 
 .searchResultPhotos {
@@ -291,7 +283,6 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-
 /* Map Styling */
 
 .mapouter {
@@ -311,14 +302,67 @@ body {
     width: 974px;
 }
 
+/* Spotify CSS */
+
+.player {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.8);
+    color: #000;
+    min-height: 80px;
+    max-height: 80px;
+    display: flex;
+    flex-direction: row;
+    /* position: fixed; */
+}
+
+.left {
+    width: 80px;
+    background-image: url();
+    background-size: cover;
+}
+
+.right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.artist {
+    color: white;
+}
+
+.song {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.bottom {
+    display: flex;
+}
+
+video {
+    flex-grow: 1;
+    height: 35px;
+}
 
 /*=================================   ABOUT PAGE  =================================*/
+
 .aboutUs {
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.1)), url(../images/extra2.jpg);
     background-size: cover;
     color: white;
     background-position: center; 
 }
+
 .aboutTitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 80px;
@@ -440,8 +484,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     color: black;
-
 }
+
 .wantToGive2 {
     color: black;
     font-family: 'Work Sans', sans-serif;
@@ -452,7 +496,6 @@ body {
     margin-top: -160px;
 }
 
-
 /*=================================   FAVORITES  =================================*/
 .favoritesBody {
     position: relative;
@@ -460,14 +503,12 @@ body {
 
 .favorites {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(../images/favoritesBack.jpg);
-    background-size:cover;
-    background-position: center; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 0;
-	
-  /* Preserve aspet ratio */
+    /* Preserve aspet ratio */
     min-width: 100%;
     min-height: 100%;
 }
@@ -495,8 +536,12 @@ body {
     /* object-fit: contain; */
     width: 60%;
     height: auto;
-    margin: 5px auto;
-    
+    margin: 13px auto;
+}
+
+#spotify {
+    width: 200%;
+    height: auto;
 }
 
 #logoFooter {
@@ -524,8 +569,7 @@ body {
     color: black;
 }
 
-.timeTable td,
-.timeTable th {
+.timeTable td, .timeTable th {
     border: 1px solid #ddd;
     padding: 10px 20px;
 }
