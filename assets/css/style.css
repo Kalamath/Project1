@@ -501,7 +501,6 @@ video {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 .favorites {
@@ -603,13 +602,13 @@ video {
     width: 90%;
     margin: 20px auto;
     position: relative;
-    margin: 40px auto; 
+    margin: 40px auto;
 }
 
 .FavoritesContent {
     overflow: scroll;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     margin: 0px;
     padding: 0px;
