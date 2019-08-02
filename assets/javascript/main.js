@@ -5,7 +5,6 @@ var artists = [];
 var favoriteList = [];
 console.log("Initial: " + favoriteList)
 
-
 $(document).ready(function () {
 
 
@@ -177,7 +176,9 @@ $(document).ready(function () {
         $("#celeb").show();
         $("#resultsText").empty();
         $("#celebphoto").empty();
-        $(".causeResults").remove();
+        $("#search").hide()
+        $("#search").empty();
+        $(".causeResults").empty();
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
@@ -199,8 +200,13 @@ $(document).ready(function () {
             var purpose = response[0].cause.causeName;
             var mission = response[0].mission;
             var site = response[0].websiteURL;
+            var link = $("<a>");
+            link.attr("href", site);
+            link.text(site);
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-                "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" );
+            $("#resultsText").append(link);
+            console.log(link);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
             faveButton.attr("search-term", btnVal);
@@ -253,8 +259,12 @@ $(document).ready(function () {
         var site = response[i].websiteURL;
         var purpose = response[i].cause.causeName;
         var mission = response[i].mission;
+        var link = $("<a>");
+        link.attr("href", site);
+        link.text(site);
         $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site + "<br>" + "<br>");
+        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>"+ mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>");
+        $(textDiv).append(link).append("<br>" + "<br>")
         $(".searchResultsDiv").append(newDiv);
     }
 
@@ -265,8 +275,8 @@ $(document).ready(function () {
         event.preventDefault();
         $("#celebphoto").empty();
         $("#resultsText").empty();
-        $(".searchResultsDiv").empty();
-        $("#search").show();
+        $("#celeb").hide();
+        $("#search").show().empty();
         var search = $(this).attr("data-name");
         var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
         newH1.text("Most Popular Charities");
