@@ -1,6 +1,9 @@
 var actors = [];
 var athletes = [];
 var artists = [];
+// getting list items (array from)
+var favoriteList = [];
+console.log("Initial: " + favoriteList)
 
 $(document).ready(function () {
 
@@ -13,7 +16,7 @@ $(document).ready(function () {
     }
 
     //Artists Array
-     artists = [
+    artists = [
         {
             name: "Usher",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Boys%20and%20Girls%20Club%20of%20America&searchType=NAME_ONLY&rated=true",
@@ -53,7 +56,7 @@ $(document).ready(function () {
         for (var i = 0; i < artists.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", artists[i].name);
+            newButton.attr("data-name", artists[i].name).attr('data-index', i);
             newButton.attr("img-src", artists[i].img);
             newButton.attr("query-link", artists[i].queryURL)
             newButton.text(artists[i].name);
@@ -103,7 +106,7 @@ $(document).ready(function () {
         for (var i = 0; i < actors.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", actors[i].name);
+            newButton.attr("data-name", actors[i].name).attr('data-index', i);
             newButton.attr("img-src", actors[i].img);
             newButton.attr("query-link", actors[i].queryURL)
             newButton.text(actors[i].name);
@@ -149,7 +152,7 @@ $(document).ready(function () {
         for (var i = 0; i < athletes.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", athletes[i].name);
+            newButton.attr("data-name", athletes[i].name).attr('data-index', i);
             newButton.attr("img-src", athletes[i].img);
             newButton.attr("query-link", athletes[i].queryURL)
             newButton.text(athletes[i].name);
@@ -160,10 +163,11 @@ $(document).ready(function () {
 
     getAthletes();
 
-    function fave(){
+    function fave() {
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
+
     }
 
     $(".celebBtn").on("click", function (results) {
@@ -172,11 +176,13 @@ $(document).ready(function () {
         $("#celeb").show();
         $("#resultsText").empty();
         $("#celebphoto").empty();
-        $(".causeResults").remove();
+        $("#search").hide()
+        $("#search").empty();
+        $(".causeResults").empty();
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
-        
+
         // Creates Images from Celeb Object and Appends to Search Results Div
         var img = $("<img>");
         img.addClass("searchResultPhotos");
@@ -203,14 +209,19 @@ $(document).ready(function () {
             console.log(link);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
-            $(".searchResultsDiv").addClass(btnVal);
-            $(".searchResultsDiv").attr("id", btnVal);
-            faveButton.attr("id", btnVal);
-            // need this push id into array to track what is favorited
-            favoriteList.push(btnVal)
-            //create variable that. add id of the search term to the fav button and push that id to the favoList
+            faveButton.attr("search-term", btnVal);
         });
 
+        // check to see if it was already favorited
+        if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
+            var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
+            if (favoriteList.includes(btnVal)) {
+                $(faveButton).css("background-color", "#fff200b7");
+                $(faveButton).css("color", "rgb(94, 94, 94)");
+                $(faveButton).css("border", "2px solid rgb(94, 94, 94)");
+                $(faveButton).text("Favorited");
+            }
+        }
     });
 
 
@@ -238,10 +249,10 @@ $(document).ready(function () {
     });
 
     getCauses();
-        function getCauseResults(response, i) {
+    function getCauseResults(response, i) {
         var newDiv = $("<div>")
         newDiv.addClass("causeResults")
-        var textDiv = $("<div>")
+        var textDiv = $("<div id='resultsText'>")
         $(newDiv).append(textDiv);
         var chartName = response[i].charityName;
         var tagline = response[i].tagLine;
@@ -257,37 +268,50 @@ $(document).ready(function () {
         $(".searchResultsDiv").append(newDiv);
     }
 
-  
 
-    function handleSearch(event){
+
+    function handleSearch(event) {
         console.log(this, "this is");
         event.preventDefault();
         $("#celebphoto").empty();
         $("#resultsText").empty();
-        $(".searchResultsDiv").empty();
-        $("#search").show();
+        $("#celeb").hide();
+        $("#search").show().empty();
         var search = $(this).attr("data-name");
-        var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true";        var newH1 = $("<h1>");
+        var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
         newH1.text("Most Popular Charities");
         newH1.addClass("causeH1")
 
+        var searchCharity = $(this).attr("data-name");
         var faveBtnResults = $("<button>");
         faveBtnResults.addClass("favebtn");
+        faveBtnResults.attr("search-term", searchCharity)
         faveBtnResults.text("Add to Favorites");
         $("#search").append(newH1).append(faveBtnResults);
-        
+
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-                for (var i = 0; i < response.length; i++) {
+            for (var i = 0; i < response.length; i++) {
                 getCauseResults(response, i);
-                    }
+            }
 
         });
+
+        // check to see if it was already favorited
+        if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
+            var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
+            if (favoriteList.includes($(this).attr("data-name"))) {
+                $(faveBtnResults).css("background-color", "#fff200b7");
+                $(faveBtnResults).css("color", "rgb(94, 94, 94)");
+                $(faveBtnResults).css("border", "2px solid rgb(94, 94, 94)");
+                $(faveBtnResults).text("Favorited");
+            }
+        }
     }
-        
+
 
 });
