@@ -57,7 +57,7 @@ a:hover {
 
 .menu {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -75,11 +75,11 @@ a:hover {
 }
 
 #spotifyNav {
-    /* display: block; */
-    /* margin: 0px auto; */
+    display: inline-block;
+    margin: 0px auto;
     object-fit: contain;
-    width: 50%;
-    margin-left: 100px;
+    width: 20%;
+    
 }
 
 
