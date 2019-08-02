@@ -43,107 +43,172 @@ function compareObject(array, saved) {
         }
     }
 };
-
 // global variables of finding if Faved is in celebl array
 var foundArtist;
 var foundActor;
 var foundAthletes;
-var myObj;
 
-// TO SHOW RESULTS ON TO FAVORITES PAGE
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    TO SHOW RESULTS ON TO FAVORITES PAGE
 $("#favoriteCharities").on("click", ".faveSearch", function (event) {
     $(".favortiesPageResults").empty();
 
     var searchTerm = $(this).attr("data-search");
-    foundArtist = compareObject(artists, searchTerm);
-    if (foundArtist !== null) {
-        myObj = foundArtist;
-    };
-    foundActor = compareObject(actors, searchTerm);
-    if (foundActor !== null) {
-        myObj = foundActor;
-    };
-    foundAthletes = compareObject(athletes, searchTerm);
-    if (foundAthletes !== null) {
-        myObj = foundAthletes;
-    };
-  
-    console.log(myObj)
+    foundArtist = compareObject(artists, searchTerm)
+    foundActor = compareObject(actors, searchTerm)
+    foundAthletes = compareObject(athletes, searchTerm)
+    console.log("artist", foundArtist)
+    console.log("actor", foundActor)
+    console.log("athlete", foundAthletes)
 
-        if (Object.keys(myObj).length == 3) {
-            $(".favortiesPageResults").empty();
+    if (foundAthletes !== undefined) {
+        $(".favortiesPageResults").empty();
 
-            // Creates Images from Celeb Object and Appends to Search Results Div
-            var parentDiv = $("<div class='celebFaved'>")
-            parentDiv.appendTo(".favortiesPageResults");
-            var imgDiv = $("<div id='celebphoto'>")
-            parentDiv.append(imgDiv)
-            var textDiv = $("<div id='resultsText'>")
-            parentDiv.append(textDiv)
-            var faveButton = $("<button>");
-            faveButton.addClass("nofavebtn");
-            faveButton.attr("data-faved", $(this).attr("data-search"))
-            faveButton.text("Favorited");
+        // Creates Images from Celeb Object and Appends to Search Results Div
+        var parentDiv = $("<div class='celebFaved'>")
+        parentDiv.appendTo(".favortiesPageResults");
+        var imgDiv = $("<div id='celebphoto'>")
+        parentDiv.append(imgDiv)
+        var textDiv = $("<div id='resultsText'>")
+        parentDiv.append(textDiv)
+        var faveButton = $("<button>");
+        faveButton.addClass("nofavebtn");
+        faveButton.attr("data-faved", $(this).attr("data-search"))
+        faveButton.text("Favorited");
 
 
-            var img = $("<img>");
-            img.addClass("searchResultPhotos");
-            imgsrc = myObj.img;
-            img.attr("src", imgsrc);
-            var queryURL = myObj.queryURL;
+        var img = $("<img>");
+        img.addClass("searchResultPhotos");
+        imgsrc = foundAthletes.img;
+        img.attr("src", imgsrc);
+        var queryURL = foundAthletes.queryURL;
 
-            //API CALLS FOR CELEBRITY BUTTONS   
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                $("#celebphoto").empty();
-                var chartName = response[0].charityName;
-                var tagline = response[0].tagLine;
-                var purpose = response[0].cause.causeName;
-                var mission = response[0].mission;
-                var site = response[0].websiteURL;
+        //API CALLS FOR CELEBRITY BUTTONS   
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            $("#celebphoto").empty();
+            var chartName = response[0].charityName;
+            var tagline = response[0].tagLine;
+            var purpose = response[0].cause.causeName;
+            var mission = response[0].mission;
+            var site = response[0].websiteURL;
+            $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
+                "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+            $(imgDiv).append(img);
+            $(imgDiv).append(faveButton);
+        });
+    } else if (foundActor !== undefined) {
+        $(".favortiesPageResults").empty();
+
+        // Creates Images from Celeb Object and Appends to Search Results Div
+        var parentDiv = $("<div class='celebFaved'>")
+        parentDiv.appendTo(".favortiesPageResults");
+        var imgDiv = $("<div id='celebphoto'>")
+        parentDiv.append(imgDiv)
+        var textDiv = $("<div id='resultsText'>")
+        parentDiv.append(textDiv)
+        var faveButton = $("<button>");
+        faveButton.addClass("nofavebtn");
+        faveButton.attr("data-faved", $(this).attr("data-search"))
+        faveButton.text("Favorited");
+
+
+        var img = $("<img>");
+        img.addClass("searchResultPhotos");
+        imgsrc = foundActor.img;
+        img.attr("src", imgsrc);
+        var queryURL = foundActor.queryURL;
+
+        //API CALLS FOR CELEBRITY BUTTONS   
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            $("#celebphoto").empty();
+            var chartName = response[0].charityName;
+            var tagline = response[0].tagLine;
+            var purpose = response[0].cause.causeName;
+            var mission = response[0].mission;
+            var site = response[0].websiteURL;
+            $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
+                "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+            $(imgDiv).append(img);
+            $(imgDiv).append(faveButton);
+        });
+    } else if (foundArtist !== undefined) {
+        $(".favortiesPageResults").empty();
+
+        // Creates Images from Celeb Object and Appends to Search Results Div
+        var parentDiv = $("<div class='celebFaved'>")
+        parentDiv.appendTo(".favortiesPageResults");
+        var imgDiv = $("<div id='celebphoto'>")
+        parentDiv.append(imgDiv)
+        var textDiv = $("<div id='resultsText'>")
+        parentDiv.append(textDiv)
+        var faveButton = $("<button>");
+        faveButton.addClass("nofavebtn");
+        faveButton.attr("data-faved", $(this).attr("data-search"))
+        faveButton.text("Favorited");
+
+
+        var img = $("<img>");
+        img.addClass("searchResultPhotos");
+        imgsrc = foundArtist.img;
+        img.attr("src", imgsrc);
+        var queryURL = foundArtist.queryURL;
+
+        //API CALLS FOR CELEBRITY BUTTONS   
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            $("#celebphoto").empty();
+            var chartName = response[0].charityName;
+            var tagline = response[0].tagLine;
+            var purpose = response[0].cause.causeName;
+            var mission = response[0].mission;
+            var site = response[0].websiteURL;
+            $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
+                "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+            $(imgDiv).append(img);
+            $(imgDiv).append(faveButton);
+        });
+    } else {
+        var search = $(this).attr("data-search");
+        var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
+        var newH1 = $("<h1>");
+        newH1.text("Most Popular Charities");
+        newH1.addClass("causeH1");
+        $(".favortiesPageResults").append(newH1);
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            for (var i = 0; i < response.length; i++) {
+                var newDiv = $("<div>")
+                var textDiv = $("<div>")
+                var faveButton = $("<button data-faved=" + search + ">");
+                faveButton.addClass("nofavebtn causefaved");
+                faveButton.text("Favorited");
+                newDiv.append(faveButton);
+                newDiv.append(textDiv);
+                var chartName = response[i].charityName;
+                var tagline = response[i].tagLine;
+                var site = response[i].websiteURL;
+                var purpose = response[i].cause.causeName;
+                var mission = response[i].mission;
                 $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-                    "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
-                $(imgDiv).append(img);
-                $(imgDiv).append(faveButton);
-            });
+                    "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site + "<br>" + "<br>");
+                $(textDiv).css("padding", "30px 30px")
+                $(".favortiesPageResults").append(newDiv);
+            }
+        });
 
-        } else {
-            var search = $(this).attr("data-name");
-            var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
-            var newH1 = $("<h1>");
-            newH1.text("Most Popular Charities");
-            newH1.addClass("causeH1");
-            $(".searchResultsDiv").append(newH1);
-
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                console.log(response);
-                $("#celebphoto").empty();
-                $("#resultsText").empty();
-                for (var i = 0; i < response.length; i++) {
-                    FaveResults(response, i);
-                }
-            });
-
-        }
+    }
 
 });
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function FaveResults(response, i) {
-    var newDiv = $("<div>")
-    var textDiv = $("<div>")
-    $(newDiv).append(textDiv);
-    var chartName = response[i].charityName;
-    var tagline = response[i].tagLine;
-    var site = response[i].websiteURL;
-    var purpose = response[i].cause.causeName;
-    var mission = response[i].mission;
-    $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site + "<br>" + "<br>");
-    $(textDiv).css("padding", "30px 30px")
-    $(".favortiesPageResults").append(newDiv);
-}
