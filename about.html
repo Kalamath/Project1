@@ -11,15 +11,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/bWokeLogoFavicon.png">
+
     <!-- CSS Links -->
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/headerfooter.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/tablet_810-1024.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/mobile_375-810.css">
+
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Teko:400,500,600,700&display=swap"
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300,400,700&display=swap"
         rel="stylesheet">
+
 
     <!-- link to jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -30,71 +35,195 @@
 <body>
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
-            <a href="" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img src="assets/images/bWokeLogo.png"
-                    alt="bWOKE" id="Favelogo"></a>
-            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
-                <a href="" class="navMenu">
-                    <div id='myFavorites' class='menu favoritesNav'>My Favorites</div>
+            <a href="./index.html" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img
+                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo">
+            </a>
+            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-6 navSpace"></div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 navigation">
+                <a href="./favorites.html" class="navMenu">
+                    <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
                 </a>
-                <a href="" class="navMenu">
+                <a href="./about.html" class="navMenu">
                     <div id='about' class='menu aboutNav'>About</div>
+                </a>
+                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state"
+                    class="navMenu"><img class='menu'
+                        src="http://www.sclance.com/pngs/spotify-logo-transparent-png/spotify_logo_transparent_png_1294604.png"
+                        alt="Spotify" id="spotifyNav">
                 </a>
             </div>
         </div>
     </header>
 
-    <div class="row headerBlocked"></div>
-    <div class="container">
-        <section class="aboutDescription">
-            <div class="row searchResultsDiv">
-                Results Div (this will be hidden when they are searching, but when searches load, the
-                .initialSuggestionsDiv
-                will hide and this div will show in JS
-            </div>
-        </section>
 
-        <section class="aboutPurpose">
-            <div class="row searchResultsDiv">
-                Results Div (this will be hidden when they are searching, but when searches load, the
-                .initialSuggestionsDiv
-                will hide and this div will show in JS
-            </div>
-
-        </section>
-    </div>
-
-    <section class="team-section">
+    <section class="aboutUs container-fluid">
+        <div class="row headerBlocked"></div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="section-heading text-center">
-                    <h2><strong>Team</strong></h2>
+            <div class="col-2"></div>
+            <h1 class="col-5 aboutTitle">About bWoke</h1>
+            <div class="col-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <p class="col-8 description">Influencer culture has not only help promote brands, but larger social issues
+                and charities that celebrities are passionate about. Historically, donations from individuals account
+                for over two-thirds of all donations. If you add in gifts from
+                bequests, then the category accounts for nearly 80% of all giving. In other words, the donating public,
+                not big foundations or corporations, is responsible for the vast majority of annual donations.
+
+                </br>
+
+                Many people in today’s world have a hard time knowing what a good first step to social activism or
+                giving back is. We are aiming to create measurable change by giving people an easy tool to find causes
+                close to their hearts and close to their homes. The
+                added layer of also identifying celebrity endorsements for charities mixes personal passion and pop
+                culture by connecting everyday folks to people they admire in hopes of creating larger social change
+                through already established followings.
+            </p>
+            <div class="col-2"></div>
+        </div>
+
+        <main role="aboutUsMain">
+            <!-- Our Team -->
+            <section class="container-fluid ourTeam">
+                <div class="container">
+                    <!-- <div class="row headerBlocked"></div> -->
+
+                    <div class="jumbotron bg-transparent">
+                        <section class="container-fluid">
+                            <div class="row">
+                                <div class="col-4">
+                                    <!-- <picture>
+                                        <img class="teamImg" src="assets/images/aboutTeam2.jpg">
+                                    </picture> -->
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+    <hr class="divider">
+    <section>
+        <div class="jumbotron text-center">
+            <!-- <div class="col-2"></div> -->
+            <div class="container-fluid">
+                <div>
+                    <h1 class="wantToGive">Our team is at the intersection of entertainment and philanthrophy.</h1>
+                    <br>
+                    <div class="wantToGive2">Bacon ipsum dolor amet shank beef ribs ham hock strip steak
+                        shoulder filet mignon
+                        flank. Spare ribs jerky ball tip picanha rump bacon pancetta. Pork drumstick corned beef pork
+                        loin
+                        ham hock turducken swine tri-tip sirloin tongue capicola kielbasa meatball ribeye filet mignon.
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="team-photo">
-                    <a href="">Martell Harding</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="team-photo">
-                    <a href="">Isabel Ngan</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="team-photo">
-                    <a href="">Ashton Roth</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                <div class="team-photo">
-                    <a href="">Ari Virgil-Paige</a>
-                </div>
-            </div>
+            <!-- <div class="col-2"></div> -->
         </div>
     </section>
+    <!-- Seperate this div -->
+    <div class="container">
+        <hr class="divider">
+        <div class="jumbotron bg-transparent container-fluid">
+            <h1 id="aboutMotto">Our Team</h1>
+            <h2 id="belowAbout">Meet The Squad</h2>
+        </div>
+        <section class="container-fluid">
+            <div class="container">
+                <div class="jumbotron bg-transparent wePride">
+                    <div class="row">
+                        <div class="col-10">
+                            <h1 class="teamMission"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="footer container-fluid">
+
+        <section class="theTeam container-fluid">
+            <hr class="divider">
+            <div class="container">
+                <div class="jumbotron text-center bg-transparent" id="jumboTeam">
+                    <section class="team-section">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="team-photo">
+
+                                    <a href="https://kalamath.github.io/Bootstrap-Portfolio/"><img class="profile"
+                                            src="./assets/images/martell.jpg" still="./assets/images/martell.jpg"
+                                            animated="./assets/images/Martell.gif">Martell
+                                        Harding</a>
+                                    <div class="jumbotron teamInfo">Bacon ipsum dolor amet venison sausage pork loin
+                                        pork flank pork belly turducken, rump bresaola t-bone bacon jowl. Sirloin
+                                        pastrami bresaola venison t-bone hamburger frankfurter doner, landjaeger
+                                        shank shoulder
+                                        pig pancetta ribeye corned beef. Pork chop alcatra cupim beef ribs boudin.
+                                        Jowl kielbasa pork belly turducken picanha pork loin sausage kevin.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="team-photo">
+                                    <a href="https://ingan274.github.io/"><img class="profile"
+                                            src="./assets/images/isabel.jpg" still="./assets/images/isabel.jpg"
+                                            animated="./assets/images/Isabel.gif">Isabel
+                                        Ngan</a>
+                                    <div class="jumbotron teamInfo">Isabel designs for emotion. She believes cohesive
+                                        and intuitive design systems are functional, usable, reliable, and most of all,
+                                        breath feeling. To Isabel, emotional design allows conversations with users that
+                                        always end with a better iteration. So, why not design to fulfill a task and put
+                                        a smile on our users faces?
+                                        As individuals, we own our story; as a collective, shared stories can be
+                                        powerful. Isabel relishes in listening to stories of individuals and companies
+                                        that stem from passion and drive. She aims to always be open to learning new
+                                        things, while acknowledging what she doesn't know.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="team-photo">
+                                    <img class="profile" src="./assets/images/ashton.png"
+                                        still="./assets/images/ashton.png" animated="./assets/images/Ashton.gif">
+                                    <a href="">Ashton Roth</a>
+                                    <div class="jumbotron teamInfo">Ashton is an ambitious millennial who seeks to make
+                                        the world a better place through connection and empathy. Growing up in LA,
+                                        Ashton has had many experiences with many people all across the city which has
+                                        fostered a larger sense of community. In market research by day, and coding by
+                                        night Ashton has a wide sense of what is largely applicable to a broad audience.
+                                        Ashton believes that this application can help set a better standard for action
+                                        by putting the work that needs to be done in today’s world with what is easily
+                                        accessible and intriguing to us.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="team-photo">
+                                    <a href="https://avpaige.github.io/Responsive-Portfolio/"><img class="profile"
+                                            src="./assets/images/ari.jpg" still="./assets/images/ari.jpg"
+                                            animated="./assets/images/Ari.gif">Ari
+                                        Virgil-Paige</a>
+                                    <div class="jumbotron teamInfo">Ari is proud Philadelphia native and current Los
+                                        Angeles resident who believes in the power of change by way of human connection.
+                                        Pragmatic in approach but optimistic for results, Ari combines her years of
+                                        experience in operations and project management with her passion for having
+                                        honest and empathetic conversations to stimulate impactful change. Ari credits
+                                        her parents for her belief that she is capable of anything she puts her mind to
+                                        in a world that consistently tries to tell her otherwise.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+
+    <footer class="aboutFooter container-fluid">
         <div class="row">
             <img src="assets/images/bWokeLogo.png" alt="bWOKE" id="logoFooter">
         </div>
@@ -103,7 +232,9 @@
         </div>
     </footer>
 
+
     <script type="text/javascript" src="./assets/javascript/main.js"></script>
+    <script type="text/javascript" src="./assets/javascript/about.js"></script>
 </body>
 
 </html>
