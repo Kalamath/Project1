@@ -4,8 +4,9 @@ var favorited = false;
 
 $(".searchResultsDiv").on("click", ".favebtn", function () {
     // removing from FAVES
-    favoriteList = JSON.parse(localStorage.getItem('Favorited'));
-    if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
+    var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
+    if (favoriteList !== null) {
+        // taking out of faves
         if (favoriteList.includes($(this).attr("search-term"))) {
             $(this).css("background-color", "");
             $(this).css("color", "");
@@ -28,6 +29,7 @@ $(".searchResultsDiv").on("click", ".favebtn", function () {
             $(this).text("Favorited");
 
             var btnVal = $(this).attr("search-term");
+            console.log(btnVal)
             // need this push id into array to track what is favorited
             SaveDataToLocalStorage(btnVal);
             favorited = true;

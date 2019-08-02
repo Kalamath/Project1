@@ -14,8 +14,7 @@ var buttons = function () {
 
 setTimeout(function () {
     buttons();
-}, 1000)
-
+}, 500)
 
 // ============================================= Favoites Page Button listening =================================================
 // THIS LISTENER HELPS REMOVE FAVORITE BUTTON
@@ -35,6 +34,8 @@ $(".favortiesPageResults").on("click", ".nofavebtn", function () {
     $(".favortiesPageResults").empty();
 });
 
+
+// this function is to compare it in the arrays (actors, athletes, or artist) if they have the favorited item
 function compareObject(array, saved) {
     for (var item of array) {
         if (item.name === saved) {
@@ -43,29 +44,30 @@ function compareObject(array, saved) {
     }
 };
 
+// global variables of finding if Faved is in celebl array
 var foundArtist;
 var foundActor;
 var foundAthletes;
 var myObj;
-// TO SHOW RESULTS
+
+// TO SHOW RESULTS ON TO FAVORITES PAGE
 $("#favoriteCharities").on("click", ".faveSearch", function (event) {
     $(".favortiesPageResults").empty();
 
     var searchTerm = $(this).attr("data-search");
     foundArtist = compareObject(artists, searchTerm);
-    foundActor = compareObject(actors, searchTerm);
-    foundAthletes = compareObject(athletes, searchTerm);
-
-
     if (foundArtist !== null) {
         myObj = foundArtist;
     };
+    foundActor = compareObject(actors, searchTerm);
     if (foundActor !== null) {
         myObj = foundActor;
     };
+    foundAthletes = compareObject(athletes, searchTerm);
     if (foundAthletes !== null) {
         myObj = foundAthletes;
     };
+  
     console.log(myObj)
 
         if (Object.keys(myObj).length == 3) {
@@ -110,6 +112,7 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
         } else {
             var search = $(this).attr("data-name");
             var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
+            var newH1 = $("<h1>");
             newH1.text("Most Popular Charities");
             newH1.addClass("causeH1");
             $(".searchResultsDiv").append(newH1);

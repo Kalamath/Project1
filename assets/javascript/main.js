@@ -203,8 +203,6 @@ $(document).ready(function () {
                 "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
-            $(".searchResultsDiv").addClass(btnVal);
-            $(".searchResultsDiv").attr("id", btnVal);
             faveButton.attr("search-term", btnVal);
         });
 
