@@ -194,8 +194,13 @@ $(document).ready(function () {
             var purpose = response[0].cause.causeName;
             var mission = response[0].mission;
             var site = response[0].websiteURL;
+            var link = $("<a>");
+            link.attr("href", site);
+            link.text(site);
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" );
+            $("#resultsText").append(link);
+            console.log(link);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
             $(".searchResultsDiv").addClass(btnVal);
@@ -243,8 +248,12 @@ $(document).ready(function () {
         var site = response[i].websiteURL;
         var purpose = response[i].cause.causeName;
         var mission = response[i].mission;
+        var link = $("<a>");
+        link.attr("href", site);
+        link.text(site);
         $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>"+ mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site + "<br>"+ "<br>" );
+        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>"+ mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>");
+        $(textDiv).append(link).append("<br>" + "<br>")
         $(".searchResultsDiv").append(newDiv);
     }
 
