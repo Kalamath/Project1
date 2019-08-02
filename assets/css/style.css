@@ -32,6 +32,7 @@ body {
     /* position: relative; */
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/home1Option2.jpg);
     background-size: cover;
+    background-position: center; 
 }
 
 
@@ -249,6 +250,12 @@ body {
     color: rgb(94, 94, 94);
 }
 
+.causeH1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px; 
+    padding: 30px 30px;
+}
+
 #resultsText {
     padding: 30px 30px;
 }
@@ -270,6 +277,8 @@ body {
 .maps {
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.2)), url(../images/home3.jpg);
     background-size: cover;
+    background-position: center; 
+
 }
 
 #homeMapTitle {
@@ -308,6 +317,7 @@ body {
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.1)), url(../images/extra2.jpg);
     background-size: cover;
     color: white;
+    background-position: center; 
 }
 .aboutTitle {
     font-family: 'Montserrat', sans-serif;
@@ -350,8 +360,9 @@ body {
 
 .aboutUsMain {
     background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images?.jpg);
-    /* background-size: cover; */
+    background-size: cover;
     margin: 0px auto;
+    background-position: center; 
 }
 
 .teamImg {
@@ -406,6 +417,7 @@ body {
     /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg); */
     background-size: cover;
     color: black;
+    background-position: center; 
 }
 
 .indTeamName {
@@ -442,10 +454,14 @@ body {
 
 
 /*=================================   FAVORITES  =================================*/
+.favoritesBody {
+    position: relative;
+}
 
 .favorites {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(../images/favoritesBack.jpg);
     background-size:cover;
+    background-position: center; 
     position: fixed; 
     top: 0; 
     left: 0; 
@@ -531,4 +547,55 @@ body {
     color: white;
     border: 1px solid #ddd;
     padding: 8px 10px;
+}
+
+
+.faveSearch {
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 15px 5px 15px;
+    background: white;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(234, 172, 0);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: initial;
+}
+
+.nofavebtn {
+    color: rgb(94, 94, 94);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid rgb(94, 94, 94);
+    border-radius: 3px;
+    margin: 20px;
+    background: #fff200b7;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faveSearch:hover, .nofavebtn:hover {
+    color: #3F4444;
+}
+
+
+.favortiesPageResults {
+    background: rgba(255, 255, 255, 0.74);
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+    margin: 40px auto; 
+}
+
+.FavoritesContent {
+    overflow: scroll;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
 }
