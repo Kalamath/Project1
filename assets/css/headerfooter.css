@@ -86,9 +86,9 @@ a:hover {
 /*=================================   FOOTER  =================================*/
 
 footer {
-    height: 100px;
+    height: 180px;
     background: rgb(0, 0, 0);
-    padding: 100px;
+    padding: 50px;
 }
 
 .aboutFooter {
