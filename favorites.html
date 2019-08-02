@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bWoke | My Favorites</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/headerfooter.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/tablet_810-1024.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/mobile_375-810.css">
+
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300,400,700&display=swap"
+        rel="stylesheet">
+
+    <!-- link to jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    <!-- Link to Javascripts
+    <script type="text/javascript" src="assets/javascript/api.js"></script> -->
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
+    <script
+        src="http://maps.google.com/maps/api/js?key=AIzaSyCfCbQMtphVTJZPsHwJfmHVYIgcWCpITKk&libraries=places"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
+    <script type="text/javascript" src="assets/javascript/google.js"></script>
+
+</head>
+
+<body class="favoritesBody">
+    <div class="favorites"></div>
+    <header class="header container-fluid" id="favoriteHeader">
+        <div class="row">
+            <a href="./index.html" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img
+                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo">
+            </a>
+            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-6 navSpace"></div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 navigation">
+                <a href="./favorites.html" class="navMenu">
+                    <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
+                </a>
+                <a href="./about.html" class="navMenu">
+                    <div id='about' class='menu aboutNav'>About</div>
+                </a>
+                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state"
+                    class="navMenu"><img class='menu'
+                        src="http://www.sclance.com/pngs/spotify-logo-transparent-png/spotify_logo_transparent_png_1294604.png"
+                        alt="Spotify" id="spotifyNav">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="FavoritesContent container-fluid">
+        <h1 class="favoriteTitle">My Favorites</h1>
+        <div class="row">
+            <div class="col-2"></div>
+            <div id="favoriteCharities">
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="favortiesPageResults"></div>
+            <div class="col-2"></div>
+        </div>
+    </section>
+    <script type="text/javascript" src="./assets/javascript/main.js"></script>
+    <script type="text/javascript" src="./assets/javascript/favoritesStorage.js"></script>
+    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
+</body>
+
+</html>

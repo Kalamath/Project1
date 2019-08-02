@@ -1,0 +1,123 @@
+/* Header Font:  
+font-family: 'Montserrat', sans-serif;
+ wieght: 900
+
+Body font:
+font-family: 'Work Sans', sans-serif;
+wieght: 300, 400, 700
+
+Colors:
+color: #fff200; Yellow
+color: #69bd45; Green
+color: #00aeef; Blue
+color: #90181b; Red
+*/
+
+
+/* 
+colors:
+gold: #EAAA00;
+Charcoal: #3F4444; */
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a:hover {
+    text-decoration: none;
+    color: none;
+}
+
+
+/*=================================   HEADER  =================================*/
+
+.header {
+    background: rgba(45, 49, 49, 0.596);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    position: fixed;
+    z-index: 5;
+}
+
+.navMenu {
+    display: inline-block;
+    color: white;
+    width: 30%;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px 5px;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.menu {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navMenu:hover {
+    color: rgb(234, 172, 0);
+}
+
+
+/* Home and About Page */
+
+#bWokeNav {
+    /* padding: 5px 20px;
+    margin: 5px auto;
+    font-size: 25px; */
+}
+
+#spotifyNav {
+    display: inline-block;
+    margin: 0px auto;
+    object-fit: contain;
+    width: 20%;
+    
+}
+
+
+/*=================================   FOOTER  =================================*/
+
+footer {
+    height: 180px;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+}
+
+.aboutFooter {
+    height: 100px;
+    background: white;
+    padding: 100px;
+}
+
+#logoFooter {
+    display: block;
+    margin: 10px auto;
+}
+
+#copyright {
+    display: block;
+    margin: 10px auto;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+
+/*=================================   MUSIC BAR (FIXED ON HOME AND FAVORITES)  =================================*/
+
+.music {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+    /* background: rgba(234, 172, 0, 0.459); */
+    margin-bottom: 10.2px;
+}
+
