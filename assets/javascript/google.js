@@ -16,13 +16,16 @@ $(document).ready(function(){
       });
      locationRequest(data.latitude, data.longitude).then(function(results){
        console.log(results)
-
        var charityLocation = results
-       var marker = new google.maps.Marker({
-        position: {lat: data.latitude, lng: data.longitude},
-        map: map,
-        title: 'Hello World!'
-      });
+       for (var i =0; i<charityLocation.results.length; i++){
+         console.log(charityLocation.results[i].geometry.location)
+         var marker = new google.maps.Marker({
+          position: charityLocation.results[i].geometry.location, 
+          map: map,
+          title: 'Hello World!'
+        });
+       }
+       
      });
       // var request = {
       //   query: 'school',
@@ -104,10 +107,13 @@ $(document).ready(function(){
     return $.ajax({
       type: "GET",
       url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=charities&location="+ lat +","+ lng +"&key=AIzaSyCfCbQMtphVTJZPsHwJfmHVYIgcWCpITKk",
+
+     
+      
+    
     });
 
   }
 
 
 }); 
-
