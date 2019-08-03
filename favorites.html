@@ -41,44 +41,47 @@
 
 </head>
 
-<body>
+<body class="favoritesBody">
+    <div class="favorites"></div>
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
             <a href="./index.html" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img
-                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
-            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
-                <a href="./favorites.html" class="navMenu" id='veiwFavesAbout'>
+                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo">
+            </a>
+            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-6 navSpace"></div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 navigation">
+                <a href="./favorites.html" class="navMenu">
                     <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
                 </a>
                 <a href="./about.html" class="navMenu">
                     <div id='about' class='menu aboutNav'>About</div>
                 </a>
+                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state"
+                    class="navMenu"><img class='menu'
+                        src="http://www.sclance.com/pngs/spotify-logo-transparent-png/spotify_logo_transparent_png_1294604.png"
+                        alt="Spotify" id="spotifyNav">
+                </a>
             </div>
+        </div>
     </header>
-    <section class="favorites container-fluid">
+
+    <section class="FavoritesContent container-fluid">
         <h1 class="favoriteTitle">My Favorites</h1>
-        <div id="favoriteCharities">
-            <div class="row">
-                <div class="col-1"></div>
-                <table class="col-10" id="timeTable">
-                    <tr class="tableTitle">
-                        <th class="tableTitle">Train Name</th>
-                        <th class="tableTitle ">Destination</th>
-                        <th class="tableTitle ">First Train of the Day</th>
-                        <th class="tableTitle ">Frequency (Min)</th>
-                        <th class="tableTitle ">Next Arrival</th>
-                        <th class="tableTitle ">Minutes Away</th>
-                    </tr>
-                </table>
-                <div class="col-1"></div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div id="favoriteCharities">
             </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="favortiesPageResults"></div>
+            <div class="col-2"></div>
         </div>
     </section>
     <script type="text/javascript" src="./assets/javascript/main.js"></script>
-    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
     <script type="text/javascript" src="./assets/javascript/favoritesStorage.js"></script>
-    <script type="text/javascript" src="./assets/javascript/google.js"></script>
+    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
 </body>
 
 </html>

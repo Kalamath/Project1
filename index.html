@@ -49,19 +49,23 @@
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
             <a href="./index.html" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img
-                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
-            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
-                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state" class="navMenu" id='veiwFavesAbout'>
-                    <div id='viewFaves' class='menu favoritesNav'>Login To Spotify</div>
-                </a>
-                <a href="./favorites.html" class="navMenu" id='veiwFavesAbout'>
+                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo">
+            </a>
+            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-6 navSpace"></div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 navigation">
+                <a href="./favorites.html" class="navMenu">
                     <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
                 </a>
                 <a href="./about.html" class="navMenu">
                     <div id='about' class='menu aboutNav'>About</div>
                 </a>
+                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state"
+                    class="navMenu"><img class='menu'
+                        src="http://www.sclance.com/pngs/spotify-logo-transparent-png/spotify_logo_transparent_png_1294604.png"
+                        alt="Spotify" id="spotifyNav">
+                </a>
             </div>
+        </div>
     </header>
 
     <!-- if we want a background video -->
@@ -135,9 +139,11 @@
             <div class="col-1"></div>
         </div>
 
-        <div class="row searchResultsDiv">
-            <div id="celebphoto"></div>
-            <div id="resultsText"></div>
+        <div class="row searchResultsDiv" id="celeb">
+                <div id="celebphoto"></div>
+                <div id="resultsText"></div>
+        </div>
+        <div class="row searchResultsDiv" id="search">
         </div>
     </section>
 
@@ -147,15 +153,12 @@
         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div id="map" style="width:100%;height:500px"></div>
         <div class="mapouter">
-          
+
         </div>
         </div>
         <div class="mapCharityBtns"></div>
     </section>
 
-    <section class="music container-fluid">
-        <h1>insert spotify info here</h1>
-    </section>
 
     <footer class="footer container-fluid">
         <div class="row">
@@ -166,10 +169,33 @@
         </div>
     </footer>
 
+    <section class="music container-fluid">
+        <div class="player">
+            <div class="left"></div>
+            <div class="right">
+                <div class="top">
+                    <!-- <a class="song"
+                        href="https://open.spotify.com/track/52LlzTfdulBMiwH4BZy5Sq?si=1c1rwqNYSf6ZaaRbzlstLQ">Let's Go
+                        To
+                        the Forest</a>
+                    <a class="artist"
+                        href="https://open.spotify.com/artist/6OqhFYFJDnBBHas02HopPT?si=vQaSwY1DRkyhj-eoKZlMrw">Kero
+                        Kero
+                        Bonito</a> -->
+                </div>
+                <div class="bottom">
+                    <video controls="" _autoplay="" name="media">
+                        <source src="https://i.koya.io/Kero%20Kero%20Bonito%20-%20Let's%20Go%20To%20The%20Forest.mp3"
+                            type="audio/mpeg"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script type="text/javascript" src="./assets/javascript/main.js"></script>
-    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
     <script type="text/javascript" src="./assets/javascript/favoritesStorage.js"></script>
-    
+    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
+
 </body>
 
 </html>

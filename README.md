@@ -5,6 +5,20 @@ To allow people to find causes close to them AND to celebrities they like as a w
 ## Purpose:
 To utilize Today’s influencer and celebrity culture to drive and connect charities with the masses.
 
+## To Run Locally
+
+Open your terminal to the folder for this project.
+
+Run the command: `npm install`
+
+This will install the dependencies. Once your dependencies are installed, run the command below to "serve" your code as a local website
+
+```
+./node_modules/.bin/serve 
+```
+
+Now you can visit `http://localhost:5000` in your browsers
+
 ### Woke Squad Members (Team Motto:  “We Woke Up Like This”)
 Martell Harding (Kalamath), Isabel Ngan (ingan274), Ashton Roth (ashtonroth), Ari Virgil-Paige (avpaige)
 
@@ -20,19 +34,11 @@ Technology Used:
 APIs Used:
 * Charity Navigator API 
 * Google Maps
-* Facebook
 * Spotify
 
-## To Run Locally
+Features:
+* Find Charities of top Musical Artists, Actors, and Athletees
+* Search Charities based on your interests
+* Favorite that charities you're interested in
+* Connect to your Spotify
 
-Open your terminal to the folder for this project.
-
-Run the command: `npm install`
-
-This will install the dependencies. Once your dependencies are installed, run the command below to "serve" your code as a local website
-
-```
-./node_modules/.bin/serve 
-```
-
-Now you can visit `http://localhost:5000` in your browsers

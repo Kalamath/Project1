@@ -36,16 +36,23 @@
     <header class="header container-fluid" id="favoriteHeader">
         <div class="row">
             <a href="./index.html" class="col-xs-3 col-sm-4 col-md-4 col-lg-2" id="bWokeNav"><img
-                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo"></a>
-            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-7 navSpace"></div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 navigation">
-                <a href="./favorites.html" class="navMenu" id='veiwFavesAbout'>
+                    src="./assets/images/bWokeLogo.png" alt="bWOKE" id="Favelogo">
+            </a>
+            <div class="col-xs-3 col-sm-4 col-md-4 col-lg-6 navSpace"></div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 navigation">
+                <a href="./favorites.html" class="navMenu">
                     <div id='viewFaves' class='menu favoritesNav'>My Favorites</div>
                 </a>
                 <a href="./about.html" class="navMenu">
                     <div id='about' class='menu aboutNav'>About</div>
                 </a>
+                <a href="https://accounts.spotify.com/authorize?client_id=b76ef5ca02de4a8ab97997dfd0eb6637&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fcallback.html&scope=user-modify-playback-state"
+                    class="navMenu"><img class='menu'
+                        src="http://www.sclance.com/pngs/spotify-logo-transparent-png/spotify_logo_transparent_png_1294604.png"
+                        alt="Spotify" id="spotifyNav">
+                </a>
             </div>
+        </div>
     </header>
 
 
@@ -145,8 +152,9 @@
                             <div class="col-md-3 col-sm-12 col-xs-12">
                                 <div class="team-photo">
 
-                                    <a href="https://kalamath.github.io/Bootstrap-Portfolio/"><img
-                                            src="https://marriedbiography.com/wp-content/uploads/2017/11/Bill-Murray.jpg">Martell
+                                    <a href="https://kalamath.github.io/Bootstrap-Portfolio/"><img class="profile"
+                                            src="./assets/images/martell.jpg" still="./assets/images/martell.jpg"
+                                            animated="./assets/images/Martell.gif">Martell
                                         Harding</a>
                                     <div class="jumbotron teamInfo">Bacon ipsum dolor amet venison sausage pork loin
                                         pork flank pork belly turducken, rump bresaola t-bone bacon jowl. Sirloin
@@ -159,8 +167,9 @@
                             </div>
                             <div class="col-md-3 col-sm-12 col-xs-12">
                                 <div class="team-photo">
-                                    <a href="https://ingan274.github.io/"><img
-                                            src="https://www.famousbirthdays.com/headshots/bill-murray-8.jpg">Isabel
+                                    <a href="https://ingan274.github.io/"><img class="profile"
+                                            src="./assets/images/isabel.jpg" still="./assets/images/isabel.jpg"
+                                            animated="./assets/images/Isabel.gif">Isabel
                                         Ngan</a>
                                     <div class="jumbotron teamInfo">Isabel designs for emotion. She believes cohesive
                                         and intuitive design systems are functional, usable, reliable, and most of all,
@@ -176,7 +185,8 @@
                             </div>
                             <div class="col-md-3 col-sm-12 col-xs-12">
                                 <div class="team-photo">
-                                    <img src="https://mediamass.net/jdd/public/documents/celebrities/1076.jpg">
+                                    <img class="profile" src="./assets/images/ashton.png"
+                                        still="./assets/images/ashton.png" animated="./assets/images/Ashton.gif">
                                     <a href="">Ashton Roth</a>
                                     <div class="jumbotron teamInfo">Ashton is an ambitious millennial who seeks to make
                                         the world a better place through connection and empathy. Growing up in LA,
@@ -191,15 +201,17 @@
                             </div>
                             <div class="col-md-3 col-sm-12 col-xs-12">
                                 <div class="team-photo">
-                                    <a href="https://avpaige.github.io/Responsive-Portfolio/"><img
-                                            src="https://media.sandiegoreader.com/img/photos/2017/11/27/friday-bill-murray_t300.jpg?8aff03de2423e912a2467e97388a07f5331c05b6">Ari
+                                    <a href="https://avpaige.github.io/Responsive-Portfolio/"><img class="profile"
+                                            src="./assets/images/ari.jpg" still="./assets/images/ari.jpg"
+                                            animated="./assets/images/Ari.gif">Ari
                                         Virgil-Paige</a>
-                                    <div class="jumbotron teamInfo">Bacon ipsum dolor amet venison sausage pork loin
-                                        pork flank pork belly turducken, rump bresaola t-bone bacon jowl. Sirloin
-                                        pastrami bresaola venison t-bone hamburger frankfurter doner, landjaeger
-                                        shank shoulder
-                                        pig pancetta ribeye corned beef. Pork chop alcatra cupim beef ribs boudin.
-                                        Jowl kielbasa pork belly turducken picanha pork loin sausage kevin.
+                                    <div class="jumbotron teamInfo">Ari is proud Philadelphia native and current Los
+                                        Angeles resident who believes in the power of change by way of human connection.
+                                        Pragmatic in approach but optimistic for results, Ari combines her years of
+                                        experience in operations and project management with her passion for having
+                                        honest and empathetic conversations to stimulate impactful change. Ari credits
+                                        her parents for her belief that she is capable of anything she puts her mind to
+                                        in a world that consistently tries to tell her otherwise.
                                     </div>
                                 </div>
                             </div>
@@ -222,9 +234,7 @@
 
 
     <script type="text/javascript" src="./assets/javascript/main.js"></script>
-    <script type="text/javascript" src="./assets/javascript/favoritesPage.js"></script>
-    <script type="text/javascript" src="./assets/javascript/favoritesStorage.js"></script>
-    <script type="text/javascript" src="./assets/javascript/google.js"></script>
+    <script type="text/javascript" src="./assets/javascript/about.js"></script>
 </body>
 
 </html>

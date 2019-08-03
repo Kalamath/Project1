@@ -1,15 +1,22 @@
+var actors = [];
+var athletes = [];
+var artists = [];
+// getting list items (array from)
+var favoriteList = [];
+console.log("Initial: " + favoriteList)
+
 $(document).ready(function () {
 
 
     resultsDiv()
 
     function resultsDiv() {
-        $("#results").hide();
+        $(".searchResultsDiv").hide();
 
     }
 
     //Artists Array
-    var artists = [
+    artists = [
         {
             name: "Usher",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Boys%20and%20Girls%20Club%20of%20America&searchType=NAME_ONLY&rated=true",
@@ -49,7 +56,7 @@ $(document).ready(function () {
         for (var i = 0; i < artists.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", artists[i].name);
+            newButton.attr("data-name", artists[i].name).attr('data-index', i);
             newButton.attr("img-src", artists[i].img);
             newButton.attr("query-link", artists[i].queryURL)
             newButton.text(artists[i].name);
@@ -63,7 +70,7 @@ $(document).ready(function () {
 
     //Actors Array
 
-    var actors = [
+    actors = [
         {
             name: "Michael B. Jordan",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Feeding%20America&searchType=NAME_ONLY&rated=true",
@@ -99,7 +106,7 @@ $(document).ready(function () {
         for (var i = 0; i < actors.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", actors[i].name);
+            newButton.attr("data-name", actors[i].name).attr('data-index', i);
             newButton.attr("img-src", actors[i].img);
             newButton.attr("query-link", actors[i].queryURL)
             newButton.text(actors[i].name);
@@ -110,7 +117,7 @@ $(document).ready(function () {
 
     getActors();
 
-    var athletes = [
+    athletes = [
         {
             name: "Michael Phelps",
             queryURL: "https://api.data.charitynavigator.org/v2/Organizations?app_id=270bf11f&app_key=6fbc2df180aae26a94dfe40a27140c98&pageSize=1&pageNum=1&search=Special%20Olympics&searchType=NAME_ONLY&rated=true",
@@ -145,7 +152,7 @@ $(document).ready(function () {
         for (var i = 0; i < athletes.length; i++) {
             var newButton = $("<button>");
             newButton.addClass("celebBtn");
-            newButton.attr("data-name", athletes[i].name);
+            newButton.attr("data-name", athletes[i].name).attr('data-index', i);
             newButton.attr("img-src", athletes[i].img);
             newButton.attr("query-link", athletes[i].queryURL)
             newButton.text(athletes[i].name);
@@ -156,55 +163,65 @@ $(document).ready(function () {
 
     getAthletes();
 
-    $(".celebBtn").on("click", function (results) {
-        event.preventDefault();
-        $("#resultsText").empty();
-        $("#celebphoto").empty();
-        $(".searchResultsDiv").show();
-        // $("#celebphoto").append(loading)
-
-        // Creates Images from Celeb Object and Appends to Search Results Div
+    function fave() {
         var faveButton = $("<button>");
         faveButton.addClass("favebtn");
         faveButton.text("Add to Favorites");
 
+    }
 
+    $(".celebBtn").on("click", function (results) {
+        event.preventDefault();
+        var btnVal = $(this).attr("data-name");
+        $("#celeb").show();
+        $("#resultsText").empty();
+        $("#celebphoto").empty();
+        $("#search").hide()
+        $("#search").empty();
+        $(".causeResults").empty();
+        var faveButton = $("<button>");
+        faveButton.addClass("favebtn");
+        faveButton.text("Add to Favorites");
+
+        // Creates Images from Celeb Object and Appends to Search Results Div
         var img = $("<img>");
         img.addClass("searchResultPhotos");
         imgsrc = $(this).attr("img-src");
         img.attr("src", imgsrc);
         var queryURL = $(this).attr("query-link");
-        $("#celebphoto").append(img)
 
-        console.log(img, "image")
-
-        //API CALLS FOR CELEBRITY BUTTONS   
-
-        // @ARI When you make this generate dyanmically
-        // ---- need id to be a class and "id" attr of the entire div
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            $("#celebphoto").empty();
             var chartName = response[0].charityName;
             var tagline = response[0].tagLine;
             var purpose = response[0].cause.causeName;
             var mission = response[0].mission;
             var site = response[0].websiteURL;
-            var id = response[0].organization.ein;
+            var link = $("<a>");
+            link.attr("href", site);
+            link.text(site);
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-                "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" + site);
+            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" );
+            $("#resultsText").append(link);
+            console.log(link);
             $("#celebphoto").append(img);
             $("#celebphoto").append(faveButton);
-            $(".searchResultsDiv").addClass(id);
-            $(".searchResultsDiv").attr("id", id);
-            faveButton.attr("id", id);
-            // need this push id into array to track what is favorited
-            favoriteList.push(id)
+            faveButton.attr("search-term", btnVal);
         });
 
+        // check to see if it was already favorited
+        if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
+            var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
+            if (favoriteList.includes(btnVal)) {
+                $(faveButton).css("background-color", "#fff200b7");
+                $(faveButton).css("color", "rgb(94, 94, 94)");
+                $(faveButton).css("border", "2px solid rgb(94, 94, 94)");
+                $(faveButton).text("Favorited");
+            }
+        }
     });
 
 
@@ -217,8 +234,8 @@ $(document).ready(function () {
             var newButton = $("<button>");
             newButton.addClass("searchBtn");
             newButton.attr("data-name", causes[i]);
-            // newButton.attr("query-link", causes[i])
             newButton.text(causes[i]);
+            newButton.on("click", handleSearch);
             $("#causebtns").append(newButton);
         }
     }
@@ -232,50 +249,69 @@ $(document).ready(function () {
     });
 
     getCauses();
-
-    var userLocation = "";//ASHTON PUT THIS HERE :)
-    var search = "";
-
-    // Removing gif ID from from Array Function
-    function removeFave(index) {
-        console.log('index', index);
-        favoriteList.splice(index, 1)
-    }
-
-    // ====================================END OF FAVE BUTTON CODE =============================
-    function getCauseResults(response) {
+    function getCauseResults(response, i) {
         var newDiv = $("<div>")
-        newDev.addClass("resultDivs")
-        var chartName = response[0].charityName;
-        var tagline = response[0].tagLine;
-        var site = response[0].websiteURL;
-        var purpose = response[0].cause.causeName;
-        var mission = response[0].mission;
-        $(newDiv).append(chartName + tagline + site);
+        newDiv.addClass("causeResults")
+        var textDiv = $("<div id='resultsText'>")
+        $(newDiv).append(textDiv);
+        var chartName = response[i].charityName;
+        var tagline = response[i].tagLine;
+        var site = response[i].websiteURL;
+        var purpose = response[i].cause.causeName;
+        var mission = response[i].mission;
+        var link = $("<a>");
+        link.attr("href", site);
+        link.text(site);
+        $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
+        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>"+ mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>");
+        $(textDiv).append(link).append("<br>" + "<br>")
         $(".searchResultsDiv").append(newDiv);
     }
 
-    $(".searchBtn").on("click", function (event) {
+
+
+    function handleSearch(event) {
+        console.log(this, "this is");
         event.preventDefault();
-        $(".searchResultsDiv").show();
-        var userLocation = "";//ASHTON PUT THIS HERE :)
+        $("#celebphoto").empty();
+        $("#resultsText").empty();
+        $("#celeb").hide();
+        $("#search").show().empty();
         var search = $(this).attr("data-name");
-        var querlyURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true&state=" + userLocation;
+        var queryURL = "https://api.data.charitynavigator.org/v2/Organizations?app_id=37bca05d&app_key=41fa3dccfcb5a6ae31cba2a08192de93&pageSize=5&search=" + search + "&rated=true"; var newH1 = $("<h1>");
+        newH1.text("Most Popular Charities");
+        newH1.addClass("causeH1")
+
+        var searchCharity = $(this).attr("data-name");
+        var faveBtnResults = $("<button>");
+        faveBtnResults.addClass("favebtn");
+        faveBtnResults.attr("search-term", searchCharity)
+        faveBtnResults.text("Add to Favorites");
+        $("#search").append(newH1).append(faveBtnResults);
+
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            $("#celebphoto").empty();
-            $("#resultsText").empty();
-
             for (var i = 0; i < response.length; i++) {
-                getCauseResults(response);
+                getCauseResults(response, i);
             }
 
         });
 
-    });
+        // check to see if it was already favorited
+        if (JSON.parse(localStorage.getItem('Favorited')) !== null) {
+            var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
+            if (favoriteList.includes($(this).attr("data-name"))) {
+                $(faveBtnResults).css("background-color", "#fff200b7");
+                $(faveBtnResults).css("color", "rgb(94, 94, 94)");
+                $(faveBtnResults).css("border", "2px solid rgb(94, 94, 94)");
+                $(faveBtnResults).text("Favorited");
+            }
+        }
+    }
+
 
 });
