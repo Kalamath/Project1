@@ -3,13 +3,16 @@ var buttons = function () {
     $("#favoriteCharities").empty();
     var favoriteList = JSON.parse(localStorage.getItem('Favorited'));
     console.log(favoriteList);
-    for (var term of favoriteList) {
-        var buttonFave = $("<button class='faveSearch'>");
-        buttonFave.text(term);
-        buttonFave.attr("data-search", term);
-        buttonFave.css("display", "inline-block")
-        $("#favoriteCharities").append(buttonFave);
+    if (favoriteList !== null) {
+        for (var term of favoriteList) {
+            var buttonFave = $("<button class='faveSearch'>");
+            buttonFave.text(term);
+            buttonFave.attr("data-search", term);
+            buttonFave.css("display", "inline-block")
+            $("#favoriteCharities").append(buttonFave);
+        }
     }
+    
 }
 
 setTimeout(function () {
