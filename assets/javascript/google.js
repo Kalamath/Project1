@@ -22,7 +22,7 @@ $(document).ready(function(){
          var marker = new google.maps.Marker({
           position: charityLocation.results[i].geometry.location, 
           map: map,
-          title: 'Hello World!'
+          title: charityLocation.results[i].geometry.name, 
         });
        }
        
