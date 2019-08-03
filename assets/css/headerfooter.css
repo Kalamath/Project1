@@ -86,7 +86,7 @@ a:hover {
 /*=================================   FOOTER  =================================*/
 
 footer {
-    height: 180px;
+    height: 200px;
     background: rgb(0, 0, 0);
     padding: 50px;
 }
@@ -119,5 +119,13 @@ footer {
     height: 100px;
     /* background: rgba(234, 172, 0, 0.459); */
     margin-bottom: 10.2px;
+}
+
+.col {
+    font-family: 'Montserrat', sans-serif; 
+    display: block;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
 }
 
