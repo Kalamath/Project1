@@ -304,6 +304,13 @@ body {
 
 /* Spotify CSS */
 
+#defaultBar {
+    width: 640px;
+    position: relative;
+    background-color: red;
+    height: 10px;
+}
+
 .player {
     z-index: 10;
     background: rgba(0, 0, 0, 0.8);
@@ -335,6 +342,13 @@ body {
     padding-left: 10px;
 }
 
+#progressBar {
+    position: absolute;
+    height: 10px;
+    background-color: blue;
+    width: 0px;
+}
+
 .artist {
     color: white;
 }
@@ -347,6 +361,42 @@ body {
 
 .bottom {
     display: flex;
+}
+
+#playButton {
+    /* background-color: white; */
+    border: none;
+    height: 32px;
+    width: 32px;
+    background-image: url(../images/play.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#muteButton {
+    /* background-color: white; */
+    border: none;
+    height: 32px;
+    width: 32px;
+    background-image: url(../images/unmute.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#muteButton:active, #playButton:active {
+    position: relative;
+    top: 2px;
+}
+
+nav {
+    background-color: yellow;
+    width: 640px;
+    padding-bottom: 3px;
+}
+
+#wrapper {
+    width: 640px;
+    margin: 10px auto;
 }
 
 video {
