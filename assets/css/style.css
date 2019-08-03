@@ -285,21 +285,13 @@ body {
 
 /* Map Styling */
 
-.mapouter {
-    display: block;
-    position: relative;
-    text-align: right;
-    height: 715px;
-    width: 974px;
-    padding-bottom: 50px;
-    margin: 0px auto;
+#map {
+    padding: 70px 50px;
+    width: 80%;
 }
 
-.gmap_canvas {
-    overflow: hidden;
-    background: none;
-    height: 715px;
-    width: 974px;
+#spaceBelowMap {
+    height: 80px;
 }
 
 /* Spotify CSS */
@@ -551,7 +543,6 @@ video {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 .favorites {
@@ -567,14 +558,21 @@ video {
 }
 
 .favoriteTitle {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    font-weight: 600;
     text-align: center;
     text-transform: uppercase;
     color: #3F4444;
-    padding: 100px;
-    width: 90%;
+    padding: 100px 0px 0px 0px;
+}
+
+.favoritesSubtitle {
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 0px 0px 100px 0px;
 }
 
 #myFavorites {
@@ -605,48 +603,6 @@ video {
     object-fit: contain;
     width: 10%;
 }
-
-.trainSchedule {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.timeTable {
-    color: white;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    margin: 30px auto;
-    padding: 10px 20px;
-    border-collapse: collapse;
-    width: 100%;
-    color: black;
-}
-
-.timeTable td, .timeTable th {
-    border: 1px solid #ddd;
-    padding: 10px 20px;
-}
-
-.timeTable tr:nth-child(even) {
-    background-color: rgba(1, 50, 67, .3);
-    color: black;
-}
-
-.timeTable tr:hover {
-    background-color: rgba(1, 50, 67, .5);
-}
-
-.tableTitle {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: rgba(1, 50, 67, 1);
-    color: white;
-    border: 1px solid #ddd;
-    padding: 8px 10px;
-}
-
 
 .faveSearch {
     display: inline-block;
@@ -688,13 +644,13 @@ video {
     width: 90%;
     margin: 20px auto;
     position: relative;
-    margin: 40px auto; 
+    margin: 40px auto;
 }
 
 .FavoritesContent {
-    overflow-y: scroll;
+    overflow: scroll;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     margin: 0px;
     padding: 0px;
