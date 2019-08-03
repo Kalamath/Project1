@@ -285,21 +285,13 @@ body {
 
 /* Map Styling */
 
-.mapouter {
-    display: block;
-    position: relative;
-    text-align: right;
-    height: 715px;
-    width: 974px;
-    padding-bottom: 50px;
-    margin: 0px auto;
+#map {
+    padding: 70px 50px;
+    width: 80%;
 }
 
-.gmap_canvas {
-    overflow: hidden;
-    background: none;
-    height: 715px;
-    width: 974px;
+#spaceBelowMap {
+    height: 80px;
 }
 
 /* Spotify CSS */
