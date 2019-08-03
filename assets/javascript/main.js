@@ -240,14 +240,30 @@ $(document).ready(function () {
         }
     }
 
+    function showModal(){
+        $(".modal").show();
+    }
+
+
+
     //Adding Buttons from Search Bar
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
         var newCause = $("#search-input").val().trim();
+    if (newCause ===""){
+        showModal();
+    } else {
         causes.push(newCause);
         getCauses();
+        $("#search-input").text("");
+        }
     });
 
+    $(".close").on("click", function () {
+        $(".modal").hide();
+
+    });
+   
     getCauses();
     function getCauseResults(response, i) {
         var newDiv = $("<div>")
