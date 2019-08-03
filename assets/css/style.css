@@ -1,0 +1,661 @@
+/* Header Font:  
+font-family: 'Montserrat', sans-serif;
+wieght: 900
+
+Body font:
+font-family: 'Work Sans', sans-serif;
+wieght: 300, 400, 700
+
+Colors:
+color: #fff200; Yellow
+color: #69bd45; Green
+color: #00aeef; Blue
+color: #90181b; Red
+*/
+
+/*=================================   HOME PAGE  =================================*/
+
+/* FIRST BLOCK: About Us */
+
+body {
+    background-color: #f4f4f2;
+}
+
+.headerBlocked {
+    height: 200px;
+}
+
+.introduction {
+    /* Positioning for Video */
+    /* position: relative; */
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/home1Option2.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+
+/* To edit video behind but still figuring it out */
+
+/* #homeVideo {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    left: -100;
+    bottom: 0;
+    z-index: 0;
+  } */
+
+#bWokeLogo {
+    display: block;
+    margin: 20px auto;
+}
+
+#homeMotto {
+    margin: 50px auto;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 180px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#homeShortDescription {
+    padding: 50px;
+    margin-bottom: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    background: rgba(255, 242, 0, 0.3);
+    border-radius: 10px;
+}
+
+.learnMore {
+    display: block;
+    margin: 20px auto;
+    margin-bottom: 50px;
+    width: 30%;
+    background: rgba(255, 242, 0, 0.8);
+    height: 50px;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 13px 40px;
+    color: white;
+}
+
+.learnMore:hover {
+    background: #90181b;
+    color: white;
+}
+
+/* SECOND BLOCK: Search */
+
+.searchArea {
+    background: rgba(49, 53, 53, 0.918);
+    padding: 20px 20px;
+    position: relative;
+}
+
+.Search {
+    padding: 50px;
+}
+
+.searchBar {
+    margin: 0px auto;
+    margin-top: 30px;
+}
+
+.searchBarTitle {
+    margin: 30px auto;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#searchSubhead {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: initial;
+    padding: 5px;
+}
+
+#search-input {
+    background: rgba(145, 156, 156, 0.253);
+    border: none;
+}
+
+#search-input:hover {
+    background: rgba(145, 156, 156, 0.411);
+    border: none;
+}
+
+#search-input:focus {
+    background: rgba(255, 255, 255, 0.842);
+}
+
+#searchBtn {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 20px;
+}
+
+#searchBtn:hover {
+    color: rgba(234, 172, 0, 0.5);
+    ;
+}
+
+#searchBtn:active {
+    color: rgba(234, 172, 0, 1);
+    ;
+}
+
+.searchBtn {
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 15px 5px 15px;
+    background: white;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(234, 172, 0);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: initial;
+}
+
+.searchBtn:hover {
+    color: #3F4444;
+}
+
+/* Category Search */
+
+.suggestionDiv {
+    background: rgba(0, 0, 0, 0.24);
+    width: 70%;
+    margin: 20px auto;
+}
+
+.suggestTitle {
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 20px;
+}
+
+.celebBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 5px 15px 5px 15px;
+    background: rgba(145, 156, 156, 0.411);
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: initial;
+}
+
+.celebBtn:hover {
+    color: rgb(234, 172, 0);
+    background: white;
+}
+
+/* Results Div */
+
+.searchResultsDiv {
+    background: rgba(255, 255, 255, 0.74);
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.favebtn {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 3px;
+    margin: 20px;
+    background: rgba(145, 156, 156, 0.411);
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.favebtn:hover {
+    border: 2px solid grey;
+    background: #fff20086;
+    color: rgb(94, 94, 94);
+}
+
+.causeH1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px; 
+    padding: 30px 30px;
+}
+
+#resultsText {
+    padding: 30px 30px;
+}
+
+.searchItemTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.searchResultPhotos {
+    object-fit: contain;
+    margin: 20px;
+    width: 500px;
+}
+
+/* Map Title */
+
+.maps {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.2)), url(../images/home3.jpg);
+    background-size: cover;
+    background-position: center; 
+
+}
+
+#homeMapTitle {
+    padding: 50px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Map Styling */
+
+#map {
+    padding: 70px 50px;
+    width: 80%;
+}
+
+#spaceBelowMap {
+    height: 80px;
+}
+
+/* Spotify CSS */
+
+#defaultBar {
+    width: 640px;
+    position: relative;
+    background-color: red;
+    height: 10px;
+}
+
+.player {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.8);
+    color: #000;
+    min-height: 80px;
+    max-height: 80px;
+    display: flex;
+    flex-direction: row;
+    /* position: fixed; */
+}
+
+.left {
+    width: 80px;
+    background-image: url();
+    background-size: cover;
+}
+
+.right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+#progressBar {
+    position: absolute;
+    height: 10px;
+    background-color: blue;
+    width: 0px;
+}
+
+.artist {
+    color: white;
+}
+
+.song {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.bottom {
+    display: flex;
+}
+
+#playButton {
+    /* background-color: white; */
+    border: none;
+    height: 32px;
+    width: 32px;
+    background-image: url(../images/play.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#muteButton {
+    /* background-color: white; */
+    border: none;
+    height: 32px;
+    width: 32px;
+    background-image: url(../images/unmute.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#muteButton:active, #playButton:active {
+    position: relative;
+    top: 2px;
+}
+
+nav {
+    background-color: yellow;
+    width: 640px;
+    padding-bottom: 3px;
+}
+
+#wrapper {
+    width: 640px;
+    margin: 10px auto;
+}
+
+video {
+    flex-grow: 1;
+    height: 35px;
+}
+
+/*=================================   ABOUT PAGE  =================================*/
+
+.aboutUs {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.3), rgba(45, 49, 49, 0.1)), url(../images/extra2.jpg);
+    background-size: cover;
+    color: white;
+    background-position: center; 
+}
+
+.aboutTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+}
+
+.description {
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400px;
+    font-size: 25px;
+    margin: 50px 10px;
+    margin-bottom: 100px;
+    background: rgba(255, 255, 255, .1)
+}
+
+#menu {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#aboutMotto {
+    color: black;
+    /* margin: 50px auto;
+    margin-bottom: 0px; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    /* text-transform: uppercase; */
+}
+
+#belowAbout {
+    color: black;
+    /* margin: 0px auto; */
+    /* margin-bottom: 60px; */
+    font-family: 'Work Sans', sans-serif;
+    font-size: 30px;
+}
+
+.aboutUsMain {
+    background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images?.jpg);
+    background-size: cover;
+    margin: 0px auto;
+    background-position: center; 
+}
+
+.teamImg {
+    width: 100%;
+    height: auto;
+}
+
+.teamMission {
+    color: white;
+}
+
+.theTeam {
+    /* color: black; */
+    /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/favoritesBack.jpg); */
+    /* background-size: auto;
+    background-repeat: no-repeat;
+    margin: 0px auto; */
+}
+
+#jumboTeam {
+    margin: 0px auto;
+}
+
+.team-photo {
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #00aeef;
+    /* text-shadow: 0 0 3px #000; */
+    /* border: 5px solid black; */
+}
+
+.team-photo img {
+    border: 8px solid black;
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.teamInfo {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.ourTeam {
+    /* background: linear-gradient(to Bottom, rgba(45, 49, 49, 0.5), rgba(45, 49, 49, 0.2)), url(../images/extra2.jpg); */
+    background-size: cover;
+    color: black;
+    background-position: center; 
+}
+
+.indTeamName {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px #00aeef;
+}
+
+.strongTeam {
+    margin: 0px auto;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+
+.wantToGive {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: black;
+}
+
+.wantToGive2 {
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+}
+
+.wePride {
+    margin-top: -160px;
+}
+
+/*=================================   FAVORITES  =================================*/
+.favoritesBody {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.favorites {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(../images/favoritesBack.jpg);
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.favoriteTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3F4444;
+    padding: 100px 0px 0px 0px;
+}
+
+.favoritesSubtitle {
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 0px 0px 100px 0px;
+}
+
+#myFavorites {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#Favelogo {
+    color: white;
+    /* display: block; */
+    /* margin: 0px auto; */
+    /* object-fit: contain; */
+    width: 60%;
+    height: auto;
+    margin: 13px auto;
+}
+
+#spotify {
+    width: 200%;
+    height: auto;
+}
+
+#logoFooter {
+    color: white;
+    display: block;
+    margin: 0px auto;
+    object-fit: contain;
+    width: 10%;
+}
+
+.faveSearch {
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 15px 5px 15px;
+    background: white;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(234, 172, 0);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: initial;
+}
+
+.nofavebtn {
+    color: rgb(94, 94, 94);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;  
+    border: 2px solid rgb(94, 94, 94);
+    border-radius: 3px;
+    margin: 20px;
+    background: #fff200b7;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faveSearch:hover, .nofavebtn:hover {
+    color: #3F4444;
+}
+
+
+.favortiesPageResults {
+    background: rgba(255, 255, 255, 0.74);
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+    margin: 40px auto;
+}
+
+.FavoritesContent {
+    overflow: scroll;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
