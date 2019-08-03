@@ -6,7 +6,7 @@ var buttons = function () {
     for (var term of favoriteList) {
         var buttonFave = $("<button class='faveSearch'>");
         buttonFave.text(term);
-        buttonFave.attr("data-search", term).attr('data-index');
+        buttonFave.attr("data-search", term);
         buttonFave.css("display", "inline-block")
         $("#favoriteCharities").append(buttonFave);
     }
@@ -27,7 +27,6 @@ $(".favortiesPageResults").on("click", ".nofavebtn", function () {
 
 
     var favedItem = $(this).attr("data-faved");
-    console.log(favedItem)
     removeFave(favedItem);
     favorited = false;
     buttons();
@@ -72,7 +71,7 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
         parentDiv.append(textDiv)
         var faveButton = $("<button>");
         faveButton.addClass("nofavebtn");
-        faveButton.attr("data-faved", $(this).attr("data-search"))
+        faveButton.attr("data-faved", searchTerm)
         faveButton.text("Favorited");
 
 
@@ -202,7 +201,8 @@ $("#favoriteCharities").on("click", ".faveSearch", function (event) {
             for (var i = 0; i < response.length; i++) {
                 var newDiv = $("<div>")
                 var textDiv = $("<div>")
-                var faveButton = $("<button data-faved=" + search + ">");
+                var faveButton = $("<button>");
+                faveButton.attr("data-faved", searchTerm)
                 faveButton.addClass("nofavebtn causefaved");
                 faveButton.text("Favorited");
                 newDiv.append(faveButton);
