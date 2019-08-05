@@ -146,7 +146,7 @@ $(document).ready(function () {
 
         var newH1 = $("<h1>");
         newH1.addClass("suggestTitle");
-        newH1.text("Popular Artists");
+        newH1.text("Popular Athletes");
         $("#athletes").append(newH1);
 
         for (var i = 0; i < athletes.length; i++) {
