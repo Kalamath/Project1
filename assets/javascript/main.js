@@ -204,7 +204,7 @@ $(document).ready(function () {
             link.attr("href", site);
             link.text(site);
             $("#resultsText").append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>" );
+                "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>");
             $("#resultsText").append(link);
             console.log(link);
             $("#celebphoto").append(img);
@@ -240,22 +240,37 @@ $(document).ready(function () {
         }
     }
 
-    function showModal(){
+    function showModal() {
         $(".modal").show();
     }
 
 
 
     //Adding Buttons from Search Bar
-    $("#searchBtn").on("click", function (event) {
+    $("#searchBtn").click(function (event) {
         event.preventDefault();
         var newCause = $("#search-input").val().trim();
-    if (newCause ===""){
-        showModal();
-    } else {
-        causes.push(newCause);
-        getCauses();
-        $("#search-input").text("");
+        if (newCause === "") {
+            showModal();
+        } else {
+            causes.push(newCause);
+            getCauses();
+            $("#search-input").text("");
+        }
+    });
+
+    $('#search-input').keypress(function (e) {
+        var key = e.which || e.keyCode; 
+        if (e.keyCode === 13) { //Enter key pressed
+            event.preventDefault();
+            var newCause = $("#search-input").val().trim();
+            if (newCause === "") {
+                showModal();
+            } else {
+                causes.push(newCause);
+                getCauses();
+                $("#search-input").text("");
+            }
         }
     });
 
@@ -263,7 +278,7 @@ $(document).ready(function () {
         $(".modal").hide();
 
     });
-   
+
     getCauses();
     function getCauseResults(response, i) {
         var newDiv = $("<div>")
@@ -279,7 +294,7 @@ $(document).ready(function () {
         link.attr("href", site);
         link.text(site);
         $(textDiv).append("<span class='searchItemTitle'>Charity Name: </span>" + chartName + "<br>" + "<span class='searchItemTitle'>Charity Tagline: </span>" + tagline +
-        "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>"+ mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>");
+            "<br>" + "<span class='searchItemTitle'>Charity Purpose: </span>" + purpose + "<br>" + "<span class='searchItemTitle'>Mission Statement: </span>" + mission + "<br>" + "<span class='searchItemTitle'>Get Involved: </span>");
         $(textDiv).append(link).append("<br>" + "<br>")
         $(".searchResultsDiv").append(newDiv);
     }
